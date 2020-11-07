@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: rmnmatusevich/online-shop-gatsby
-media_folder: publicAdmin/img
+media_folder: static/img
 public_folder: img
 collections:
   - name: "pages"
