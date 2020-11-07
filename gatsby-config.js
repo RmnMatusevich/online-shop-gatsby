@@ -21,5 +21,11 @@ module.exports = {
         icon: 'src/assets/img/favicon.png', // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        enableIdentityWidget: false,
+      }
+    },
   ],
 }
