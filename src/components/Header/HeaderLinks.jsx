@@ -8,7 +8,12 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
-
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import BuildOutlinedIcon from '@material-ui/icons/BuildOutlined';
+import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined';
+import DevicesOtherIcon from '@material-ui/icons/DevicesOther';
+import SettingsInputHdmiOutlinedIcon from '@material-ui/icons/SettingsInputHdmiOutlined';
+import MemoryIcon from '@material-ui/icons/Memory';
 // @material-ui/icons
 import { Apps, CloudDownload } from "@material-ui/icons";
 
@@ -28,84 +33,145 @@ function HeaderLinks({ ...props }) {
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
-          buttonText="Components"
+          navDropdown
+          buttonText="Ремонт устройств"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
           }}
-          buttonIcon={Apps}
+          buttonIcon={BuildOutlinedIcon}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
-              All components
+            <Link href="/repair/phone">
+              <a className={classes.dropdownLink}>Ремонт телефонов</a>
             </Link>,
-            <a
-              href="https://creativetimofficial.github.io/material-kit-react/#/documentation"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              Documentation
-            </a>
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Ремонт планшетов</a>
+            </Link>,
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Ремонт ноутбуков</a>
+            </Link>,
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Ремонт часов</a>
+            </Link>,
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Ремонт iqos</a>
+            </Link>,
+            // <a
+            //   href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"
+            //   target="_blank"
+            //   className={classes.dropdownLink}
+            // >
+            //   Documentation
+            // </a>
+          ]}
+        />
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          buttonText="Скупка устройств"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent"
+          }}
+          buttonIcon={MonetizationOnOutlinedIcon}
+          dropdownList={[
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Продать телефон</a>
+            </Link>,
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Продать планшет</a>
+            </Link>,
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Продать ноутбук</a>
+            </Link>,
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Продать часы</a>
+            </Link>,
+          ]}
+        />
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          buttonText="Продажа устройств"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent"
+          }}
+          buttonIcon={DevicesOtherIcon}
+          dropdownList={[
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Телефоны</a>
+            </Link>,
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Планшеты</a>
+            </Link>,
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Ноутбуки</a>
+            </Link>,
+          ]}
+        />
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          buttonText="Аксессуары"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent"
+          }}
+          buttonIcon={SettingsInputHdmiOutlinedIcon}
+          dropdownList={[
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Кабеля и зарядки</a>
+            </Link>,
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Чехлы</a>
+            </Link>,
+            <Link href="/components">
+              <a className={classes.dropdownLink}>Стилусы</a>
+            </Link>,
           ]}
         />
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="https://www.creative-tim.com/product/material-kit-react"
+          href="https://www.creative-tim.com/product/nextjs-material-kit?ref=njsmk-navbar"
           color="transparent"
           target="_blank"
           className={classes.navLink}
         >
-          <CloudDownload className={classes.icons} /> Download
+          <MemoryIcon className={classes.icons} />Запчасти
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-twitter"
-          title="Follow us on twitter"
-          placement={typeof window !== 'undefined' && window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
+        <Button
+          href="https://www.creative-tim.com/product/nextjs-material-kit?ref=njsmk-navbar"
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
         >
-          <Button
-            href="https://twitter.com/CreativeTim"
-            target="_blank"
-            color="transparent"
-            className={classes.navLink}
-          >
-            <FaTwitter/>
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-facebook"
-          title="Follow us on facebook"
-          placement={typeof window !== 'undefined' && window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.facebook.com/CreativeTim"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <FaFacebook/>
-          </Button>
-        </Tooltip>
+          <InfoOutlinedIcon className={classes.icons} />Информация
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"
           title="Follow us on instagram"
-          placement={typeof window !== 'undefined' && window.innerWidth > 959 ? "top" : "left"}
+          placement={"top"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
             color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial"
+            href="https://www.instagram.com/techtagpl/?igshid=l1jajg9pay3g"
             target="_blank"
             className={classes.navLink}
           >
-            <FaInstagram/>
+            <i className={classes.socialIcons + " fab fa-instagram"} />
           </Button>
         </Tooltip>
       </ListItem>
