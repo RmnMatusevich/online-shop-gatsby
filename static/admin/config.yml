@@ -32,6 +32,7 @@ collections:
       - { name: path, label: Path }
       - { name: title, label: Title }
       - { name: subtitle, label: Subtitle}
+      - { name: repair, label: Repair, default: "/repair", widget: "string"}
       - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
       - label: 'Brands'
         name: "brands"

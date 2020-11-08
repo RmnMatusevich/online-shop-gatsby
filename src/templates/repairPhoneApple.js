@@ -29,7 +29,8 @@ const  Template = ({ data, classes, ...rest }) => {
         {phonesData.map((i, index) => {
           return (
             <div key={index}>
-              {i.node.frontmatter.productDescription}
+              <img src={require(`../../static/${i.node.frontmatter.productImage}`)} alt="gogo" />
+              <p>{i.node.frontmatter.productDescription}</p>
             </div>
           )
         })}
