@@ -66,6 +66,9 @@ const Components = (props) => {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
+          <Link to={"/repair/phone/apple/iphone-xr"}>
+            <a>fsdfsdfsdfsdfsdf</a>
+          </Link>
           <SectionBasics />
           <SectionNavbars />
           <SectionTabs />
