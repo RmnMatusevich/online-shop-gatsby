@@ -2,6 +2,7 @@
 path: /repair/phone
 title: Repair Phone and Phones
 subtitle: We can repair EVERYTHING
+repair: /repair
 backgroundImage: img/header_photo.jpg
 brands:
   - brand: Apple
