@@ -30,7 +30,10 @@ const  Template = ({ data, classes, ...rest }) => {
           return (
             <div key={index}>
               <img src={require(`../../static/${i.node.frontmatter.productImage}`)} alt="gogo" />
+              <h1>{i.node.frontmatter.productName}</h1>
               <p>{i.node.frontmatter.productDescription}</p>
+              <h1>{i.node.frontmatter.productBrand}</h1>
+              <h1>{i.node.frontmatter.productYear}</h1>
             </div>
           )
         })}

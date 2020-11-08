@@ -44,7 +44,7 @@ function HeaderLinks({ ...props }) {
             <Link href="/repair/phone">
               <a className={classes.dropdownLink}>Ремонт телефонов</a>
             </Link>,
-            <Link href="/components">
+            <Link href="/repair/tablets">
               <a className={classes.dropdownLink}>Ремонт планшетов</a>
             </Link>,
             <Link href="/components">

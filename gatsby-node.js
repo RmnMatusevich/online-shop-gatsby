@@ -74,4 +74,44 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
         context: {},
       });
     });
+
+
+  const RepairPageTemplate = path.resolve('src/templates/repairPageTemplate.js');
+
+  const repairPage = await graphql(`
+    {
+  allMarkdownRemark(filter: {frontmatter: {repair: {eq: "/repair"}}}) {
+    edges {
+      node {
+        frontmatter {
+          path
+          title
+          subtitle
+          backgroundImage
+          brands {
+            brand
+            image
+            linkTo
+          }
+        }
+      }
+    }
+  }
+}
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+    console.log("RESULT: ", result.data)
+    return result.data
+  })
+
+  repairPage.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: RepairPageTemplate,
+      context: {},
+    });
+  });
+
 };
