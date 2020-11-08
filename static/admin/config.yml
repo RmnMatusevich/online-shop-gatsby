@@ -24,6 +24,22 @@ collections:
       - { label: "productBrand", name: "productBrand", widget: "string"}
       - { label: "productDescription", name: "productDescription", widget: "markdown"}
       - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
+  - name: repairPage
+    label: RepairPage
+    folder: repair-page
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - label: 'Brands'
+        name: "brands"
+        widget: list
+        fields:
+          - { label: "Brand", name: "brand", widget: "string"}
+          - { label: "Image", name: "image", widget: "image"}
+          - {label: "LinkTo", name: "linkTo", widget: "string"}
 #  - name: "pages"
 #    label: "Pages"
 #    files:

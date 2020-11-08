@@ -1,25 +1,44 @@
 import React from 'react';
+import classNames from "classnames"
+import Header from "../components/Header/Header"
+import HeaderLinks from "../components/Header/HeaderLinks"
+import Parallax from "../components/Parallax/Parallax"
+import GridContainer from "../components/Grid/GridContainer"
+import GridItem from "../components/Grid/GridItem"
+import withStyles from "@material-ui/core/styles/withStyles";
+import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
 
-export default function Template({ data, }) {
+const  Template = ({ data, classes, ...rest }) => {
   const phonesData = data.allMarkdownRemark.edges;
   console.log("phonesData: ", phonesData)
   // const { frontmatter, html } = markdownRemark;
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
+    <div>
+      <Header
+        brand="Material Kit React"
+        rightLinks={<HeaderLinks />}
+        fixed
+        color="transparent"
+        changeColorOnScroll={{
+          height: 400,
+          color: "white"
+        }}
+        {...rest}
+      />
+      <div className={classNames(classes.main, classes.mainRaised)} style={{marginTop: 150}}>
         {phonesData.map((i, index) => {
           return (
             <div key={index}>
-              <h1>{i.node.frontmatter.productDescription}</h1>
+              {i.node.frontmatter.productDescription}
             </div>
           )
         })}
-        {/*<h1>{frontmatter.productName}</h1>*/}
-        {/*<h2>{frontmatter.date}</h2>*/}
       </div>
     </div>
   );
 }
+export default withStyles(componentsStyle)(Template);
+
 export const pageQuery = graphql`
   query Repair($path: String!) {
   allMarkdownRemark(filter: {frontmatter: {productBrand: {eq: "Apple"}, path: {eq: $path}}}) {
