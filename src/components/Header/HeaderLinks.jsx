@@ -41,20 +41,20 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={BuildOutlinedIcon}
           dropdownList={[
-            <Link href="/repair/phone">
-              <a className={classes.dropdownLink}>Ремонт телефонов</a>
+            <Link to="/repair/phone" className={classes.dropdownLink}>
+              Ремонт телефонов
             </Link>,
-            <Link href="/repair/tablets">
-              <a className={classes.dropdownLink}>Ремонт планшетов</a>
+            <Link to="/repair/tablets" className={classes.dropdownLink}>
+              Ремонт планшетов
             </Link>,
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Ремонт ноутбуков</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Ремонт ноутбуков
             </Link>,
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Ремонт часов</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Ремонт часов
             </Link>,
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Ремонт iqos</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Ремонт iqos
             </Link>,
             // <a
             //   href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"
