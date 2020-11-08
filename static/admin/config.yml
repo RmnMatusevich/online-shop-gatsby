@@ -13,6 +13,17 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+  - name: repairPhoneApple
+    label: repairPhoneApple
+    folder: repair/phone/apple
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { label: "productImage", name: "productImage", widget: "image"}
+      - { label: "productName", name: "productName", widget: "string"}
+      - { label: "productDescription", name: "productDescription", widget: "text"}
+      - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
+      - { label: "productUrl", name: "productUrl", widget: "string"}
   - name: "pages"
     label: "Pages"
     files:
