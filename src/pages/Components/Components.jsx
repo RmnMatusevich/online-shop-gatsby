@@ -2,7 +2,7 @@ import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // react components for routing our app without refresh
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
@@ -32,7 +32,12 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 
 class Components extends React.Component {
   render() {
-    const { classes, ...rest } = this.props;
+    const { classes, data, ...rest } = this.props;
+    const { markdownRemark } = data;
+    const { frontmatter, html } = markdownRemark;
+    console.log(frontmatter.title)
+    console.log(frontmatter.data)
+
     return (
       <div>
         <Header
@@ -89,3 +94,16 @@ class Components extends React.Component {
 }
 
 export default withStyles(componentsStyle)(Components);
+
+export const pageQuery = graphql`
+  query BlogPostByPath($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        path
+        title
+      }
+    }
+  }
+`;

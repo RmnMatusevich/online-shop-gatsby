@@ -9,6 +9,7 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-sass',
     'gatsby-plugin-material-ui',
+    'gatsby-transformer-yaml',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -27,5 +28,13 @@ module.exports = {
         enableIdentityWidget: false,
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/blog`,
+        name: 'markdown-pages',
+      },
+    },
+    `gatsby-transformer-remark`,
   ],
 }
