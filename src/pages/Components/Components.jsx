@@ -2,7 +2,7 @@ import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // react components for routing our app without refresh
-import { Link, graphql } from "gatsby";
+import { Link } from "gatsby";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
@@ -30,13 +30,12 @@ import SectionDownload from "./Sections/SectionDownload.jsx";
 
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
 
-class Components extends React.Component {
-  render() {
-    const { classes, data, ...rest } = this.props;
-    const { markdownRemark } = data;
-    const { frontmatter, html } = markdownRemark;
-    console.log(frontmatter.title)
-    console.log(frontmatter.data)
+const Components = (props) => {
+    const { classes, data, ...rest } = props;
+    console.log("datadatadata ",data);
+    // const { frontmatter } = allMarkdownRemark;
+    // console.log(frontmatter.title)
+    // console.log(frontmatter.data)
 
     return (
       <div>
@@ -90,20 +89,20 @@ class Components extends React.Component {
         <Footer />
       </div>
     );
-  }
 }
 
 export default withStyles(componentsStyle)(Components);
 
-export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
-        title
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+// query BlogPostByPath {
+//   allMarkdownRemark {
+//     nodes {
+//       frontmatter {
+//         date
+//         path
+//         title
+//       }
+//     }
+//   }
+// }
+// `;

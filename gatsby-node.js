@@ -3,7 +3,7 @@ const path = require('path');
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
-  const blogPostTemplate = path.resolve('src/pages/Components/Components');
+  const blogPostTemplate = path.resolve('src/templates/blogTemplate.js');
 
   return graphql(`
     {
@@ -24,8 +24,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           }
         }
       }
-    }
-  `).then(result => {
+    }`).then(result => {
+    console.log("resultresult :", result)
     if (result.errors) {
       return Promise.reject(result.errors);
     }
