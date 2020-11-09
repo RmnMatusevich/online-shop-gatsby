@@ -53,7 +53,7 @@ export const pageQuery = graphql`
   query Repair($path: String!) {
     allMarkdownRemark(
       filter: {
-        frontmatter: { productBrand: { eq: "Apple" }, path: { eq: $path } }
+        frontmatter: {type: {eq: "product"}, path: { eq: $path } }
       }
     ) {
       edges {
