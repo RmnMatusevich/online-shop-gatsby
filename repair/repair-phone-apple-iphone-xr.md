@@ -1,5 +1,6 @@
 ---
 path: /repair/phone/apple/iphone-xr
+type: product
 productImage: img/apple_brand.svg
 productName: iPhone XR
 productBrand: Apple
