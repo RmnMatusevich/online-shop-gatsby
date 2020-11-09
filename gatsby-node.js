@@ -44,7 +44,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
 
   const repairPhones = await graphql(`
     {
-      allMarkdownRemark(filter: {frontmatter: {productBrand: {eq: "Apple"}}}) {
+  allMarkdownRemark(filter: {frontmatter: {type: {eq: "product"}}}) {
     edges {
       node {
         id
@@ -58,7 +58,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
       }
     }
   }
-    }
+}
   `).then(result => {
     if (result.errors) {
       return Promise.reject(result.errors);
