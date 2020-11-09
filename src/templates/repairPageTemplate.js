@@ -62,7 +62,10 @@ const RepairPageTemplate = props => {
                 return (
                   <div key={index}>
                     <Link to={i.linkTo}>
-                      <img src={require(`../../static/${i.image}`)} alt="fddf" />
+                      <img
+                        src={require(`../../static/${i.image}`)}
+                        alt="fddf"
+                      />
                     </Link>
                     <h4>{i.brand}</h4>
                   </div>

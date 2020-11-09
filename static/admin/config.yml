@@ -19,6 +19,7 @@ collections:
     create: true
     fields:
       - { name: "path", label: "Path" }
+      - { name: "type", label: "Type", widget: "string"}
       - { label: "productImage", name: "productImage", widget: "image"}
       - { label: "productName", name: "productName", widget: "string"}
       - { label: "productBrand", name: "productBrand", widget: "string"}

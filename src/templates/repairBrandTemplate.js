@@ -13,7 +13,7 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 
 const RepairBrandTemplate = props => {
   const { classes, data, ...rest } = props
-  // const repairBrandData = data.allMarkdownRemark.edges
+  const repairBrandData = data.allMarkdownRemark.edges
   console.log(data)
   // console.log("datadatadata ", repairData)
   // const { frontmatter } = allMarkdownRemark;
@@ -49,27 +49,19 @@ const RepairBrandTemplate = props => {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        {/*{repairData.map((i, index) => {*/}
-        {/*  return (*/}
-        {/*    <div key={index}>*/}
-        {/*      <h1>{i.node.frontmatter.title}</h1>*/}
-        {/*      <h1>{i.node.frontmatter.subtitle}</h1>*/}
-        {/*      <h1>{i.node.frontmatter.title}</h1>*/}
-        {/*      <img*/}
-        {/*        src={require(`../../static/${i.node.frontmatter.backgroundImage}`)}*/}
-        {/*        alt="dfgfg"*/}
-        {/*      />*/}
-        {/*      {i.node.frontmatter.brands.map((i, index) => {*/}
-        {/*        return (*/}
-        {/*          <div key={index}>*/}
-        {/*            <img src={require(`../../static/${i.image}`)} alt="fddf" />*/}
-        {/*            <h4>{i.brand}</h4>*/}
-        {/*          </div>*/}
-        {/*        )*/}
-        {/*      })}*/}
-        {/*    </div>*/}
-        {/*  )*/}
-        {/*})}*/}
+        {repairBrandData.map((i, index) => {
+          return (
+            <div key={index}>
+              <Link to={i.node.frontmatter.path}>
+                <img
+                  src={require(`../../static/${i.node.frontmatter.productImage}`)}
+                />
+              </Link>
+              {i.node.frontmatter.productBrand}
+              {i.node.frontmatter.productDescription}
+            </div>
+          )
+        })}
       </div>
       <Footer />
     </div>
@@ -80,19 +72,19 @@ export default withStyles(componentsStyle)(RepairBrandTemplate)
 
 export const pageQuery = graphql`
   query RepairBrand($path: String!) {
-  allMarkdownRemark(filter: {frontmatter: {path: {regex: $path}}}) {
-    edges {
-      node {
-        frontmatter {
-          path
-          productBrand
-          productName
-          productDescription
-          productImage
-          productYear
+    allMarkdownRemark(filter: { frontmatter: { path: { regex: $path } } }) {
+      edges {
+        node {
+          frontmatter {
+            path
+            productBrand
+            productName
+            productDescription
+            productImage
+            productYear
+          }
         }
       }
     }
   }
-}
 `
