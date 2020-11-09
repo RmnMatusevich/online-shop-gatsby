@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
+import withStyles from "@material-ui/core/styles/withStyles"
+import Grid from "@material-ui/core/Grid"
 
 const style = {
   grid: {
@@ -10,17 +10,17 @@ const style = {
     minHeight: "1px",
     paddingRight: "15px",
     paddingLeft: "15px",
-    flexBasis: "auto"
-  }
-};
+    flexBasis: "auto",
+  },
+}
 
 function GridItem({ ...props }) {
-  const { classes, children, className, ...rest } = props;
+  const { classes, children, className, ...rest } = props
   return (
     <Grid item {...rest} className={classes.grid + " " + className}>
       {children}
     </Grid>
-  );
+  )
 }
 
-export default withStyles(style)(GridItem);
+export default withStyles(style)(GridItem)

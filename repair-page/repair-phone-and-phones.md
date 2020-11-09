@@ -1,5 +1,5 @@
 ---
-path: /repair/phone
+path: /repair/phone/
 title: Repair Phone and Phones
 subtitle: We can repair EVERYTHING
 repair: /repair

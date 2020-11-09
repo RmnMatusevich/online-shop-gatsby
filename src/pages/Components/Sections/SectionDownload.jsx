@@ -1,20 +1,25 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@material-ui/core/styles/withStyles"
 // @material-ui/icons
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
-import Button from "components/CustomButtons/Button.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx"
+import GridItem from "components/Grid/GridItem.jsx"
+import Button from "components/CustomButtons/Button.jsx"
 // React icons
-import { FaTwitter, FaFacebookSquare, FaGooglePlusG, FaGithub } from 'react-icons/fa';
+import {
+  FaTwitter,
+  FaFacebookSquare,
+  FaGooglePlusG,
+  FaGithub,
+} from "react-icons/fa"
 // core components
-import downloadStyle from "assets/jss/material-kit-react/views/componentsSections/downloadStyle.jsx";
+import downloadStyle from "assets/jss/material-kit-react/views/componentsSections/downloadStyle.jsx"
 
 class SectionDownload extends React.Component {
   render() {
-    const { classes } = this.props;
+    const { classes } = this.props
     return (
       <div className={classes.section}>
         <div className={classes.container}>
@@ -89,24 +94,23 @@ class SectionDownload extends React.Component {
               <h3>Thank you for supporting us!</h3>
             </GridContainer>
             <Button color="twitter">
-              <FaTwitter/> Tweet
+              <FaTwitter /> Tweet
             </Button>
             <Button color="facebook">
-              <FaFacebookSquare/>{" "}
-              Share
+              <FaFacebookSquare /> Share
             </Button>
             <Button color="google">
-              <FaGooglePlusG/>
+              <FaGooglePlusG />
               Share
             </Button>
             <Button color="github">
-              <FaGithub/> Star
+              <FaGithub /> Star
             </Button>
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default withStyles(downloadStyle)(SectionDownload);
+export default withStyles(downloadStyle)(SectionDownload)

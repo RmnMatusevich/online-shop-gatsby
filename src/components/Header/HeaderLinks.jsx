@@ -1,33 +1,33 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 // react components for routing our app without refresh
-import { Link } from "gatsby";
+import { Link } from "gatsby"
 
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import BuildOutlinedIcon from '@material-ui/icons/BuildOutlined';
-import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined';
-import DevicesOtherIcon from '@material-ui/icons/DevicesOther';
-import SettingsInputHdmiOutlinedIcon from '@material-ui/icons/SettingsInputHdmiOutlined';
-import MemoryIcon from '@material-ui/icons/Memory';
+import withStyles from "@material-ui/core/styles/withStyles"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import Tooltip from "@material-ui/core/Tooltip"
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined"
+import BuildOutlinedIcon from "@material-ui/icons/BuildOutlined"
+import MonetizationOnOutlinedIcon from "@material-ui/icons/MonetizationOnOutlined"
+import DevicesOtherIcon from "@material-ui/icons/DevicesOther"
+import SettingsInputHdmiOutlinedIcon from "@material-ui/icons/SettingsInputHdmiOutlined"
+import MemoryIcon from "@material-ui/icons/Memory"
 // @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
+import { Apps, CloudDownload } from "@material-ui/icons"
 
 // React icons
-import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"
 
 // core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
-import Button from "components/CustomButtons/Button.jsx";
+import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx"
+import Button from "components/CustomButtons/Button.jsx"
 
-import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx";
+import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx"
 
 function HeaderLinks({ ...props }) {
-  const { classes } = props;
+  const { classes } = props
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
@@ -37,7 +37,7 @@ function HeaderLinks({ ...props }) {
           buttonText="Ремонт устройств"
           buttonProps={{
             className: classes.navLink,
-            color: "transparent"
+            color: "transparent",
           }}
           buttonIcon={BuildOutlinedIcon}
           dropdownList={[
@@ -47,13 +47,13 @@ function HeaderLinks({ ...props }) {
             <Link to="/repair/tablets" className={classes.dropdownLink}>
               Ремонт планшетов
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/repair/laptops" className={classes.dropdownLink}>
               Ремонт ноутбуков
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/repair/watches" className={classes.dropdownLink}>
               Ремонт часов
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/repair/iqos" className={classes.dropdownLink}>
               Ремонт iqos
             </Link>,
             // <a
@@ -73,7 +73,7 @@ function HeaderLinks({ ...props }) {
           buttonText="Скупка устройств"
           buttonProps={{
             className: classes.navLink,
-            color: "transparent"
+            color: "transparent",
           }}
           buttonIcon={MonetizationOnOutlinedIcon}
           dropdownList={[
@@ -99,7 +99,7 @@ function HeaderLinks({ ...props }) {
           buttonText="Продажа устройств"
           buttonProps={{
             className: classes.navLink,
-            color: "transparent"
+            color: "transparent",
           }}
           buttonIcon={DevicesOtherIcon}
           dropdownList={[
@@ -122,7 +122,7 @@ function HeaderLinks({ ...props }) {
           buttonText="Аксессуары"
           buttonProps={{
             className: classes.navLink,
-            color: "transparent"
+            color: "transparent",
           }}
           buttonIcon={SettingsInputHdmiOutlinedIcon}
           dropdownList={[
@@ -145,7 +145,8 @@ function HeaderLinks({ ...props }) {
           target="_blank"
           className={classes.navLink}
         >
-          <MemoryIcon className={classes.icons} />Запчасти
+          <MemoryIcon className={classes.icons} />
+          Запчасти
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -155,7 +156,8 @@ function HeaderLinks({ ...props }) {
           target="_blank"
           className={classes.navLink}
         >
-          <InfoOutlinedIcon className={classes.icons} />Информация
+          <InfoOutlinedIcon className={classes.icons} />
+          Информация
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -176,7 +178,7 @@ function HeaderLinks({ ...props }) {
         </Tooltip>
       </ListItem>
     </List>
-  );
+  )
 }
 
-export default withStyles(headerLinksStyle)(HeaderLinks);
+export default withStyles(headerLinksStyle)(HeaderLinks)

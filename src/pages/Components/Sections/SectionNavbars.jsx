@@ -1,34 +1,34 @@
-import React from "react";
+import React from "react"
 
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Icon from "@material-ui/core/Icon";
+import withStyles from "@material-ui/core/styles/withStyles"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import Icon from "@material-ui/core/Icon"
 // @material-ui/icons
-import Search from "@material-ui/icons/Search";
-import Email from "@material-ui/icons/Email";
-import Face from "@material-ui/icons/Face";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import Explore from "@material-ui/icons/Explore";
+import Search from "@material-ui/icons/Search"
+import Email from "@material-ui/icons/Email"
+import Face from "@material-ui/icons/Face"
+import AccountCircle from "@material-ui/icons/AccountCircle"
+import Explore from "@material-ui/icons/Explore"
 // React icons
-import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"
 // core components
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
-import Header from "components/Header/Header.jsx";
-import CustomInput from "components/CustomInput/CustomInput.jsx";
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
-import Button from "components/CustomButtons/Button.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx"
+import GridItem from "components/Grid/GridItem.jsx"
+import Header from "components/Header/Header.jsx"
+import CustomInput from "components/CustomInput/CustomInput.jsx"
+import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx"
+import Button from "components/CustomButtons/Button.jsx"
 
-import navbarsStyle from "assets/jss/material-kit-react/views/componentsSections/navbarsStyle.jsx";
+import navbarsStyle from "assets/jss/material-kit-react/views/componentsSections/navbarsStyle.jsx"
 
-import image from "assets/img/bg.jpg";
-import profileImage from "assets/img/faces/avatar.jpg";
+import image from "assets/img/bg.jpg"
+import profileImage from "assets/img/faces/avatar.jpg"
 
 class SectionNavbars extends React.Component {
   render() {
-    const { classes } = this.props;
+    const { classes } = this.props
     return (
       <div className={classes.section}>
         <div className={classes.container}>
@@ -68,7 +68,7 @@ class SectionNavbars extends React.Component {
                         dropdownHeader="Dropdown Header"
                         buttonProps={{
                           className: classes.navLink,
-                          color: "transparent"
+                          color: "transparent",
                         }}
                         dropdownList={[
                           "Action",
@@ -77,7 +77,7 @@ class SectionNavbars extends React.Component {
                           { divider: true },
                           "Separated link",
                           { divider: true },
-                          "One more separated link"
+                          "One more separated link",
                         ]}
                       />
                     </ListItem>
@@ -112,7 +112,7 @@ class SectionNavbars extends React.Component {
                         buttonIcon="settings"
                         buttonProps={{
                           className: classes.navLink,
-                          color: "transparent"
+                          color: "transparent",
                         }}
                         dropdownList={[
                           "Action",
@@ -121,7 +121,7 @@ class SectionNavbars extends React.Component {
                           { divider: true },
                           "Separated link",
                           { divider: true },
-                          "One more separated link"
+                          "One more separated link",
                         ]}
                       />
                     </ListItem>
@@ -172,14 +172,14 @@ class SectionNavbars extends React.Component {
                     white
                     inputRootCustomClasses={classes.inputRootCustomClasses}
                     formControlProps={{
-                      className: classes.formControl
+                      className: classes.formControl,
                     }}
                     inputProps={{
                       placeholder: "Search",
                       inputProps: {
                         "aria-label": "Search",
-                        className: classes.searchInput
-                      }
+                        className: classes.searchInput,
+                      },
                     }}
                   />
                   <Button justIcon round color="white">
@@ -317,12 +317,12 @@ class SectionNavbars extends React.Component {
                       buttonProps={{
                         className:
                           classes.navLink + " " + classes.imageDropdownButton,
-                        color: "transparent"
+                        color: "transparent",
                       }}
                       dropdownList={[
                         "Me",
                         "Settings and other stuff",
-                        "Sign out"
+                        "Sign out",
                       ]}
                     />
                   </ListItem>
@@ -379,8 +379,7 @@ class SectionNavbars extends React.Component {
                         classes.navLink + " " + classes.socialIconsButton
                       }
                     >
-                      <FaTwitter className={classes.marginRight5}/>{" "}
-                      Twitter
+                      <FaTwitter className={classes.marginRight5} /> Twitter
                     </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
@@ -390,8 +389,7 @@ class SectionNavbars extends React.Component {
                         classes.navLink + " " + classes.socialIconsButton
                       }
                     >
-                      <FaFacebook className={classes.marginRight5}/>{" "}
-                      Facebook
+                      <FaFacebook className={classes.marginRight5} /> Facebook
                     </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
@@ -401,8 +399,7 @@ class SectionNavbars extends React.Component {
                         classes.navLink + " " + classes.socialIconsButton
                       }
                     >
-                      <FaInstagram className={classes.marginRight5}/>{" "}
-                      Instagram
+                      <FaInstagram className={classes.marginRight5} /> Instagram
                     </Button>
                   </ListItem>
                 </List>
@@ -411,8 +408,8 @@ class SectionNavbars extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default withStyles(navbarsStyle)(SectionNavbars);
+export default withStyles(navbarsStyle)(SectionNavbars)

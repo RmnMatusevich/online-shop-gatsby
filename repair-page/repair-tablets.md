@@ -1,5 +1,5 @@
 ---
-path: /repair/tablets
+path: /repair/tablets/
 title: Repair Tablets
 subtitle: We nice repair tablets!
 repair: /repair

@@ -1,22 +1,22 @@
-import React from "react";
+import React from "react"
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Snack from "@material-ui/core/SnackbarContent";
-import IconButton from "@material-ui/core/IconButton";
-import Icon from "@material-ui/core/Icon";
+import withStyles from "@material-ui/core/styles/withStyles"
+import Snack from "@material-ui/core/SnackbarContent"
+import IconButton from "@material-ui/core/IconButton"
+import Icon from "@material-ui/core/Icon"
 // @material-ui/icons
-import Close from "@material-ui/icons/Close";
+import Close from "@material-ui/icons/Close"
 
-import snackbarContentStyle from "assets/jss/material-kit-react/components/snackbarContentStyle.jsx";
+import snackbarContentStyle from "assets/jss/material-kit-react/components/snackbarContentStyle.jsx"
 
 class SnackbarContent extends React.Component {
   constructor(props) {
-    super(props);
-    this.closeAlert = this.closeAlert.bind(this);
-    const { classes, message, color, close, icon } = props;
-    var action = [];
+    super(props)
+    this.closeAlert = this.closeAlert.bind(this)
+    const { classes, message, color, close, icon } = props
+    var action = []
     if (close !== undefined) {
       action = [
         <IconButton
@@ -27,21 +27,21 @@ class SnackbarContent extends React.Component {
           onClick={this.closeAlert}
         >
           <Close className={classes.close} />
-        </IconButton>
-      ];
+        </IconButton>,
+      ]
     }
 
-    let snackIcon = null;
+    let snackIcon = null
     switch (typeof icon) {
       case "function":
-        snackIcon = <props.icon className={classes.icon} />;
-        break;
+        snackIcon = <props.icon className={classes.icon} />
+        break
       case "string":
-        snackIcon = <Icon className={classes.icon}>{props.icon}</Icon>;
-        break;
+        snackIcon = <Icon className={classes.icon}>{props.icon}</Icon>
+        break
       default:
-        snackIcon = null;
-        break;
+        snackIcon = null
+        break
     }
 
     this.state = {
@@ -56,17 +56,17 @@ class SnackbarContent extends React.Component {
           }
           classes={{
             root: classes.root + " " + classes[color],
-            message: classes.message + " " + classes.container
+            message: classes.message + " " + classes.container,
           }}
         />
-      )
-    };
+      ),
+    }
   }
   closeAlert() {
-    this.setState({ alert: null });
+    this.setState({ alert: null })
   }
   render() {
-    return this.state.alert;
+    return this.state.alert
   }
 }
 
@@ -75,7 +75,7 @@ SnackbarContent.propTypes = {
   message: PropTypes.node.isRequired,
   color: PropTypes.oneOf(["info", "success", "warning", "danger", "primary"]),
   close: PropTypes.bool,
-  icon: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
-};
+  icon: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+}
 
-export default withStyles(snackbarContentStyle)(SnackbarContent);
+export default withStyles(snackbarContentStyle)(SnackbarContent)

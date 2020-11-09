@@ -3,8 +3,8 @@ import {
   successCardHeader,
   dangerCardHeader,
   infoCardHeader,
-  primaryCardHeader
-} from "assets/jss/material-kit-react.jsx";
+  primaryCardHeader,
+} from "assets/jss/material-kit-react.jsx"
 const cardHeaderStyle = {
   cardHeader: {
     borderRadius: "3px",
@@ -13,17 +13,17 @@ const cardHeaderStyle = {
     marginRight: "15px",
     marginTop: "-30px",
     border: "0",
-    marginBottom: "0"
+    marginBottom: "0",
   },
   cardHeaderPlain: {
     marginLeft: "0px",
-    marginRight: "0px"
+    marginRight: "0px",
   },
   warningCardHeader,
   successCardHeader,
   dangerCardHeader,
   infoCardHeader,
-  primaryCardHeader
-};
+  primaryCardHeader,
+}
 
-export default cardHeaderStyle;
+export default cardHeaderStyle

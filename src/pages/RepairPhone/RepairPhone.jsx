@@ -2,7 +2,7 @@ import classNames from "classnames"
 import { Link } from "gatsby"
 import withStyles from "@material-ui/core/styles/withStyles"
 import React from "react"
-import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
+import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import Footer from "../../components/Footer/Footer"
 import GridContainer from "../../components/Grid/GridContainer"
 import GridItem from "../../components/Grid/GridItem"
@@ -10,9 +10,9 @@ import Parallax from "../../components/Parallax/Parallax"
 import HeaderLinks from "../../components/Header/HeaderLinks"
 import Header from "../../components/Header/Header"
 
-const RepairPhone = (props) => {
-  const { classes, data, ...rest } = props;
-  console.log("datadatadata ",data);
+const RepairPhone = props => {
+  const { classes, data, ...rest } = props
+  console.log("datadatadata ", data)
   // const { frontmatter } = allMarkdownRemark;
   // console.log(frontmatter.title)
   // console.log(frontmatter.data)
@@ -26,7 +26,7 @@ const RepairPhone = (props) => {
         color="transparent"
         changeColorOnScroll={{
           height: 400,
-          color: "white"
+          color: "white",
         }}
         {...rest}
       />
@@ -52,7 +52,7 @@ const RepairPhone = (props) => {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default withStyles(componentsStyle)(RepairPhone);
+export default withStyles(componentsStyle)(RepairPhone)

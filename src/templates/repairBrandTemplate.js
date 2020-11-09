@@ -11,10 +11,11 @@ import GridItem from "../components/Grid/GridItem"
 import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 
-const RepairPageTemplate = props => {
+const RepairBrandTemplate = props => {
   const { classes, data, ...rest } = props
-  const repairData = data.allMarkdownRemark.edges
-  console.log("datadatadata ", repairData)
+  // const repairBrandData = data.allMarkdownRemark.edges
+  console.log(data)
+  // console.log("datadatadata ", repairData)
   // const { frontmatter } = allMarkdownRemark;
   // console.log(frontmatter.title)
   // console.log(frontmatter.data)
@@ -48,59 +49,50 @@ const RepairPageTemplate = props => {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        {repairData.map((i, index) => {
-          return (
-            <div key={index}>
-              <h1>{i.node.frontmatter.title}</h1>
-              <h1>{i.node.frontmatter.subtitle}</h1>
-              <h1>{i.node.frontmatter.title}</h1>
-              <img
-                src={require(`../../static/${i.node.frontmatter.backgroundImage}`)}
-                alt="dfgfg"
-              />
-              {i.node.frontmatter.brands.map((i, index) => {
-                return (
-                  <div key={index}>
-                    <Link to={i.linkTo}>
-                      <img src={require(`../../static/${i.image}`)} alt="fddf" />
-                    </Link>
-                    <h4>{i.brand}</h4>
-                  </div>
-                )
-              })}
-            </div>
-          )
-        })}
+        {/*{repairData.map((i, index) => {*/}
+        {/*  return (*/}
+        {/*    <div key={index}>*/}
+        {/*      <h1>{i.node.frontmatter.title}</h1>*/}
+        {/*      <h1>{i.node.frontmatter.subtitle}</h1>*/}
+        {/*      <h1>{i.node.frontmatter.title}</h1>*/}
+        {/*      <img*/}
+        {/*        src={require(`../../static/${i.node.frontmatter.backgroundImage}`)}*/}
+        {/*        alt="dfgfg"*/}
+        {/*      />*/}
+        {/*      {i.node.frontmatter.brands.map((i, index) => {*/}
+        {/*        return (*/}
+        {/*          <div key={index}>*/}
+        {/*            <img src={require(`../../static/${i.image}`)} alt="fddf" />*/}
+        {/*            <h4>{i.brand}</h4>*/}
+        {/*          </div>*/}
+        {/*        )*/}
+        {/*      })}*/}
+        {/*    </div>*/}
+        {/*  )*/}
+        {/*})}*/}
       </div>
       <Footer />
     </div>
   )
 }
 
-export default withStyles(componentsStyle)(RepairPageTemplate)
+export default withStyles(componentsStyle)(RepairBrandTemplate)
 
 export const pageQuery = graphql`
-  query RepairPages($path: String!) {
-    allMarkdownRemark(
-      filter: {
-        frontmatter: { repair: { eq: "/repair" }, path: { eq: $path } }
-      }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            path
-            title
-            subtitle
-            backgroundImage
-            brands {
-              brand
-              image
-              linkTo
-            }
-          }
+  query RepairBrand($path: String!) {
+  allMarkdownRemark(filter: {frontmatter: {path: {regex: $path}}}) {
+    edges {
+      node {
+        frontmatter {
+          path
+          productBrand
+          productName
+          productDescription
+          productImage
+          productYear
         }
       }
     }
   }
+}
 `

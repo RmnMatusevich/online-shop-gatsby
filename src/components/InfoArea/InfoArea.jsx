@@ -1,24 +1,24 @@
-import React from "react";
+import React from "react"
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@material-ui/core/styles/withStyles"
 
-import infoStyle from "assets/jss/material-kit-react/components/infoStyle.jsx";
+import infoStyle from "assets/jss/material-kit-react/components/infoStyle.jsx"
 
 function InfoArea({ ...props }) {
-  const { classes, title, description, iconColor, vertical } = props;
+  const { classes, title, description, iconColor, vertical } = props
   const iconWrapper = classNames({
     [classes.iconWrapper]: true,
     [classes[iconColor]]: true,
-    [classes.iconWrapperVertical]: vertical
-  });
+    [classes.iconWrapperVertical]: vertical,
+  })
   const iconClasses = classNames({
     [classes.icon]: true,
-    [classes.iconVertical]: vertical
-  });
+    [classes.iconVertical]: vertical,
+  })
   return (
     <div className={classes.infoArea}>
       <div className={iconWrapper}>
@@ -29,12 +29,12 @@ function InfoArea({ ...props }) {
         <p className={classes.description}>{description}</p>
       </div>
     </div>
-  );
+  )
 }
 
 InfoArea.defaultProps = {
-  iconColor: "gray"
-};
+  iconColor: "gray",
+}
 
 InfoArea.propTypes = {
   classes: PropTypes.object.isRequired,
@@ -48,9 +48,9 @@ InfoArea.propTypes = {
     "success",
     "info",
     "rose",
-    "gray"
+    "gray",
   ]),
-  vertical: PropTypes.bool
-};
+  vertical: PropTypes.bool,
+}
 
-export default withStyles(infoStyle)(InfoArea);
+export default withStyles(infoStyle)(InfoArea)

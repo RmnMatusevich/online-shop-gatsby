@@ -1,22 +1,22 @@
-import React from "react";
+import React from "react"
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@material-ui/core/styles/withStyles"
 
-import badgeStyle from "assets/jss/material-kit-react/components/badgeStyle.jsx";
+import badgeStyle from "assets/jss/material-kit-react/components/badgeStyle.jsx"
 
 function Badge({ ...props }) {
-  const { classes, color, children } = props;
+  const { classes, color, children } = props
   return (
     <span className={classes.badge + " " + classes[color]}>{children}</span>
-  );
+  )
 }
 
 Badge.defaultProps = {
-  color: "gray"
-};
+  color: "gray",
+}
 
 Badge.propTypes = {
   classes: PropTypes.object.isRequired,
@@ -27,8 +27,8 @@ Badge.propTypes = {
     "success",
     "info",
     "rose",
-    "gray"
-  ])
-};
+    "gray",
+  ]),
+}
 
-export default withStyles(badgeStyle)(Badge);
+export default withStyles(badgeStyle)(Badge)

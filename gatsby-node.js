@@ -77,6 +77,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
 
 
   const RepairPageTemplate = path.resolve('src/templates/repairPageTemplate.js');
+  const RepairBrandTemplate = path.resolve('src/templates/repairBrandTemplate.js')
 
   const repairPage = await graphql(`
     {
@@ -112,6 +113,19 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
       component: RepairPageTemplate,
       context: {},
     });
+  });
+
+  repairPage.allMarkdownRemark.edges.forEach(({ node }) => {
+    node.frontmatter.brands.forEach(brand => {
+      // console.log("nodeeeee ", brand.linkTo)
+      const path = brand.linkTo + "/";
+      console.log('PATH: ', path)
+      createPage({
+        path: path,
+        component: RepairBrandTemplate,
+        context: {},
+      });
+    })
   });
 
 };
