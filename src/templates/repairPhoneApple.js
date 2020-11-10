@@ -15,10 +15,9 @@ const Template = ({ data, classes, ...rest }) => {
   return (
     <div>
       <Header
-        brand="Material Kit React"
         rightLinks={<HeaderLinks />}
         fixed
-        color="transparent"
+        color="white"
         changeColorOnScroll={{
           height: 400,
           color: "white",
@@ -52,9 +51,7 @@ export default withStyles(componentsStyle)(Template)
 export const pageQuery = graphql`
   query Repair($path: String!) {
     allMarkdownRemark(
-      filter: {
-        frontmatter: {type: {eq: "product"}, path: { eq: $path } }
-      }
+      filter: { frontmatter: { type: { eq: "product" }, path: { eq: $path } } }
     ) {
       edges {
         node {

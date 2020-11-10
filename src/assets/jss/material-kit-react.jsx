@@ -37,13 +37,13 @@ const container = {
     maxWidth: "540px",
   },
   "@media (min-width: 768px)": {
-    maxWidth: "720px",
+    maxWidth: "100%",
   },
   "@media (min-width: 992px)": {
-    maxWidth: "960px",
+    maxWidth: "100%",
   },
   "@media (min-width: 1200px)": {
-    maxWidth: "1140px",
+    maxWidth: "100%",
   },
 }
 
@@ -69,7 +69,7 @@ const defaultFont = {
   lineHeight: "1.5em",
 }
 
-const primaryColor = "#9c27b0"
+const primaryColor = "#0D68E0"
 const warningColor = "#ff9800"
 const dangerColor = "#f44336"
 const successColor = "#4caf50"

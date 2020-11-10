@@ -39,7 +39,7 @@ const headerLinksStyle = theme => ({
   navLink: {
     color: "inherit",
     position: "relative",
-    padding: "0.9375rem",
+    padding: "0.5375rem",
     fontWeight: "400",
     fontSize: "12px",
     textTransform: "uppercase",
@@ -65,7 +65,7 @@ const headerLinksStyle = theme => ({
   },
   notificationNavLink: {
     color: "inherit",
-    padding: "0.9375rem",
+    padding: "0.5375rem",
     fontWeight: "400",
     fontSize: "12px",
     textTransform: "uppercase",

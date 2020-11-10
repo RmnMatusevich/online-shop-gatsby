@@ -64,7 +64,6 @@ class Header extends React.Component {
       color,
       rightLinks,
       leftLinks,
-      brand,
       fixed,
       absolute,
     } = this.props
@@ -74,7 +73,15 @@ class Header extends React.Component {
       [classes.absolute]: absolute,
       [classes.fixed]: fixed,
     })
-    const brandComponent = <Button className={classes.title}>{brand}</Button>
+    const brandComponent = (
+      <Button className={classes.title} href="/">
+        <img
+          src={require("../../../static/img/logo.png")}
+          style={{ width: 150 }}
+          alt="Logo"
+        />
+      </Button>
+    )
     return (
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>

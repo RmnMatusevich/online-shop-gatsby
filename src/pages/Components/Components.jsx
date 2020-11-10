@@ -33,32 +33,26 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 const Components = props => {
   const { classes, data, ...rest } = props
   console.log("datadatadata ", data)
-  // const { frontmatter } = allMarkdownRemark;
-  // console.log(frontmatter.title)
-  // console.log(frontmatter.data)
 
   return (
     <div>
       <Header
-        brand="Material Kit React"
         rightLinks={<HeaderLinks />}
         fixed
-        color="transparent"
+        color="white"
         changeColorOnScroll={{
           height: 400,
           color: "white",
         }}
         {...rest}
       />
-      <Parallax image={require("assets/img/bg4.jpg")}>
+      <Parallax image={require("../../../static/img/header_photo.jpg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
               <div className={classes.brand}>
-                <h1 className={classes.title}>Material Kit React.</h1>
-                <h3 className={classes.subtitle}>
-                  A Badass Material-UI Kit based on Material Design.
-                </h3>
+                <h1 className={classes.title}>Tech Tag</h1>
+                <h3 className={classes.subtitle}>Look into the future</h3>
               </div>
             </GridItem>
           </GridContainer>
@@ -66,9 +60,6 @@ const Components = props => {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <Link to={"/repair/phone/apple/iphone-xr"}>
-          <h1>fsdfsdfsdfsdfsdf</h1>
-        </Link>
         <SectionCarousel />
       </div>
       <Footer />

@@ -10,6 +10,25 @@ import Parallax from "../components/Parallax/Parallax"
 import GridItem from "../components/Grid/GridItem"
 import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
+import { Card, Typography } from "@material-ui/core"
+
+const StyledCard = withStyles({
+  root: {
+    display: "flex",
+    gap: 12,
+    width: 260,
+    height: 260,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    boxShadow: "0 12px 20px -10px gray",
+    transition: "0.18s ease",
+    "&:hover, &:focus": {
+      transform: "scale(1.03)",
+      boxShadow: "0 12px 20px -10px gray",
+    },
+  },
+})(Card)
 
 const RepairPageTemplate = props => {
   const { classes, data, ...rest } = props
@@ -22,17 +41,18 @@ const RepairPageTemplate = props => {
   return (
     <div>
       <Header
-        brand="Material Kit React"
         rightLinks={<HeaderLinks />}
         fixed
-        color="transparent"
+        color="white"
         changeColorOnScroll={{
           height: 400,
           color: "white",
         }}
         {...rest}
       />
-      <Parallax image={require("assets/img/bg4.jpg")}>
+      <Parallax
+        image={require(`../../static/${repairData[0].node.frontmatter.backgroundImage}`)}
+      >
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
@@ -54,23 +74,37 @@ const RepairPageTemplate = props => {
               <h1>{i.node.frontmatter.title}</h1>
               <h1>{i.node.frontmatter.subtitle}</h1>
               <h1>{i.node.frontmatter.title}</h1>
-              <img
-                src={require(`../../static/${i.node.frontmatter.backgroundImage}`)}
-                alt="dfgfg"
-              />
-              {i.node.frontmatter.brands.map((i, index) => {
-                return (
-                  <div key={index}>
-                    <Link to={i.linkTo}>
-                      <img
-                        src={require(`../../static/${i.image}`)}
-                        alt="fddf"
-                      />
-                    </Link>
-                    <h4>{i.brand}</h4>
-                  </div>
-                )
-              })}
+              <div
+                style={{ display: "flex", flexDirection: "column", gap: 10 }}
+              >
+                {i.node.frontmatter.brands.map((i, index) => {
+                  return (
+                    <div
+                      style={{ display: "flex", flexDirection: "column" }}
+                      key={index}
+                    >
+                      <Link to={i.linkTo} key={index}>
+                        <StyledCard>
+                          <img
+                            style={{
+                              width: 150,
+                              height: 150,
+                              borderRadius: 30,
+                            }}
+                            src={require(`../../static/${i.image}`)}
+                          />
+                          <Typography
+                            variant="h6"
+                            style={{ letterSpacing: 1.2 }}
+                          >
+                            {i.brand}
+                          </Typography>
+                        </StyledCard>
+                      </Link>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           )
         })}

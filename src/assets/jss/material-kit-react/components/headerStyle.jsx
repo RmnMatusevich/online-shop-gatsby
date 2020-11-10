@@ -44,6 +44,7 @@ const headerStyle = {
     minHeight: "50px",
     flex: "1",
     alignItems: "center",
+    flexDirection: "column",
     justifyContent: "space-between",
     display: "flex",
     flexWrap: "nowrap",

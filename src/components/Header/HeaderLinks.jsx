@@ -77,17 +77,17 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={MonetizationOnOutlinedIcon}
           dropdownList={[
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Продать телефон</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Продать телефон
             </Link>,
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Продать планшет</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Продать планшет
             </Link>,
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Продать ноутбук</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Продать ноутбук
             </Link>,
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Продать часы</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Продать часы
             </Link>,
           ]}
         />
@@ -103,14 +103,14 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={DevicesOtherIcon}
           dropdownList={[
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Телефоны</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Телефоны
             </Link>,
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Планшеты</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Планшеты
             </Link>,
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Ноутбуки</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Ноутбуки
             </Link>,
           ]}
         />
@@ -126,14 +126,14 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={SettingsInputHdmiOutlinedIcon}
           dropdownList={[
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Кабеля и зарядки</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Кабеля и зарядки
             </Link>,
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Чехлы</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Чехлы
             </Link>,
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Стилусы</a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Стилусы
             </Link>,
           ]}
         />
