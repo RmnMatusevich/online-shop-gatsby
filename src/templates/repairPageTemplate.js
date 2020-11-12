@@ -57,9 +57,11 @@ const RepairPageTemplate = props => {
           <GridContainer>
             <GridItem>
               <div className={classes.brand}>
-                <h1 className={classes.title}>Material Kit React.</h1>
+                <h1 className={classes.title}>
+                  {repairData[0].node.frontmatter.title}
+                </h1>
                 <h3 className={classes.subtitle}>
-                  A Badass Material-UI Kit based on Material Design.
+                  {repairData[0].node.frontmatter.subtitle}
                 </h3>
               </div>
             </GridItem>
@@ -67,15 +69,23 @@ const RepairPageTemplate = props => {
         </div>
       </Parallax>
 
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div
+        className={classNames(classes.main, classes.mainRaised)}
+        style={{ padding: 25 }}
+      >
         {repairData.map((i, index) => {
           return (
             <div key={index}>
-              <h1>{i.node.frontmatter.title}</h1>
-              <h1>{i.node.frontmatter.subtitle}</h1>
-              <h1>{i.node.frontmatter.title}</h1>
               <div
-                style={{ display: "flex", flexDirection: "column", gap: 10 }}
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  gap: 10,
+                  margin: "0 auto",
+                  width: "fit-content",
+                  justifyContent: "center",
+                }}
               >
                 {i.node.frontmatter.brands.map((i, index) => {
                   return (

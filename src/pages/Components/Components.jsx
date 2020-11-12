@@ -45,7 +45,10 @@ const Components = props => {
       <Helmet>
         {/* General tags */}
         <title>Tech Tag</title>
-        <meta name="description" content="Быстрый и качественный ремонт телефонов, ремонт планшетов, ремонт iqos,ремонт часов, ремонт ноутбуков" />
+        <meta
+          name="description"
+          content="Быстрый и качественный ремонт телефонов, ремонт планшетов, ремонт iqos,ремонт часов, ремонт ноутбуков"
+        />
       </Helmet>
       <Header
         rightLinks={<HeaderLinks />}

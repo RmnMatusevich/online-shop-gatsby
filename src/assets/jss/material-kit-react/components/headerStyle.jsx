@@ -12,7 +12,7 @@ import {
   drawerWidth,
 } from "assets/jss/material-kit-react.jsx"
 
-const headerStyle = (theme) =>({
+const headerStyle = theme => ({
   appBar: {
     display: "flex",
     border: "0",
@@ -48,8 +48,8 @@ const headerStyle = (theme) =>({
     justifyContent: "space-between",
     display: "flex",
     flexWrap: "nowrap",
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: "row"
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "row",
     },
   },
   flex: {

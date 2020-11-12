@@ -10,6 +10,26 @@ import Parallax from "../components/Parallax/Parallax"
 import GridItem from "../components/Grid/GridItem"
 import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
+import { Card, Typography } from "@material-ui/core"
+
+const StyledCard = withStyles({
+  root: {
+    display: "flex",
+    gap: 12,
+    width: 350,
+    height: 145,
+    padding: 20,
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    flexDirection: "column",
+    boxShadow: "0 12px 20px -10px gray",
+    transition: "0.18s ease",
+    "&:hover, &:focus": {
+      transform: "scale(1.03)",
+      boxShadow: "0 12px 20px -10px gray",
+    },
+  },
+})(Card)
 
 const RepairBrandTemplate = props => {
   const { classes, data, ...rest } = props
@@ -32,33 +52,50 @@ const RepairBrandTemplate = props => {
         }}
         {...rest}
       />
-      <Parallax image={require("assets/img/bg4.jpg")}>
-        <div className={classes.container}>
-          <GridContainer>
-            <GridItem>
-              <div className={classes.brand}>
-                <h1 className={classes.title}>Material Kit React.</h1>
-                <h3 className={classes.subtitle}>
-                  A Badass Material-UI Kit based on Material Design.
-                </h3>
-              </div>
-            </GridItem>
-          </GridContainer>
-        </div>
-      </Parallax>
 
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div
+        className={classNames(classes.main, classes.mainRaised)}
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          gap: 10,
+          margin: "150px auto 50px auto",
+          width: "fit-content",
+          justifyContent: "center",
+        }}
+      >
         {repairBrandData.map((i, index) => {
           return (
-            <div key={index}>
-              <Link to={i.node.frontmatter.path}>
-                <img
-                  src={require(`../../static/${i.node.frontmatter.productImage}`)}
-                />
-              </Link>
-              {i.node.frontmatter.productBrand}
-              {i.node.frontmatter.productDescription}
-            </div>
+            <Link to={i.node.frontmatter.path} key={index}>
+              <StyledCard key={index}>
+                <div
+                  style={{ display: "flex", flexDirection: "column", gap: 20 }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      gap: 20,
+                    }}
+                  >
+                    <img
+                      src={require(`../../static/${i.node.frontmatter.productImage}`)}
+                      style={{ height: 100, width: 100, borderRadius: 20 }}
+                    />
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                      <Typography variant="body2">
+                        {i.node.frontmatter.productBrand}
+                      </Typography>
+                      <Typography variant="h6">
+                        {i.node.frontmatter.productName}
+                      </Typography>
+                    </div>
+                  </div>
+                </div>
+              </StyledCard>
+            </Link>
           )
         })}
       </div>
