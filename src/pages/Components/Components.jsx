@@ -27,6 +27,7 @@ import SectionCompletedExamples from "./Sections/SectionCompletedExamples.jsx"
 import SectionLogin from "./Sections/SectionLogin.jsx"
 import SectionExamples from "./Sections/SectionExamples.jsx"
 import SectionDownload from "./Sections/SectionDownload.jsx"
+import { Helmet } from "react-helmet"
 
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 
@@ -36,6 +37,16 @@ const Components = props => {
 
   return (
     <div>
+      {/*<Helmet>*/}
+      {/*  <meta charSet="utf-8" />*/}
+      {/*  <title>Tech Tag</title>*/}
+      {/*  <link rel="canonical" href="http://mysite.com/example" />*/}
+      {/*</Helmet>*/}
+      <Helmet>
+        {/* General tags */}
+        <title>Tech Tag</title>
+        <meta name="description" content="Быстрый и качественный ремонт телефонов, ремонт планшетов, ремонт iqos,ремонт часов, ремонт ноутбуков" />
+      </Helmet>
       <Header
         rightLinks={<HeaderLinks />}
         fixed
