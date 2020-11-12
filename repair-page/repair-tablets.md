@@ -3,7 +3,7 @@ path: /repair/tablets/
 title: Repair Tablets
 subtitle: We nice repair tablets!
 repair: /repair
-backgroundImage: img/samsung_brand.svg
+backgroundImage: img/backgroundtablets.svg
 brands:
   - brand: Samsung
     image: img/samsung_brand.svg

@@ -3,7 +3,7 @@ path: /repair/phone/
 title: Repair Phone and Phones
 subtitle: We can repair EVERYTHING
 repair: /repair
-backgroundImage: img/header_photo.jpg
+backgroundImage: img/backgroundphones.svg
 brands:
   - brand: Apple
     image: img/apple_brand.svg

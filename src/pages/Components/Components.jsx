@@ -57,7 +57,7 @@ const Components = props => {
         }}
         {...rest}
       />
-      <Parallax image={require("../../../static/img/header_photo.jpg")}>
+      <Parallax image={require("../../../static/img/backgroundmain.svg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
