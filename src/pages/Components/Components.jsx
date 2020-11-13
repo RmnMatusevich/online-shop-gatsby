@@ -37,18 +37,14 @@ const Components = props => {
 
   return (
     <div>
-      {/*<Helmet>*/}
-      {/*  <meta charSet="utf-8" />*/}
-      {/*  <title>Tech Tag</title>*/}
-      {/*  <link rel="canonical" href="http://mysite.com/example" />*/}
-      {/*</Helmet>*/}
       <Helmet>
-        {/* General tags */}
         <title>Tech Tag</title>
         <meta
           name="description"
           content="Быстрый и качественный ремонт телефонов, ремонт планшетов, ремонт iqos,ремонт часов, ремонт ноутбуков"
         />
+        <meta charSet="utf-8" />
+        <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <Header
         rightLinks={<HeaderLinks />}
