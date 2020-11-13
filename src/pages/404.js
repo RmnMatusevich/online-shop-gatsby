@@ -5,6 +5,8 @@ import HeaderLinks from "../components/Header/HeaderLinks"
 import Parallax from "../components/Parallax/Parallax"
 import GridContainer from "../components/Grid/GridContainer"
 import GridItem from "../components/Grid/GridItem"
+import withStyles from "@material-ui/core/styles/withStyles"
+import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 
 const Index = (props) => {
   const { classes, data, ...rest } = props
@@ -35,8 +37,8 @@ const Index = (props) => {
           <GridContainer>
             <GridItem>
               <div className={classes.brand}>
-                <h1 className={classes.title}>Tech Tag</h1>
-                <h3 className={classes.subtitle}>Look into the future</h3>
+                <h2 className={classes.title}>Sorry, but this page is not existing</h2>
+                <h3 className={classes.subtitle}>404 Not Found</h3>
               </div>
             </GridItem>
           </GridContainer>
@@ -46,4 +48,4 @@ const Index = (props) => {
   )
 }
 
-export default Index;
+export default withStyles(componentsStyle)(Index);
