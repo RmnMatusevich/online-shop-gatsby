@@ -25,6 +25,13 @@ collections:
       - { label: "productBrand", name: "productBrand", widget: "string"}
       - { label: "productDescription", name: "productDescription", widget: "markdown"}
       - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
+      - label: 'Services'
+        name: "services"
+        widget: list
+        fields:
+        - { label: "ServiceIcon", name: "serviceIcon", widget: "image"}
+        - { label: "ServiceTitle", name: "serviceTitle", widget: "string"}
+        - { label: "ServiceCost", name: "serviceCost", widget: "string"}
   - name: repairPage
     label: RepairPage
     folder: repair-page

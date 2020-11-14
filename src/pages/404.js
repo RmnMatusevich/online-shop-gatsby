@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { Helmet } from "react-helmet"
 import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
@@ -8,7 +8,7 @@ import GridItem from "../components/Grid/GridItem"
 import withStyles from "@material-ui/core/styles/withStyles"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 
-const Index = (props) => {
+const Index = props => {
   const { classes, data, ...rest } = props
 
   return (
@@ -37,7 +37,9 @@ const Index = (props) => {
           <GridContainer>
             <GridItem>
               <div className={classes.brand}>
-                <h2 className={classes.title}>Sorry, but this page is not existing</h2>
+                <h2 className={classes.title}>
+                  Sorry, but this page is not existing
+                </h2>
                 <h3 className={classes.subtitle}>404 Not Found</h3>
               </div>
             </GridItem>
@@ -48,4 +50,4 @@ const Index = (props) => {
   )
 }
 
-export default withStyles(componentsStyle)(Index);
+export default withStyles(componentsStyle)(Index)

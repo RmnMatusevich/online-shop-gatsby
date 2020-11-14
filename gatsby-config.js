@@ -1,7 +1,10 @@
 module.exports = {
-  pathPrefix: `/mini-gatsbyv2-material-kit-react`,
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: "Tech Tag",
+    titleTemplate: "%s · The Real Hero",
+    description:
+      "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops.",
+    url: "https://happy-hugle-7db64f.netlify.app/",
   },
   plugins: [
     'gatsby-plugin-resolve-src',
@@ -19,7 +22,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/assets/img/favicon.png', // This path is relative to the root of the site.
+        icon: 'src/assets/img/favicon.png',
       },
     },
     `gatsby-plugin-netlify`,
