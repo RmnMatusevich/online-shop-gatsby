@@ -16,7 +16,7 @@ const Template = ({ data, classes, ...rest }) => {
   return (
     <div>
       <SEO
-        title={phonesData[0].node.frontmatter.productName}
+        title='Repair phone'
         description={
           "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
         }

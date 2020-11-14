@@ -39,7 +39,7 @@ const RepairBrandTemplate = props => {
   return (
     <div>
       <SEO
-        title={repairBrandData[0].node.frontmatter.productBrand}
+        title='Repair phone'
         description={
           "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
         }

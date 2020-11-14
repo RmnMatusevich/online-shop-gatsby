@@ -37,7 +37,7 @@ const RepairPageTemplate = props => {
   return (
     <div>
       <SEO
-        title="Repair"
+        title="Repair phone"
         description={
           "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
         }
