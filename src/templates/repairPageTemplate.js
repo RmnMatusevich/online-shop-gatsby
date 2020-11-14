@@ -1,6 +1,5 @@
 import classNames from "classnames"
 import { Link } from "gatsby"
-import SectionCarousel from "../pages/Components/Sections/SectionCarousel"
 import withStyles from "@material-ui/core/styles/withStyles"
 import React from "react"
 import Header from "../components/Header/Header"
@@ -11,6 +10,7 @@ import GridItem from "../components/Grid/GridItem"
 import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography } from "@material-ui/core"
+import SEO from "../components/seo"
 
 const StyledCard = withStyles({
   root: {
@@ -33,13 +33,15 @@ const StyledCard = withStyles({
 const RepairPageTemplate = props => {
   const { classes, data, ...rest } = props
   const repairData = data.allMarkdownRemark.edges
-  console.log("datadatadata ", repairData)
-  // const { frontmatter } = allMarkdownRemark;
-  // console.log(frontmatter.title)
-  // console.log(frontmatter.data)
 
   return (
     <div>
+      <SEO
+        title="Repair"
+        description={
+          "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
+        }
+      />
       <Header
         rightLinks={<HeaderLinks />}
         fixed

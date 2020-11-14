@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: "Tech Tag",
-    titleTemplate: "%s · The Real Hero",
     description:
       "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops.",
     url: "https://happy-hugle-7db64f.netlify.app/",
+    author: "RmnMatusevich"
   },
   plugins: [
     'gatsby-plugin-resolve-src',

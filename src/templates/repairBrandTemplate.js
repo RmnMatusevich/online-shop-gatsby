@@ -11,6 +11,7 @@ import GridItem from "../components/Grid/GridItem"
 import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography } from "@material-ui/core"
+import SEO from "../components/seo"
 
 const StyledCard = withStyles({
   root: {
@@ -34,14 +35,15 @@ const StyledCard = withStyles({
 const RepairBrandTemplate = props => {
   const { classes, data, ...rest } = props
   const repairBrandData = data.allMarkdownRemark.edges
-  console.log(data)
-  // console.log("datadatadata ", repairData)
-  // const { frontmatter } = allMarkdownRemark;
-  // console.log(frontmatter.title)
-  // console.log(frontmatter.data)
 
   return (
     <div>
+      <SEO
+        title={repairBrandData[0].node.frontmatter.productBrand}
+        description={
+          "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
+        }
+      />
       <Header
         rightLinks={<HeaderLinks />}
         fixed
@@ -65,6 +67,17 @@ const RepairBrandTemplate = props => {
           justifyContent: "center",
         }}
       >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            gap: 10,
+            margin: "0 auto",
+            width: "fit-content",
+            justifyContent: "center",
+          }}
+        >
         {repairBrandData.map((i, index) => {
           return (
             <Link to={i.node.frontmatter.path} key={index}>
@@ -98,6 +111,7 @@ const RepairBrandTemplate = props => {
             </Link>
           )
         })}
+        </div>
       </div>
       <Footer />
     </div>

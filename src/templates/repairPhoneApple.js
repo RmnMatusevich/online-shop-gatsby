@@ -9,13 +9,18 @@ import withStyles from "@material-ui/core/styles/withStyles"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Typography } from "@material-ui/core"
 import Footer from "../components/Footer/Footer"
+import SEO from "../components/seo"
 
 const Template = ({ data, classes, ...rest }) => {
   const phonesData = data.allMarkdownRemark.edges
-  console.log("phonesData: ", phonesData)
-  // const { frontmatter, html } = markdownRemark;
   return (
     <div>
+      <SEO
+        title={phonesData[0].node.frontmatter.productName}
+        description={
+          "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
+        }
+      />
       <Header
         rightLinks={<HeaderLinks />}
         fixed
@@ -31,7 +36,6 @@ const Template = ({ data, classes, ...rest }) => {
         style={{ marginTop: 150 }}
       >
         {phonesData.map((i, index) => {
-          console.log(i)
           return (
             <div
               style={{
@@ -54,7 +58,7 @@ const Template = ({ data, classes, ...rest }) => {
                     height: 100,
                     width: 100,
                     borderRadius: 20,
-                    margin: '0 10px 0 0',
+                    margin: "0 10px 0 0",
                   }}
                 />
                 <div style={{ display: "flex", flexDirection: "column" }}>
@@ -72,31 +76,49 @@ const Template = ({ data, classes, ...rest }) => {
               <Typography variant="body1" style={{ margin: 10 }}>
                 {i.node.frontmatter.productDescription}
               </Typography>
-              <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-starts'}}>
-                {i.node.frontmatter.services && i.node.frontmatter.services.map((service, index)=> {
-                  return (
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        maxWidth: 300,
-                        margin: '0 10px 10px 0'
-                      }}
-                    >
-                      <img
-                        src={require(`../../static/${service.serviceIcon}`)}
-                        alt="service-icon"
-                        style={{ marginRight: 10, height: '100%', width: 'auto' }}
-                      />
-                      <Typography variant="body2" style={{margin: '0 10px 0 0'}}>
-                        {service.serviceTitle}
-                      </Typography>
-                      <Typography variant="body2">{service.serviceCost}</Typography>
-                    </div>
-                  )
-                })}
-            </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  justifyContent: "flex-starts",
+                }}
+              >
+                {i.node.frontmatter.services &&
+                  i.node.frontmatter.services.map((service, index) => {
+                    return (
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          alignItems: "center",
+                          maxWidth: 300,
+                          margin: "0 10px 10px 0",
+                        }}
+                        key={index}
+                      >
+                        <img
+                          src={require(`../../static/${service.serviceIcon}`)}
+                          alt="service-icon"
+                          style={{
+                            marginRight: 10,
+                            height: "100%",
+                            width: "auto",
+                          }}
+                        />
+                        <Typography
+                          variant="body2"
+                          style={{ margin: "0 10px 0 0" }}
+                        >
+                          {service.serviceTitle}
+                        </Typography>
+                        <Typography variant="body2">
+                          {service.serviceCost}
+                        </Typography>
+                      </div>
+                    )
+                  })}
+              </div>
             </div>
             // <div key={index}>
             //   <img
@@ -131,6 +153,12 @@ export const pageQuery = graphql`
             productYear
             productDescription
             productName
+            services {
+              serviceIcon
+              serviceTitle
+              serviceCost
+            }
+            productBrand
           }
         }
       }
