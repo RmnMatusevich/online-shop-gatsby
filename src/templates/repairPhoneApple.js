@@ -73,7 +73,7 @@ const Template = ({ data, classes, ...rest }) => {
                 {i.node.frontmatter.productDescription}
               </Typography>
               <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-starts'}}>
-                {i.node.frontmatter.services.map((service, index)=> {
+                {i.node.frontmatter.services && i.node.frontmatter.services.map((service, index)=> {
                   return (
                     <div
                       style={{
