@@ -3,7 +3,7 @@ module.exports = {
     title: "Tech Tag",
     description:
       "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops.",
-    url: "https://happy-hugle-7db64f.netlify.app/",
+    url: "https://techtag.netlify.app/",
     author: "RmnMatusevich"
   },
   plugins: [
