@@ -4,7 +4,7 @@ module.exports = {
     description:
       "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops.",
     url: "https://techtag.netlify.app/",
-    author: "RmnMatusevich"
+    author: "RmnMatusevich",
   },
   plugins: [
     'gatsby-plugin-resolve-src',

@@ -8,9 +8,9 @@ import GridItem from "components/Grid/GridItem.jsx"
 import Parallax from "components/Parallax/Parallax.jsx"
 import HeaderLinks from "components/Header/HeaderLinks.jsx"
 import SectionCarousel from "./Sections/SectionCarousel.jsx"
-
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import SEO from "../../components/seo"
+import { Helmet } from "react-helmet"
 
 const Components = props => {
   const { classes, data, ...rest } = props
@@ -18,6 +18,9 @@ const Components = props => {
 
   return (
     <div>
+      <Helmet>
+        <meta name="yandex-verification" content="0d1b788a734b13b9" />
+      </Helmet>
       <SEO
         title="Home"
         description={
