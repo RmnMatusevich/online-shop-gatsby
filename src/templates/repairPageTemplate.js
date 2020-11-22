@@ -37,9 +37,11 @@ const RepairPageTemplate = props => {
   return (
     <div>
       <SEO
-        title="Repair phone"
+        title="Repair"
         description={
-          "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
+          repairData && repairData[0]
+            ? `${repairData[0].node.frontmatter.title} ${repairData[0].node.frontmatter.subtitle}`
+            : "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
         }
       />
       <Header

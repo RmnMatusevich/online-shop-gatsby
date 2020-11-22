@@ -16,9 +16,15 @@ const Template = ({ data, classes, ...rest }) => {
   return (
     <div>
       <SEO
-        title='Repair phone'
+        title={
+          phonesData && phonesData[0]
+            ? phonesData[0].node.frontmatter.productName
+            : "Repair phone"
+        }
         description={
-          "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
+          phonesData && phonesData[0]
+            ? `${phonesData[0].node.frontmatter.productName}, ${phonesData[0].node.frontmatter.productBrand}, ${phonesData[0].node.frontmatter.productYear}, ${phonesData[0].node.frontmatter.productDescription}`
+            : "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
         }
       />
       <Header

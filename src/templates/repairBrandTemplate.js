@@ -39,7 +39,12 @@ const RepairBrandTemplate = props => {
   return (
     <div>
       <SEO
-        title='Repair phone'
+        // title='Repair phone'
+        title={
+          repairBrandData && repairBrandData[0]
+            ? repairBrandData[0].node.frontmatter.productBrand
+            : "Repair"
+        }
         description={
           "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
         }
@@ -78,39 +83,43 @@ const RepairBrandTemplate = props => {
             justifyContent: "center",
           }}
         >
-        {repairBrandData.map((i, index) => {
-          return (
-            <Link to={i.node.frontmatter.path} key={index}>
-              <StyledCard key={index}>
-                <div
-                  style={{ display: "flex", flexDirection: "column", gap: 20 }}
-                >
+          {repairBrandData.map((i, index) => {
+            return (
+              <Link to={i.node.frontmatter.path} key={index}>
+                <StyledCard key={index}>
                   <div
                     style={{
                       display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
+                      flexDirection: "column",
                       gap: 20,
                     }}
                   >
-                    <img
-                      src={require(`../../static/${i.node.frontmatter.productImage}`)}
-                      style={{ height: 100, width: 100, borderRadius: 20 }}
-                    />
-                    <div style={{ display: "flex", flexDirection: "column" }}>
-                      <Typography variant="body2">
-                        {i.node.frontmatter.productBrand}
-                      </Typography>
-                      <Typography variant="h6">
-                        {i.node.frontmatter.productName}
-                      </Typography>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: 20,
+                      }}
+                    >
+                      <img
+                        src={require(`../../static/${i.node.frontmatter.productImage}`)}
+                        style={{ height: 100, width: 100, borderRadius: 20 }}
+                      />
+                      <div style={{ display: "flex", flexDirection: "column" }}>
+                        <Typography variant="body2">
+                          {i.node.frontmatter.productBrand}
+                        </Typography>
+                        <Typography variant="h6">
+                          {i.node.frontmatter.productName}
+                        </Typography>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </StyledCard>
-            </Link>
-          )
-        })}
+                </StyledCard>
+              </Link>
+            )
+          })}
         </div>
       </div>
       <Footer />
