@@ -1,5 +1,5 @@
 ---
-path: /sell/phone/
+path: /sell/phone
 title: Sell your phone
 subtitle: We will consider buy your phone
 backgroundImage: img/backgroundphones.svg

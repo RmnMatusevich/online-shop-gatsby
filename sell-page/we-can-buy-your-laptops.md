@@ -1,5 +1,5 @@
 ---
-path: /sell/laptops/
+path: /sell/laptops
 title: We can buy your laptops
 subtitle: We can buy your laptops
 backgroundImage: img/backgroundlaptops.svg

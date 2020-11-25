@@ -77,16 +77,16 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={MonetizationOnOutlinedIcon}
           dropdownList={[
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/sell/phone" className={classes.dropdownLink}>
               Продать телефон
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/sell/tablets" className={classes.dropdownLink}>
               Продать планшет
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/sell/laptops" className={classes.dropdownLink}>
               Продать ноутбук
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/sell/watches" className={classes.dropdownLink}>
               Продать часы
             </Link>,
           ]}
@@ -103,14 +103,14 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={DevicesOtherIcon}
           dropdownList={[
-            <Link to="/components" className={classes.dropdownLink}>
-              Телефоны
+            <Link to="/buy/phone" className={classes.dropdownLink}>
+              Купить телефон
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
-              Планшеты
+            <Link to="/buy/tablets" className={classes.dropdownLink}>
+              Купить планшет
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
-              Ноутбуки
+            <Link to="/buy/laptops" className={classes.dropdownLink}>
+              Купить ноутбук
             </Link>,
           ]}
         />
@@ -126,13 +126,13 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={SettingsInputHdmiOutlinedIcon}
           dropdownList={[
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/accessories/cable-charges" className={classes.dropdownLink}>
               Кабеля и зарядки
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/accessories/cases" className={classes.dropdownLink}>
               Чехлы
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/accessories/stylus" className={classes.dropdownLink}>
               Стилусы
             </Link>,
           ]}

@@ -49,104 +49,48 @@ collections:
           - { label: "Brand", name: "brand", widget: "string"}
           - { label: "Image", name: "image", widget: "image"}
           - {label: "LinkTo", name: "linkTo", widget: "string"}
-#  - name: "pages"
-#    label: "Pages"
-#    files:
-#      - label: "Home"
-#        name: "home"
-#        file: "content/home.md"
-#        fields:
-#          - { label: "Title", name: "title", widget: "string"}
-#          - { label: "Publish Date", name: "date", widget: "datetime" }
-#          - { label: "Body", name: "body", widget: "markdown"}
-#          - label: 'Cats'
-#            name: "cats"
-#            widget: list
-#            fields:
-#              - { label: "Name", name: "name", widget: "string"}
-#              - { label: "Description", name: "description", widget: "text"}
-#      - label: "Main"
-#        name: "main"
-#        file: "content/main.md"
-#        fields:
-#          - { label: "Title", name: "title", widget: "string"}
-#          - { label: "Subtitle", name: "subtitle", widget: "string"}
-#          - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
-#          - { label: "OpeningTitle", name: "openingTitle", widget: "string"}
-#          - { label: "OpeningDescription", name: "openingDescription", widget: "text"}
-#          - label: 'Carousel'
-#            name: "carousel"
-#            widget: list
-#            fields:
-#              - { label: "Image", name: "image", widget: "image"}
-#          - { label: "AboutUsTitle", name: "aboutUsTitle", widget: "string"}
-#          - { label: "AboutUsDescription", name: "aboutUsDescription", widget: "text"}
-#      - label: "RepairPhone"
-#        name: "repairPhone"
-#        file: "content/repair-phone.md"
-#        fields:
-#            - { label: "Title", name: "title", widget: "string"}
-#            - { label: "Subtitle", name: "subtitle", widget: "string"}
-#            - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
-#            - { label: "BrandTitle", name: "brandTitle", widget: "string"}
-#            - label: 'Brands'
-#              name: "brands"
-#              widget: list
-#              fields:
-#                - { label: "BrandImage", name: "brandImage", widget: "image"}
-#                - { label: "BrandName", name: "brandName", widget: "string"}
-#                - { label: "BrandUrl", name: "brandUrl", widget: "string"}
-#  - name: "repair"
-#    label: "Repair"
-#    files:
-#      - label: "RepairPhoneApple"
-#        name: "repairPhoneApple"
-#        file: "content/repair-phone-apple.md"
-#        fields:
-#          - { label: "Title", name: "title", widget: "string"}
-#          - { label: "Subtitle", name: "subtitle", widget: "string"}
-#          - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
-#          - { label: "PhoneTitle", name: "phoneTitle", widget: "string"}
-#          - label: 'Products'
-#            name: "products"
-#            widget: list
-#            fields:
-#              - { label: "productImage", name: "productImage", widget: "image"}
-#              - { label: "productName", name: "productName", widget: "string"}
-#              - { label: "productDescription", name: "productDescription", widget: "text"}
-#              - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
-#              - { label: "productUrl", name: "productUrl", widget: "string"}
-#      - label: "RepairPhoneSony"
-#        name: "repairPhoneSony"
-#        file: "content/repair-phone-sony.md"
-#        fields:
-#          - { label: "Title", name: "title", widget: "string"}
-#          - { label: "Subtitle", name: "subtitle", widget: "string"}
-#          - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
-#          - { label: "PhoneTitle", name: "phoneTitle", widget: "string"}
-#          - label: 'Products'
-#            name: "products"
-#            widget: list
-#            fields:
-#              - { label: "productImage", name: "productImage", widget: "image"}
-#              - { label: "productName", name: "productName", widget: "string"}
-#              - { label: "productDescription", name: "productDescription", widget: "text"}
-#              - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
-#              - { label: "productUrl", name: "productUrl", widget: "string"}
-#      - label: "RepairPhoneSamsung"
-#        name: "repairPhoneSamsung"
-#        file: "content/repair-phone-samsung.md"
-#        fields:
-#          - { label: "Title", name: "title", widget: "string"}
-#          - { label: "Subtitle", name: "subtitle", widget: "string"}
-#          - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
-#          - { label: "PhoneTitle", name: "phoneTitle", widget: "string"}
-#          - label: 'Products'
-#            name: "products"
-#            widget: list
-#            fields:
-#              - { label: "productImage", name: "productImage", widget: "image"}
-#              - { label: "productName", name: "productName", widget: "string"}
-#              - { label: "productDescription", name: "productDescription", widget: "text"}
-#              - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
-#              - { label: "productUrl", name: "productUrl", widget: "string"}
+  - name: sellPage
+    label: SellPage
+    folder: sell-page
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - { name: sellTitle, label: SellTitle, widget: "string" }
+      - { name: sellText, label: SellText, widget: "text" }
+  - name: buyPage
+    label: BuyPage
+    folder: buy-page
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - label: 'Products'
+        name: "products"
+        widget: list
+        fields:
+          - { label: "productImage", name: "productImage", widget: "image"}
+          - { label: "productName", name: "productName", widget: "string"}
+          - { label: "productBrand", name: "productBrand", widget: "string"}
+          - { label: "productDescription", name: "productDescription", widget: "markdown"}
+          - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
+  - name: accessoriesPage
+    label: AccessoriesPage
+    folder: accessories-page
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - label: 'Products'
+        name: "products"
+        widget: list
+        fields:
+          - { label: "productImage", name: "productImage", widget: "image"}
+          - { label: "productName", name: "productName", widget: "string"}
+          - { label: "productBrand", name: "productBrand", widget: "string"}

@@ -48,6 +48,27 @@ module.exports = {
         name: 'markdown-pages',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/sell-page`,
+        name: 'markdown-pages',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/buy-page`,
+        name: 'markdown-pages',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/accessories-page`,
+        name: 'markdown-pages',
+      },
+    },
     `gatsby-transformer-remark`,
   ],
 }

@@ -128,4 +128,116 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     })
   });
 
+  const SellPageTemplate = path.resolve('src/templates/sellPageTemplate.js')
+
+  const sellPage = await graphql(`
+    {
+  allMarkdownRemark(filter: {frontmatter: {path: {regex: "/sell/"}}}) {
+    edges {
+      node {
+        frontmatter {
+          path
+          title
+          subtitle
+          backgroundImage
+          sellTitle
+          sellText
+        }
+      }
+    }
+  }
+}
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+    console.log("RESULT: ", result.data)
+    return result.data
+  })
+
+  sellPage.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: SellPageTemplate,
+      context: {},
+    });
+  });
+
+  const BuyPageTemplate = path.resolve('src/templates/buyPageTemplate.js')
+
+  const buyPage = await graphql(`
+    {
+  allMarkdownRemark(filter: {frontmatter: {path: {regex: "/buy/"}}}) {
+    edges {
+      node {
+        frontmatter {
+          path
+          title
+          subtitle
+          backgroundImage
+          products {
+            productBrand
+            productDescription
+            productImage
+            productName
+            productYear
+          }
+        }
+      }
+    }
+  }
+}
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+    console.log("RESULT: ", result.data)
+    return result.data
+  })
+
+  buyPage.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: BuyPageTemplate,
+      context: {},
+    });
+  });
+
+  const AccessoriesPageTemplate = path.resolve('src/templates/accessoriesPageTemplate.js')
+
+  const accessoryPage = await graphql(`
+    {
+  allMarkdownRemark(filter: {frontmatter: {path: {regex: "/accessories/"}}}) {
+    edges {
+      node {
+        frontmatter {
+          path
+          title
+          subtitle
+          backgroundImage
+          products {
+            productBrand
+            productImage
+            productName
+          }
+        }
+      }
+    }
+  }
+}
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+    console.log("RESULT: ", result.data)
+    return result.data
+  })
+
+  accessoryPage.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: AccessoriesPageTemplate,
+      context: {},
+    });
+  });
 };
