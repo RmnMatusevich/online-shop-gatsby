@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: rmnmatusevich/online-shop-gatsby
+  branch: master
 media_folder: static/img
 public_folder: img
 collections:
@@ -13,86 +14,86 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
-#  - name: repair
-#    label: Repair
-#    folder: repair
-#    create: true
-#    fields:
-#      - { name: "path", label: "Path" }
-#      - { name: "type", label: "Type", widget: "string"}
-#      - { label: "productImage", name: "productImage", widget: "image"}
-#      - { label: "productName", name: "productName", widget: "string"}
-#      - { label: "productBrand", name: "productBrand", widget: "string"}
-#      - { label: "productDescription", name: "productDescription", widget: "markdown"}
-#      - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
-#      - label: 'Services'
-#        name: "services"
-#        widget: list
-#        fields:
-#        - { label: "ServiceIcon", name: "serviceIcon", widget: "image"}
-#        - { label: "ServiceTitle", name: "serviceTitle", widget: "string"}
-#        - { label: "ServiceCost", name: "serviceCost", widget: "string"}
-#  - name: repairPage
-#    label: RepairPage
-#    folder: repair-page
-#    create: true
-#    fields:
-#      - { name: path, label: Path }
-#      - { name: title, label: Title }
-#      - { name: subtitle, label: Subtitle}
-#      - { name: repair, label: Repair, default: "/repair", widget: "string"}
-#      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
-#      - label: 'Brands'
-#        name: "brands"
-#        widget: list
-#        fields:
-#          - { label: "Brand", name: "brand", widget: "string"}
-#          - { label: "Image", name: "image", widget: "image"}
-#          - {label: "LinkTo", name: "linkTo", widget: "string"}
-#  - name: sellPage
-#    label: SellPage
-#    folder: sell-page
-#    create: true
-#    fields:
-#      - { name: path, label: Path }
-#      - { name: title, label: Title }
-#      - { name: subtitle, label: Subtitle}
-#      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
-#      - { name: sellTitle, label: SellTitle, widget: "string" }
-#      - { name: sellText, label: SellText, widget: "text" }
-#  - name: buyPage
-#    label: BuyPage
-#    folder: buy-page
-#    create: true
-#    fields:
-#      - { name: path, label: Path }
-#      - { name: title, label: Title }
-#      - { name: subtitle, label: Subtitle}
-#      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
-#      - label: 'Products'
-#        name: "products"
-#        widget: list
-#        fields:
-#          - { label: "productImage", name: "productImage", widget: "image"}
-#          - { label: "productName", name: "productName", widget: "string"}
-#          - { label: "productBrand", name: "productBrand", widget: "string"}
-#          - { label: "productDescription", name: "productDescription", widget: "markdown"}
-#          - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
-#          - { label: "productCost", name: "productCost", widget: "string"}
-#  - name: accessoriesPage
-#    label: AccessoriesPage
-#    folder: accessories-page
-#    create: true
-#    fields:
-#      - { name: path, label: Path }
-#      - { name: title, label: Title }
-#      - { name: subtitle, label: Subtitle}
-#      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
-#      - label: 'Products'
-#        name: "products"
-#        widget: list
-#        fields:
-#          - { label: "productImage", name: "productImage", widget: "image"}
-#          - { label: "productName", name: "productName", widget: "string"}
-#          - { label: "productBrand", name: "productBrand", widget: "string"}
-#          - { label: "productCost", name: "productCost", widget: "string"}
+  - name: repair
+    label: Repair
+    folder: repair
+    create: true
+    fields:
+      - { name: "path", label: "Path" }
+      - { name: "type", label: "Type", widget: "string"}
+      - { label: "productImage", name: "productImage", widget: "image"}
+      - { label: "productName", name: "productName", widget: "string"}
+      - { label: "productBrand", name: "productBrand", widget: "string"}
+      - { label: "productDescription", name: "productDescription", widget: "markdown"}
+      - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
+      - label: 'Services'
+        name: "services"
+        widget: list
+        fields:
+        - { label: "ServiceIcon", name: "serviceIcon", widget: "image"}
+        - { label: "ServiceTitle", name: "serviceTitle", widget: "string"}
+        - { label: "ServiceCost", name: "serviceCost", widget: "string"}
+  - name: repairPage
+    label: RepairPage
+    folder: repair-page
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle}
+      - { name: repair, label: Repair, default: "/repair", widget: "string"}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - label: 'Brands'
+        name: "brands"
+        widget: list
+        fields:
+          - { label: "Brand", name: "brand", widget: "string"}
+          - { label: "Image", name: "image", widget: "image"}
+          - {label: "LinkTo", name: "linkTo", widget: "string"}
+  - name: sellPage
+    label: SellPage
+    folder: sell-page
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - { name: sellTitle, label: SellTitle, widget: "string" }
+      - { name: sellText, label: SellText, widget: "text" }
+  - name: buyPage
+    label: BuyPage
+    folder: buy-page
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - label: 'Products'
+        name: "products"
+        widget: list
+        fields:
+          - { label: "productImage", name: "productImage", widget: "image"}
+          - { label: "productName", name: "productName", widget: "string"}
+          - { label: "productBrand", name: "productBrand", widget: "string"}
+          - { label: "productDescription", name: "productDescription", widget: "markdown"}
+          - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
+          - { label: "productCost", name: "productCost", widget: "string"}
+  - name: accessoriesPage
+    label: AccessoriesPage
+    folder: accessories-page
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - label: 'Products'
+        name: "products"
+        widget: list
+        fields:
+          - { label: "productImage", name: "productImage", widget: "image"}
+          - { label: "productName", name: "productName", widget: "string"}
+          - { label: "productBrand", name: "productBrand", widget: "string"}
+          - { label: "productCost", name: "productCost", widget: "string"}
