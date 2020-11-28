@@ -9,9 +9,11 @@ products:
     productName: Acer Phone-231
     productBrand: Acer
     productDescription: Good phone for ladies and gentlmens
+    productCost: 433$
   - productYear: 2010
     productImage: img/apple_brand.svg
     productName: iPhone 345XR
     productBrand: Apple
     productDescription: Good apple phone ha ha ha lol so we can do that
+    productCost: 425$
 ---
