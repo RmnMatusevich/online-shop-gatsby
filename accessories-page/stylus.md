@@ -7,7 +7,9 @@ products:
   - productImage: img/asus_brand.svg
     productName: stylus Cable Pkone-stylus
     productBrand: Asus
+    productCost: 540$
   - productImage: img/apple_brand.svg
     productName: stylus stylus
     productBrand: Apple
+    productCost: 340$
 ---
