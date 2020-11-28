@@ -2,9 +2,6 @@ import React from "react"
 import classNames from "classnames"
 import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
-import Parallax from "../components/Parallax/Parallax"
-import GridContainer from "../components/Grid/GridContainer"
-import GridItem from "../components/Grid/GridItem"
 import withStyles from "@material-ui/core/styles/withStyles"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Typography } from "@material-ui/core"
@@ -60,6 +57,7 @@ const Template = ({ data, classes, ...rest }) => {
               >
                 <img
                   src={require(`../../static/${i.node.frontmatter.productImage}`)}
+                  alt="Background image"
                   style={{
                     height: 100,
                     width: 100,

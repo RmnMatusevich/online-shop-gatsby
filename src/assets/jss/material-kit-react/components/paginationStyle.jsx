@@ -32,7 +32,7 @@ const paginationStyle = {
     lineHeight: "30px",
     fontWeight: "400",
     fontSize: "12px",
-    textTransform: "uppercase",
+    textTransform: "none",
     background: "transparent",
     position: "relative",
     float: "left",

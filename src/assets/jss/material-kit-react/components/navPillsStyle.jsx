@@ -66,7 +66,7 @@ const navPillsStyle = theme => ({
   },
   label: {
     lineHeight: "24px",
-    textTransform: "uppercase",
+    textTransform: "none",
     fontSize: "12px",
     fontWeight: "500",
     position: "relative",

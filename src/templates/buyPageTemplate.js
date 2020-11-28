@@ -1,5 +1,4 @@
 import classNames from "classnames"
-import { Link } from "gatsby"
 import withStyles from "@material-ui/core/styles/withStyles"
 import React from "react"
 import Header from "../components/Header/Header"
@@ -12,19 +11,19 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
 
-const StyledCard = withStyles({
+const StyledCard = withStyles(theme => ({
   root: {
     display: "flex",
     margin: 12,
-    maxWidth: 300,
-    height: 'fit-content',
+    width: 320,
+    height: 200,
     padding: 20,
     justifyContent: "flex-start",
     alignItems: "flex-start",
     flexDirection: "column",
     boxShadow: "0 12px 20px -10px gray",
   },
-})(Card)
+}))(Card)
 
 const BuyPageTemplate = props => {
   const { classes, data, ...rest } = props
@@ -33,11 +32,15 @@ const BuyPageTemplate = props => {
   return (
     <div>
       <SEO
-        title="Repair"
+        title={
+          repairData && repairData[0]
+            ? repairData[0].node.frontmatter.title
+            : "Buy"
+        }
         description={
           repairData && repairData[0]
             ? `${repairData[0].node.frontmatter.title} ${repairData[0].node.frontmatter.subtitle}`
-            : "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
+            : "Buy phone, Buy tablets, Buy watch, Buy iqos, Buy laptops."
         }
       />
       <Header
@@ -69,10 +72,7 @@ const BuyPageTemplate = props => {
         </div>
       </Parallax>
 
-      <div
-        className={classNames(classes.main, classes.mainRaised)}
-        style={{ padding: 25 }}
-      >
+      <div className={classNames(classes.main, classes.mainRaised)}>
         {repairData.map((i, index) => {
           return (
             <div key={index}>
@@ -83,7 +83,7 @@ const BuyPageTemplate = props => {
                   flexWrap: "wrap",
                   margin: "0 auto",
                   width: "100%",
-                  justifyContent: "center",
+                  justifyContent: "flex-start",
                 }}
               >
                 {repairData[0].node.frontmatter.products.map((i, index) => {
@@ -92,42 +92,58 @@ const BuyPageTemplate = props => {
                       style={{ display: "flex", flexDirection: "column" }}
                       key={index}
                     >
-                        <StyledCard key={index}>
+                      <StyledCard key={index}>
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            marginBottom: 10,
+                          }}
+                        >
                           <div
                             style={{
                               display: "flex",
-                              flexDirection: "column",
-                              marginBottom: 10,
+                              flexDirection: "row",
+                              alignItems: "flex-start",
                             }}
                           >
+                            <img
+                              src={require(`../../static/${i.productImage}`)}
+                              alt="Product image"
+                              style={{
+                                height: 100,
+                                width: 100,
+                                borderRadius: 20,
+                                marginRight: 10,
+                              }}
+                            />
                             <div
                               style={{
                                 display: "flex",
-                                flexDirection: "row",
-                                alignItems: "flex-start",
+                                flexDirection: "column",
                               }}
                             >
-                              <img
-                                src={require(`../../static/${i.productImage}`)}
-                                style={{ height: 100, width: 100, borderRadius: 20, marginRight: 10 }}
-                              />
-                              <div style={{ display: "flex", flexDirection: "column" }}>
-                                <Typography variant="body2">
-                                  {i.productBrand}
-                                </Typography>
-                                <Typography variant="h6">
-                                  {i.productName}
-                                  <Typography variant="body2">
-                                    {i.productYear}
-                                  </Typography>
-                                </Typography>
-                              </div>
+                              <Typography variant="body2">
+                                {i.productBrand}
+                              </Typography>
+                              <Typography variant="h6">
+                                {i.productName}
+                              </Typography>
+                              <Typography variant="body2">
+                                {i.productCost}
+                              </Typography>
+                              <Typography variant="body2">
+                                {i.productYear}
+                              </Typography>
                             </div>
                           </div>
-                          <div style={{marginBottom: 10}}>
-                            <Typography variant='body2'>{i.productDescription}</Typography>
-                          </div>
-                        </StyledCard>
+                        </div>
+                        <div style={{ marginBottom: 10 }}>
+                          <Typography variant="body2">
+                            {i.productDescription}
+                          </Typography>
+                        </div>
+                      </StyledCard>
                     </div>
                   )
                 })}
@@ -145,24 +161,25 @@ export default withStyles(componentsStyle)(BuyPageTemplate)
 
 export const pageQuery = graphql`
   query BuyPages($path: String!) {
-    allMarkdownRemark(filter: {frontmatter: {path: {eq: $path}}}) {
-    edges {
-      node {
-        frontmatter {
-          path
-          title
-          subtitle
-          backgroundImage
-          products {
-            productBrand
-            productDescription
-            productImage
-            productName
-            productYear
+    allMarkdownRemark(filter: { frontmatter: { path: { eq: $path } } }) {
+      edges {
+        node {
+          frontmatter {
+            path
+            title
+            subtitle
+            backgroundImage
+            products {
+              productBrand
+              productDescription
+              productImage
+              productName
+              productYear
+              productCost
+            }
+          }
         }
       }
     }
-  }
-  }
   }
 `

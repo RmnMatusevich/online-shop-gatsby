@@ -25,6 +25,7 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx"
 import Button from "components/CustomButtons/Button.jsx"
 
 import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx"
+import { Typography } from "@material-ui/core"
 
 function HeaderLinks({ ...props }) {
   const { classes } = props
@@ -126,7 +127,10 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={SettingsInputHdmiOutlinedIcon}
           dropdownList={[
-            <Link to="/accessories/cable-charges" className={classes.dropdownLink}>
+            <Link
+              to="/accessories/cable-charges"
+              className={classes.dropdownLink}
+            >
               Кабеля и зарядки
             </Link>,
             <Link to="/accessories/cases" className={classes.dropdownLink}>
@@ -146,7 +150,9 @@ function HeaderLinks({ ...props }) {
           className={classes.navLink}
         >
           <MemoryIcon className={classes.icons} />
-          Запчасти
+          <Typography variant="body2" style={{ fontSize: 14 }}>
+            Запчасти
+          </Typography>
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -157,7 +163,9 @@ function HeaderLinks({ ...props }) {
           className={classes.navLink}
         >
           <InfoOutlinedIcon className={classes.icons} />
-          Информация
+          <Typography variant="body2" style={{ fontSize: 14 }}>
+            Информация
+          </Typography>
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>

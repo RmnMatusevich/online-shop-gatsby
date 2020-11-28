@@ -181,6 +181,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
             productImage
             productName
             productYear
+            productCost
           }
         }
       }
@@ -219,6 +220,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
             productBrand
             productImage
             productName
+            productCost
           }
         }
       }

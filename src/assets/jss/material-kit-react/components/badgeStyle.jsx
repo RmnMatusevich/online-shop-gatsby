@@ -12,7 +12,7 @@ const badgeStyle = {
     marginRight: "3px",
     borderRadius: "12px",
     padding: "5px 12px",
-    textTransform: "uppercase",
+    textTransform: "none",
     fontSize: "10px",
     fontWeight: "500",
     lineHeight: "1",

@@ -78,6 +78,7 @@ collections:
           - { label: "productBrand", name: "productBrand", widget: "string"}
           - { label: "productDescription", name: "productDescription", widget: "markdown"}
           - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
+          - { label: "productCost", name: "productCost", widget: "string"}
   - name: accessoriesPage
     label: AccessoriesPage
     folder: accessories-page
@@ -94,3 +95,4 @@ collections:
           - { label: "productImage", name: "productImage", widget: "image"}
           - { label: "productName", name: "productName", widget: "string"}
           - { label: "productBrand", name: "productBrand", widget: "string"}
+          - { label: "productCost", name: "productCost", widget: "string"}

@@ -19,6 +19,7 @@ import Popper from "@material-ui/core/Popper"
 import Button from "components/CustomButtons/Button.jsx"
 
 import customDropdownStyle from "assets/jss/material-kit-react/components/customDropdownStyle.jsx"
+import { Typography } from "@material-ui/core"
 
 class CustomDropdown extends React.Component {
   constructor(props) {
@@ -97,7 +98,9 @@ class CustomDropdown extends React.Component {
             onClick={this.handleClick}
           >
             {icon}
-            {buttonText !== undefined ? buttonText : null}
+            <Typography variant="body2" style={{ fontSize: 14 }}>
+              {buttonText !== undefined ? buttonText : null}
+            </Typography>
             {caret ? <b className={caretClasses} /> : null}
           </Button>
         </div>

@@ -1,5 +1,4 @@
 import classNames from "classnames"
-import { Link } from "gatsby"
 import withStyles from "@material-ui/core/styles/withStyles"
 import React from "react"
 import Header from "../components/Header/Header"
@@ -9,26 +8,8 @@ import Parallax from "../components/Parallax/Parallax"
 import GridItem from "../components/Grid/GridItem"
 import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
-import { Card, Typography } from "@material-ui/core"
+import { Typography } from "@material-ui/core"
 import SEO from "../components/seo"
-
-const StyledCard = withStyles({
-  root: {
-    display: "flex",
-    gap: 12,
-    width: 260,
-    height: 260,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-    boxShadow: "0 12px 20px -10px gray",
-    transition: "0.18s ease",
-    "&:hover, &:focus": {
-      transform: "scale(1.03)",
-      boxShadow: "0 12px 20px -10px gray",
-    },
-  },
-})(Card)
 
 const SellPageTemplate = props => {
   const { classes, data, ...rest } = props
@@ -37,11 +18,15 @@ const SellPageTemplate = props => {
   return (
     <div>
       <SEO
-        title="Repair"
+        title={
+          repairData && repairData[0]
+            ? repairData[0].node.frontmatter.title
+            : "Sell"
+        }
         description={
           repairData && repairData[0]
             ? `${repairData[0].node.frontmatter.title} ${repairData[0].node.frontmatter.subtitle}`
-            : "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
+            : "Sell phone, Sell tablets, Sell watch, Sell iqos, Sell laptops."
         }
       />
       <Header
@@ -77,53 +62,10 @@ const SellPageTemplate = props => {
         className={classNames(classes.main, classes.mainRaised)}
         style={{ padding: 25 }}
       >
-        <Typography variant='h3'>{repairData[0].node.frontmatter.sellTitle}</Typography>
+        <Typography variant="h3">
+          {repairData[0].node.frontmatter.sellTitle}
+        </Typography>
         {repairData[0].node.frontmatter.sellText}
-      {/*  {repairData.map((i, index) => {*/}
-      {/*    return (*/}
-      {/*      <div key={index}>*/}
-      {/*        <div*/}
-      {/*          style={{*/}
-      {/*            display: "flex",*/}
-      {/*            flexDirection: "row",*/}
-      {/*            flexWrap: "wrap",*/}
-      {/*            gap: 10,*/}
-      {/*            margin: "0 auto",*/}
-      {/*            width: "fit-content",*/}
-      {/*            justifyContent: "center",*/}
-      {/*          }}*/}
-      {/*        >*/}
-      {/*          {i.node.frontmatter.brands.map((i, index) => {*/}
-      {/*            return (*/}
-      {/*              <div*/}
-      {/*                style={{ display: "flex", flexDirection: "column" }}*/}
-      {/*                key={index}*/}
-      {/*              >*/}
-      {/*                <Link to={i.linkTo} key={index}>*/}
-      {/*                  <StyledCard>*/}
-      {/*                    <img*/}
-      {/*                      style={{*/}
-      {/*                        width: 150,*/}
-      {/*                        height: 150,*/}
-      {/*                        borderRadius: 30,*/}
-      {/*                      }}*/}
-      {/*                      src={require(`../../static/${i.image}`)}*/}
-      {/*                    />*/}
-      {/*                    <Typography*/}
-      {/*                      variant="h6"*/}
-      {/*                      style={{ letterSpacing: 1.2 }}*/}
-      {/*                    >*/}
-      {/*                      {i.brand}*/}
-      {/*                    </Typography>*/}
-      {/*                  </StyledCard>*/}
-      {/*                </Link>*/}
-      {/*              </div>*/}
-      {/*            )*/}
-      {/*          })}*/}
-      {/*        </div>*/}
-      {/*      </div>*/}
-      {/*    )*/}
-      {/*  })}*/}
       </div>
       <Footer />
     </div>
@@ -134,19 +76,19 @@ export default withStyles(componentsStyle)(SellPageTemplate)
 
 export const pageQuery = graphql`
   query SellPages($path: String!) {
-    allMarkdownRemark(filter: {frontmatter: {path: {eq: $path}}}) {
-    edges {
-      node {
-        frontmatter {
-          path
-          title
-          subtitle
-          backgroundImage
-          sellTitle
-          sellText
+    allMarkdownRemark(filter: { frontmatter: { path: { eq: $path } } }) {
+      edges {
+        node {
+          frontmatter {
+            path
+            title
+            subtitle
+            backgroundImage
+            sellTitle
+            sellText
+          }
         }
       }
     }
-  }
   }
 `

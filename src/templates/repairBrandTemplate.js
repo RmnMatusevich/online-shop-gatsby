@@ -1,13 +1,9 @@
 import classNames from "classnames"
 import { Link } from "gatsby"
-import SectionCarousel from "../pages/Components/Sections/SectionCarousel"
 import withStyles from "@material-ui/core/styles/withStyles"
 import React from "react"
 import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
-import GridContainer from "../components/Grid/GridContainer"
-import Parallax from "../components/Parallax/Parallax"
-import GridItem from "../components/Grid/GridItem"
 import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography } from "@material-ui/core"
@@ -39,7 +35,6 @@ const RepairBrandTemplate = props => {
   return (
     <div>
       <SEO
-        // title='Repair phone'
         title={
           repairBrandData && repairBrandData[0]
             ? repairBrandData[0].node.frontmatter.productBrand
@@ -104,6 +99,7 @@ const RepairBrandTemplate = props => {
                     >
                       <img
                         src={require(`../../static/${i.node.frontmatter.productImage}`)}
+                        alt="Product image"
                         style={{ height: 100, width: 100, borderRadius: 20 }}
                       />
                       <div style={{ display: "flex", flexDirection: "column" }}>
