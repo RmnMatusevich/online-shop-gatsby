@@ -11,10 +11,10 @@ import SectionCarousel from "./Sections/SectionCarousel.jsx"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import SEO from "../../components/seo"
 import { Helmet } from "react-helmet"
+import ReactMarkdown from "react-markdown"
 
 const Components = props => {
-  const { classes, data, ...rest } = props
-  console.log("datadatadata ", data)
+  const { classes, ...rest } = props
 
   return (
     <div>
@@ -51,7 +51,66 @@ const Components = props => {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
+        <ReactMarkdown>
+          > **Ремонт цифровой техники в сервисном центре TechTag**
+
+          > Ремонт смартфонов: iPhone, Samsung, Xiaomi, Huawei, Sony, Lenovo, ZTE, Nokia, HTC, LG.
+
+          > Ремонт ноутбуков: MacBook, HP, ASUS, Acer, Lenovo, Toshiba, MSI, Dell.
+
+          > Ремонт планшетов: iPad, Samsung, ASUS, Lenovo, Xiaomi, TeXet, Huawei, Prestigio, Digma.
+
+          > Ремонт часов: Apple, Samsung, LG.
+
+          > Ремонт навигаторов.
+
+          > Ремонт электронных книг.
+
+          > Восстановление ПО.
+
+          > Это только малая часть того, что способны отремонтировать наши мастера. Мы также берёмся за починку цифровой техники малоизвестных брендов. Большинство сервисных центров боятся таких сложностей, но только не TechTag.
+
+
+          *Обращайтесь за консультацией к нашим операторам, мы наверняка сможем вам помочь!*
+
+
+          Помимо этого, наша компания поможет разобраться с программным обеспечением: перепрошить, разблокировать смартфон или планшет, русифицировать устройство. Мы можем восстановить утерянные данные. Также у нас можно приобрести аксессуары бренда Apple: наушники, зарядные устройства, чехлы и защитные плёнки.
+
+
+          Для офисов и юридических лиц оказываем индивидуальные услуги по подготовке и настройке рабочих мест.
+        </ReactMarkdown>
         <SectionCarousel />
+        <ReactMarkdown>
+          ## **Ремонт цифровой техники в сервисном центре TechTag**
+
+
+
+          Ремонт смартфонов: iPhone, Samsung, Xiaomi, Huawei, Sony, Lenovo, ZTE, Nokia, HTC, LG.
+
+          Ремонт ноутбуков: MacBook, HP, ASUS, Acer, Lenovo, Toshiba, MSI, Dell.
+
+          Ремонт планшетов: iPad, Samsung, ASUS, Lenovo, Xiaomi, TeXet, Huawei, Prestigio, Digma.
+
+          Ремонт часов: Apple, Samsung, LG.
+
+          Ремонт навигаторов.
+
+          Ремонт электронных книг.
+
+          Восстановление ПО.
+
+          Это только малая часть того, что способны отремонтировать наши мастера. Мы также берёмся за починку цифровой техники малоизвестных брендов. Большинство сервисных центров боятся таких сложностей, но только не TechTag.
+
+
+          ### *Обращайтесь за консультацией к нашим операторам, мы наверняка сможем вам помочь!*
+
+
+          ***Помимо этого, наша компания поможет разобраться с программным обеспечением: перепрошить, разблокировать смартфон или планшет, русифицировать устройство. Мы можем восстановить утерянные данные. Также у нас можно приобрести аксессуары бренда Apple: наушники, зарядные устройства, чехлы и защитные плёнки.***
+
+
+          Для офисов и юридических лиц оказываем индивидуальные услуги по подготовке и настройке рабочих мест. Проводим интернет-соединение, комплексное обслуживание офисной техники, ставим необходимый для сотрудников софт.
+
+        </ReactMarkdown>
       </div>
       <Footer />
     </div>
@@ -59,17 +118,3 @@ const Components = props => {
 }
 
 export default withStyles(componentsStyle)(Components)
-
-// export const pageQuery = graphql`
-// query BlogPostByPath {
-//   allMarkdownRemark {
-//     nodes {
-//       frontmatter {
-//         date
-//         path
-//         title
-//       }
-//     }
-//   }
-// }
-// `;

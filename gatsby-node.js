@@ -3,42 +3,42 @@ const path = require('path');
 exports.createPages = async ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
-  const blogPostTemplate = path.resolve('src/templates/blogTemplate.js');
-
-  const blogPosts = await graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            excerpt(pruneLength: 250)
-            html
-            id
-            frontmatter {
-              date
-              path
-              title
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors);
-    }
-    return result.data
-  })
-
-    blogPosts.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: blogPostTemplate,
-        context: {},
-      });
-    });
+  // const blogPostTemplate = path.resolve('src/templates/blogTemplate.js');
+  //
+  // const blogPosts = await graphql(`
+  //   {
+  //     allMarkdownRemark(
+  //       sort: { order: DESC, fields: [frontmatter___date] }
+  //       limit: 1000
+  //     ) {
+  //       edges {
+  //         node {
+  //           excerpt(pruneLength: 250)
+  //           html
+  //           id
+  //           frontmatter {
+  //             date
+  //             path
+  //             title
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `).then(result => {
+  //   if (result.errors) {
+  //     return Promise.reject(result.errors);
+  //   }
+  //   return result.data
+  // })
+  //
+  //   blogPosts.allMarkdownRemark.edges.forEach(({ node }) => {
+  //     createPage({
+  //       path: node.frontmatter.path,
+  //       component: blogPostTemplate,
+  //       context: {},
+  //     });
+  //   });
 
   const repairPhoneApple = path.resolve('src/templates/repairPhoneApple.js');
 
