@@ -7,6 +7,7 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Typography } from "@material-ui/core"
 import Footer from "../components/Footer/Footer"
 import SEO from "../components/seo"
+import ReactMarkdown from "react-markdown"
 
 const Template = ({ data, classes, ...rest }) => {
   const phonesData = data.allMarkdownRemark.edges
@@ -77,9 +78,9 @@ const Template = ({ data, classes, ...rest }) => {
                   </Typography>
                 </div>
               </div>
-              <Typography variant="body1" style={{ margin: 10 }}>
+              <ReactMarkdown>
                 {i.node.frontmatter.productDescription}
-              </Typography>
+              </ReactMarkdown>
               <div
                 style={{
                   display: "flex",
@@ -110,12 +111,9 @@ const Template = ({ data, classes, ...rest }) => {
                             width: "auto",
                           }}
                         />
-                        <Typography
-                          variant="body2"
-                          style={{ margin: "0 10px 0 0" }}
-                        >
+                        <ReactMarkdown>
                           {service.serviceTitle}
-                        </Typography>
+                        </ReactMarkdown>
                         <Typography variant="body2">
                           {service.serviceCost}
                         </Typography>

@@ -10,6 +10,7 @@ import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
+import ReactMarkdown from "react-markdown"
 
 const StyledCard = withStyles(theme => ({
   root: {
@@ -139,9 +140,9 @@ const BuyPageTemplate = props => {
                           </div>
                         </div>
                         <div style={{ marginBottom: 10 }}>
-                          <Typography variant="body2">
+                          <ReactMarkdown>
                             {i.productDescription}
-                          </Typography>
+                          </ReactMarkdown>
                         </div>
                       </StyledCard>
                     </div>

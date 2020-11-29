@@ -10,6 +10,7 @@ import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Typography } from "@material-ui/core"
 import SEO from "../components/seo"
+import ReactMarkdown from "react-markdown"
 
 const SellPageTemplate = props => {
   const { classes, data, ...rest } = props
@@ -65,7 +66,9 @@ const SellPageTemplate = props => {
         <Typography variant="h3">
           {repairData[0].node.frontmatter.sellTitle}
         </Typography>
+        <ReactMarkdown>
         {repairData[0].node.frontmatter.sellText}
+        </ReactMarkdown>
       </div>
       <Footer />
     </div>

@@ -43,6 +43,7 @@
     "react-helmet": "^5.2.1",
     "react-icon": "^1.0.0",
     "react-icons": "^3.5.0",
+    "react-markdown": "^5.0.3",
     "react-router-dom": "^4.3.1",
     "react-slick": "^0.23.2",
     "react-swipeable-views": "^0.13.1",
