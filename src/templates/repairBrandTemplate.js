@@ -30,7 +30,9 @@ const StyledCard = withStyles({
 const RepairBrandTemplate = props => {
   const { classes, data, ...rest } = props
   const repairBrandData = data.allMarkdownRemark.edges
-
+  const sortedItems = repairBrandData.sort((a, b) => (
+    b.node.frontmatter.productYear - a.node.frontmatter.productYear
+  ))
   return (
     <div>
       <SEO
@@ -77,7 +79,7 @@ const RepairBrandTemplate = props => {
             justifyContent: "center",
           }}
         >
-          {repairBrandData.map((i, index) => {
+          {sortedItems.map((i, index) => {
             return (
               <Link to={i.node.frontmatter.path} key={index}>
                 <StyledCard key={index}>
