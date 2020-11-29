@@ -8,7 +8,7 @@ products:
     productImage: img/acer_brand.svg
     productName: Acer Phone-231
     productBrand: Acer
-    productDescription: Good phone for ladies and gentlmens
+    productDescription: Good phone for **ladies an .asd d as dasd**
     productCost: 220$
   - productYear: 2019
     productImage: img/apple_brand.svg
