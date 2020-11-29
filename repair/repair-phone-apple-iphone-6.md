@@ -1,5 +1,5 @@
 ---
-path: /repair/phone/apple/iphone-6
+path: /repair/phone/apple/iphone6
 type: product
 productImage: img/6.png
 productName: iPhone 6
