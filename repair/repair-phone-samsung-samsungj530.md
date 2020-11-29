@@ -1,5 +1,5 @@
 ---
-path: /repair/phone/samsung/samsungj530
+path: /repair/phone/samsung/j530
 type: product
 productImage: img/j530.png
 productName: Samsung J5 (2017)
