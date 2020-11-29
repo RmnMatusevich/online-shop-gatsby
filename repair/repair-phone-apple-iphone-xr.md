@@ -8,7 +8,7 @@ productDescription: |-
   ## i**Phone XR**
 
   **Ремонт** i**Phone XR**
-productYear: 2020
+productYear: 2018
 services:
   - serviceIcon: img/repair-screen.svg
     serviceTitle: Repair screen for all and all
