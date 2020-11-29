@@ -1,5 +1,5 @@
 ---
-path: /repair/phone/samsung/j400
+path: /repair/phone/samsung/j4
 type: product
 productImage: img/j4.png
 productName: Samsung J4
