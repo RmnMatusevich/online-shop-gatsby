@@ -97,3 +97,21 @@ collections:
           - { label: "productName", name: "productName", widget: "string", required: true }
           - { label: "productBrand", name: "productBrand", widget: "string", required: true }
           - { label: "productCost", name: "productCost", widget: "string", required: true }
+  - name: "main"
+    label: "Main"
+    folder: "content/main.md"
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
+      - { name: openingTitle, label: OpeningTitle, widget: string }
+      - { name: openingDescription, label: OpeningDescription, widget: markdown }
+      - label: 'Carousel'
+        name: "carousel"
+        widget: list
+        fields:
+          - { label: "Image", name: "image", widget: "image"}
+      - { name: aboutUsTitle, label: AboutUsTitle, widget: string }
+      - { name: aboutUsDescription, label: AboutUsDescription, widget: markdown }
