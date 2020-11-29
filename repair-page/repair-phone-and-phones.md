@@ -11,4 +11,7 @@ brands:
   - brand: Sony
     image: img/sony_brand.svg
     linkTo: /repair/phone/sony
+  - brand: Samsung
+    image: img/samsung_brand.svg
+    linkTo: /repair/phone/samsung
 ---
