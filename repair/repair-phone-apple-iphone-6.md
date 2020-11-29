@@ -7,7 +7,7 @@ productBrand: Apple
 productDescription: AppleAppleAppleAppleAppleApple AppleAppleAppleAppleAppleAppl
   AppleAppleAppleAppleAppleApple AppleAppleAppleAppleAppleApple
   AppleAppleAppleAppleAppleApple AppleAppleAppleAppleAppleApple
-productYear: 2012
+productYear: 2014
 services:
   - serviceIcon: img/repair-screen.svg
     serviceTitle: Замена разбитого стекла или дисплейного модуля
