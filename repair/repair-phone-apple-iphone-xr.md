@@ -1,18 +1,14 @@
 ---
-path: /repair/phone/apple/iphone-xr
+path: /repair/phone/apple/iphonexr
 type: product
-productImage: img/apple_brand.svg
+productImage: img/iphone_xr.png
 productName: iPhone XR
 productBrand: Apple
-productDescription: >-
-  ## i**Phone XR iPhone XR**
+productDescription: |-
+  ## i**Phone XR**
 
-
-  **i**Phone XR iPhone XR [iPhone XRiPhone](https://www.figma.com/) 
-
-
-  Phone XR iPhone XRiPhone **iPhone XR iPh**one XRiPhone iPhone XR iPhone XRiPhone i**`Phone XR iPhone XRiPh`**one iPhone XR iPhone XRiPhone iPhone XR iPhone XRiPh*one iPhone XR iPhon*e XRiPho*ne iPhone XR iPhone XRiPhone*
-productYear: 2020
+  **Ремонт** i**Phone XR**
+productYear: 2018
 services:
   - serviceIcon: img/repair-screen.svg
     serviceTitle: Repair screen for all and all

@@ -12,8 +12,7 @@ import SEO from "../components/seo"
 const StyledCard = withStyles({
   root: {
     display: "flex",
-    gap: 12,
-    width: 350,
+    width: 335,
     height: 145,
     padding: 20,
     justifyContent: "flex-start",
@@ -31,7 +30,9 @@ const StyledCard = withStyles({
 const RepairBrandTemplate = props => {
   const { classes, data, ...rest } = props
   const repairBrandData = data.allMarkdownRemark.edges
-
+  const sortedItems = repairBrandData.sort((a, b) => (
+    b.node.frontmatter.productYear - a.node.frontmatter.productYear
+  ))
   return (
     <div>
       <SEO
@@ -61,10 +62,10 @@ const RepairBrandTemplate = props => {
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
-          gap: 10,
-          margin: "150px auto 50px auto",
+          margin: "110px auto 50px auto",
           width: "fit-content",
           justifyContent: "center",
+          padding: 20
         }}
       >
         <div
@@ -78,7 +79,7 @@ const RepairBrandTemplate = props => {
             justifyContent: "center",
           }}
         >
-          {repairBrandData.map((i, index) => {
+          {sortedItems.map((i, index) => {
             return (
               <Link to={i.node.frontmatter.path} key={index}>
                 <StyledCard key={index}>
@@ -86,7 +87,6 @@ const RepairBrandTemplate = props => {
                     style={{
                       display: "flex",
                       flexDirection: "column",
-                      gap: 20,
                     }}
                   >
                     <div
@@ -94,13 +94,12 @@ const RepairBrandTemplate = props => {
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",
-                        gap: 20,
                       }}
                     >
                       <img
                         src={require(`../../static/${i.node.frontmatter.productImage}`)}
                         alt="Product image"
-                        style={{ height: 100, width: 100, borderRadius: 20 }}
+                        style={{ height: 100, margin: "0 10px 0 0" }}
                       />
                       <div style={{ display: "flex", flexDirection: "column" }}>
                         <Typography variant="body2">

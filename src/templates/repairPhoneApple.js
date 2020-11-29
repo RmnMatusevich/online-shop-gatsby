@@ -37,7 +37,7 @@ const Template = ({ data, classes, ...rest }) => {
       />
       <div
         className={classNames(classes.main, classes.mainRaised)}
-        style={{ marginTop: 150 }}
+        style={{ marginTop: 110, padding: 20 }}
       >
         {phonesData.map((i, index) => {
           return (
@@ -45,7 +45,6 @@ const Template = ({ data, classes, ...rest }) => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                padding: 20,
               }}
               key={index}
             >
@@ -54,15 +53,14 @@ const Template = ({ data, classes, ...rest }) => {
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
+                  marginBottom: 10
                 }}
               >
                 <img
                   src={require(`../../static/${i.node.frontmatter.productImage}`)}
-                  alt="Background image"
+                  alt="product"
                   style={{
                     height: 100,
-                    width: 100,
-                    borderRadius: 20,
                     margin: "0 10px 0 0",
                   }}
                 />
@@ -97,8 +95,11 @@ const Template = ({ data, classes, ...rest }) => {
                           display: "flex",
                           flexDirection: "row",
                           alignItems: "center",
+                          padding: '5px 5px 5px 0',
+                          borderRadius: 5,
                           maxWidth: 300,
                           margin: "0 10px 10px 0",
+                          boxShadow: "0 12px 20px -10px gray",
                         }}
                         key={index}
                       >
@@ -108,12 +109,11 @@ const Template = ({ data, classes, ...rest }) => {
                           style={{
                             marginRight: 10,
                             height: "100%",
-                            width: "auto",
                           }}
                         />
-                        <ReactMarkdown>
-                          {service.serviceTitle}
-                        </ReactMarkdown>
+                        <div style={{marginRight: 10, width: 177}}>
+                        <Typography variant="body2">{service.serviceTitle}</Typography>
+                        </div>
                         <Typography variant="body2">
                           {service.serviceCost}
                         </Typography>
