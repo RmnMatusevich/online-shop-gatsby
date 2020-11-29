@@ -12,7 +12,7 @@ import SEO from "../components/seo"
 const StyledCard = withStyles({
   root: {
     display: "flex",
-    width: 350,
+    width: 335,
     height: 145,
     padding: 20,
     justifyContent: "flex-start",
@@ -62,10 +62,10 @@ const RepairBrandTemplate = props => {
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
-          gap: 10,
-          margin: "150px auto 50px auto",
+          margin: "110px auto 50px auto",
           width: "fit-content",
           justifyContent: "center",
+          padding: 20
         }}
       >
         <div
@@ -87,7 +87,6 @@ const RepairBrandTemplate = props => {
                     style={{
                       display: "flex",
                       flexDirection: "column",
-                      gap: 20,
                     }}
                   >
                     <div
@@ -95,7 +94,6 @@ const RepairBrandTemplate = props => {
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",
-                        gap: 20,
                       }}
                     >
                       <img
