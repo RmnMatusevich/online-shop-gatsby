@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: rmnmatusevich/online-shop-gatsby
-  branch: master
+  branch: dev
 media_folder: static/img
 public_folder: img
 collections:
@@ -19,48 +19,48 @@ collections:
     folder: repair
     create: true
     fields:
-      - { name: "path", label: "Path" }
-      - { name: "type", label: "Type", widget: "string"}
-      - { label: "productImage", name: "productImage", widget: "image"}
-      - { label: "productName", name: "productName", widget: "string"}
-      - { label: "productBrand", name: "productBrand", widget: "string"}
-      - { label: "productDescription", name: "productDescription", widget: "markdown"}
-      - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
+      - { name: "path", label: "Path", required: true }
+      - { name: "type", label: "Type", widget: "string", required: true }
+      - { label: "productImage", name: "productImage", widget: "image", required: true }
+      - { label: "productName", name: "productName", widget: "string", required: true }
+      - { label: "productBrand", name: "productBrand", widget: "string", required: true }
+      - { label: "productDescription", name: "productDescription", widget: "markdown", required: true }
+      - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int", required: true }
       - label: 'Services'
         name: "services"
         widget: list
         fields:
-        - { label: "ServiceIcon", name: "serviceIcon", widget: "image"}
-        - { label: "ServiceTitle", name: "serviceTitle", widget: "string"}
-        - { label: "ServiceCost", name: "serviceCost", widget: "string"}
+        - { label: "ServiceIcon", name: "serviceIcon", widget: "image", required: true }
+        - { label: "ServiceTitle", name: "serviceTitle", widget: "markdown", required: true }
+        - { label: "ServiceCost", name: "serviceCost", widget: "string", required: true }
   - name: repairPage
     label: RepairPage
     folder: repair-page
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: title, label: Title }
-      - { name: subtitle, label: Subtitle}
-      - { name: repair, label: Repair, default: "/repair", widget: "string"}
-      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - { name: path, label: Path, required: true  }
+      - { name: title, label: Title, required: true  }
+      - { name: subtitle, label: Subtitle, required: true }
+      - { name: repair, label: Repair, default: "/repair", widget: "string", required: true }
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
       - label: 'Brands'
         name: "brands"
         widget: list
         fields:
-          - { label: "Brand", name: "brand", widget: "string"}
-          - { label: "Image", name: "image", widget: "image"}
-          - {label: "LinkTo", name: "linkTo", widget: "string"}
+          - { label: "Brand", name: "brand", widget: "string", required: true }
+          - { label: "Image", name: "image", widget: "image", required: true }
+          - {label: "LinkTo", name: "linkTo", widget: "string", required: true }
   - name: sellPage
     label: SellPage
     folder: sell-page
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: title, label: Title }
-      - { name: subtitle, label: Subtitle}
-      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
-      - { name: sellTitle, label: SellTitle, widget: "string" }
-      - { name: sellText, label: SellText, widget: "text" }
+      - { name: path, label: Path, required: true }
+      - { name: title, label: Title, required: true }
+      - { name: subtitle, label: Subtitle, required: true }
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
+      - { name: sellTitle, label: SellTitle, widget: "string", required: true }
+      - { name: sellText, label: SellText, widget: "markdown", required: true }
   - name: buyPage
     label: BuyPage
     folder: buy-page
@@ -69,17 +69,17 @@ collections:
       - { name: path, label: Path }
       - { name: title, label: Title }
       - { name: subtitle, label: Subtitle}
-      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
       - label: 'Products'
         name: "products"
         widget: list
         fields:
-          - { label: "productImage", name: "productImage", widget: "image"}
-          - { label: "productName", name: "productName", widget: "string"}
-          - { label: "productBrand", name: "productBrand", widget: "string"}
-          - { label: "productDescription", name: "productDescription", widget: "markdown"}
-          - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int"}
-          - { label: "productCost", name: "productCost", widget: "string"}
+          - { label: "productImage", name: "productImage", widget: "image", required: true }
+          - { label: "productName", name: "productName", widget: "string", required: true }
+          - { label: "productBrand", name: "productBrand", widget: "string", required: true }
+          - { label: "productDescription", name: "productDescription", widget: "markdown", required: true }
+          - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int", required: true }
+          - { label: "productCost", name: "productCost", widget: "string", required: true }
   - name: accessoriesPage
     label: AccessoriesPage
     folder: accessories-page
@@ -88,12 +88,12 @@ collections:
       - { name: path, label: Path }
       - { name: title, label: Title }
       - { name: subtitle, label: Subtitle}
-      - { label: "BackgroundImage", name: "backgroundImage", widget: "image"}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
       - label: 'Products'
         name: "products"
         widget: list
         fields:
-          - { label: "productImage", name: "productImage", widget: "image"}
-          - { label: "productName", name: "productName", widget: "string"}
-          - { label: "productBrand", name: "productBrand", widget: "string"}
-          - { label: "productCost", name: "productCost", widget: "string"}
+          - { label: "productImage", name: "productImage", widget: "image", required: true }
+          - { label: "productName", name: "productName", widget: "string", required: true }
+          - { label: "productBrand", name: "productBrand", widget: "string", required: true }
+          - { label: "productCost", name: "productCost", widget: "string", required: true }
