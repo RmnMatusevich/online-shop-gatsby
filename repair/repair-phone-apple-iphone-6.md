@@ -7,5 +7,9 @@ productBrand: Apple
 productDescription: AppleAppleAppleAppleAppleApple AppleAppleAppleAppleAppleAppl
   AppleAppleAppleAppleAppleApple AppleAppleAppleAppleAppleApple
   AppleAppleAppleAppleAppleApple AppleAppleAppleAppleAppleApple
-productYear: 2014
+productYear: 2012
+services:
+  - serviceIcon: img/repair-screen.svg
+    serviceTitle: Замена разбитого стекла или дисплейного модуля
+    serviceCost: 100zl
 ---
