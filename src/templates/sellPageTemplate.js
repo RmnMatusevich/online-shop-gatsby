@@ -66,9 +66,7 @@ const SellPageTemplate = props => {
         <Typography variant="h3">
           {repairData[0].node.frontmatter.sellTitle}
         </Typography>
-        <ReactMarkdown>
-        {repairData[0].node.frontmatter.sellText}
-        </ReactMarkdown>
+        <ReactMarkdown>{repairData[0].node.frontmatter.sellText}</ReactMarkdown>
       </div>
       <Footer />
     </div>

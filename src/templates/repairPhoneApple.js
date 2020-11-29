@@ -61,8 +61,6 @@ const Template = ({ data, classes, ...rest }) => {
                   alt="Background image"
                   style={{
                     height: 100,
-                    width: 100,
-                    borderRadius: 20,
                     margin: "0 10px 0 0",
                   }}
                 />
@@ -108,12 +106,9 @@ const Template = ({ data, classes, ...rest }) => {
                           style={{
                             marginRight: 10,
                             height: "100%",
-                            width: "auto",
                           }}
                         />
-                        <ReactMarkdown>
-                          {service.serviceTitle}
-                        </ReactMarkdown>
+                        <ReactMarkdown>{service.serviceTitle}</ReactMarkdown>
                         <Typography variant="body2">
                           {service.serviceCost}
                         </Typography>

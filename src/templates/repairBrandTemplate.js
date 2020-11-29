@@ -12,7 +12,6 @@ import SEO from "../components/seo"
 const StyledCard = withStyles({
   root: {
     display: "flex",
-    gap: 12,
     width: 350,
     height: 145,
     padding: 20,
@@ -100,7 +99,7 @@ const RepairBrandTemplate = props => {
                       <img
                         src={require(`../../static/${i.node.frontmatter.productImage}`)}
                         alt="Product image"
-                        style={{ height: 100, width: 100, borderRadius: 20 }}
+                        style={{ height: 100, margin: "0 10px 0 0" }}
                       />
                       <div style={{ display: "flex", flexDirection: "column" }}>
                         <Typography variant="body2">

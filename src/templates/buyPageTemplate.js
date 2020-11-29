@@ -140,9 +140,7 @@ const BuyPageTemplate = props => {
                           </div>
                         </div>
                         <div style={{ marginBottom: 10 }}>
-                          <ReactMarkdown>
-                            {i.productDescription}
-                          </ReactMarkdown>
+                          <ReactMarkdown>{i.productDescription}</ReactMarkdown>
                         </div>
                       </StyledCard>
                     </div>
