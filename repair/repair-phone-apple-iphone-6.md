@@ -1,7 +1,7 @@
 ---
 path: /repair/phone/apple/iphone-6
 type: product
-productImage: img/meizu_brand.svg
+productImage: img/6.png
 productName: iPhone 6
 productBrand: Apple
 productDescription: AppleAppleAppleAppleAppleApple AppleAppleAppleAppleAppleAppl
