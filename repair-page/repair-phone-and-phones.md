@@ -6,7 +6,7 @@ repair: /repair
 backgroundImage: img/backgroundphones.svg
 brands:
   - brand: Apple
-    image: img/apple_brand.svg
+    image: img/apple.svg
     linkTo: /repair/phone/apple
   - brand: Sony
     image: img/sony_brand.svg
