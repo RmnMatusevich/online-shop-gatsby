@@ -38,7 +38,11 @@ const footerStyle = {
       color: "#FFFFFF",
     },
   },
-  container,
+  container: {
+    ...container,
+    display: "flex",
+    justifyContent: "center",
+  },
   list: {
     marginBottom: "0",
     padding: "0",

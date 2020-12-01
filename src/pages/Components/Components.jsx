@@ -12,8 +12,10 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import SEO from "../../components/seo"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
-import Typography from "@material-ui/core/Typography"
 import SectionRepair from "../../components/SectionRepair"
+import SectionText from "../../components/SectionText"
+import SectionContacts from "../../components/SectionContacts"
+
 const Components = props => {
   const { classes, ...rest } = props
 
@@ -75,27 +77,33 @@ const Components = props => {
           `}
           render={data => (
             <>
-              <Typography variant="h3">
-                {data.allMarkdownRemark.edges[0].node.frontmatter.aboutUsTitle}
-              </Typography>
-              <Typography variant="body2">
-                {
+              <SectionText
+                title={
+                  data.allMarkdownRemark.edges[0].node.frontmatter.aboutUsTitle
+                }
+                text={
                   data.allMarkdownRemark.edges[0].node.frontmatter
                     .aboutUsDescription
                 }
-              </Typography>
-              <Typography variant="h4">
-                {data.allMarkdownRemark.edges[0].node.frontmatter.openingTitle}
-              </Typography>
-              <Typography variant="body2">
-                {
+              />
+              <SectionText
+                title={
+                  data.allMarkdownRemark.edges[0].node.frontmatter.openingTitle
+                }
+                text={
                   data.allMarkdownRemark.edges[0].node.frontmatter
                     .openingDescription
                 }
-              </Typography>
+              />
             </>
           )}
         />
+      </div>
+      <div
+        className={classNames(classes.main, classes.mainRaised)}
+        style={{ marginTop: 10 }}
+      >
+        <SectionContacts />
       </div>
       <Footer />
     </div>

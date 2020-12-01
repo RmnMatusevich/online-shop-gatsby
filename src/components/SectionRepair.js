@@ -28,12 +28,12 @@ const repairObj = [
     linkTo: "/repair/phone",
   },
   {
-    img: "repair-screen.svg",
+    img: "laptop-screen.svg",
     text: "Ремонт планшетов",
     linkTo: "/repair/tablets",
   },
   {
-    img: "repair-screen.svg",
+    img: "tablet-screen.svg",
     text: "Ремонт ноутбуков",
     linkTo: "/repair/laptops",
   },
@@ -41,44 +41,52 @@ const repairObj = [
 
 const SectionRepair = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        gap: 10,
-        margin: "0 auto",
-        width: "fit-content",
-        justifyContent: "center",
-      }}
-    >
-      {repairObj.map((i, index) => {
-        return (
-          <Link to={i.linkTo} key={index}>
-            <StyledCard>
-              <div
-                style={{ display: "flex", flexDirection: "column" }}
-                key={index}
-              >
-                <img
-                  style={{
-                    height: 120,
-                    borderRadius: 30,
-                  }}
-                  src={require(`../../static/img/${i.img}`)}
-                  alt="Repair"
-                />
-                <Typography
-                  variant="h6"
-                  style={{ letterSpacing: 1.2, textTransform: "none" }}
+    <div style={{ padding: 20 }}>
+      <Typography
+        variant="h3"
+        style={{ marginBottom: 20, textAlign: "center" }}
+      >
+        Ремонт
+      </Typography>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          gap: 10,
+          margin: "0 auto",
+          width: "fit-content",
+          justifyContent: "center",
+        }}
+      >
+        {repairObj.map((i, index) => {
+          return (
+            <Link to={i.linkTo} key={index}>
+              <StyledCard>
+                <div
+                  style={{ display: "flex", flexDirection: "column" }}
+                  key={index}
                 >
-                  {i.text}
-                </Typography>
-              </div>
-            </StyledCard>
-          </Link>
-        )
-      })}
+                  <img
+                    style={{
+                      height: 120,
+                      borderRadius: 30,
+                    }}
+                    src={require(`../../static/img/${i.img}`)}
+                    alt="Repair"
+                  />
+                  <Typography
+                    variant="h6"
+                    style={{ letterSpacing: 1.2, textTransform: "none" }}
+                  >
+                    {i.text}
+                  </Typography>
+                </div>
+              </StyledCard>
+            </Link>
+          )
+        })}
+      </div>
     </div>
   )
 

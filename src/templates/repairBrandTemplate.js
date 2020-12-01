@@ -80,7 +80,7 @@ const RepairBrandTemplate = props => {
           {repairBrandData.map((i, index) => {
             const item = i.node.frontmatter
             return (
-              <Link to={item.path} key={index}>
+              <Link to={item.path} key={index} style={{textDecoration: 'none'}}>
                 <StyledCard key={index}>
                   <div
                     style={{
