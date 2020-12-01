@@ -5,26 +5,24 @@ backend:
 media_folder: static/img
 public_folder: img
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-    - name: "main"
-      label: "Main"
-      file: "content/main.md"
-      fields:
-        - { name: path, label: Path }
-        - { name: title, label: Title }
-        - { name: subtitle, label: Subtitle}
-        - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
-        - { name: openingTitle, label: OpeningTitle, widget: string }
-        - { name: openingDescription, label: OpeningDescription, widget: markdown }
-        - label: 'Carousel'
-          name: "carousel"
-          widget: list
-          fields:
-            - { label: "Image", name: "image", widget: "image"}
-        - { name: aboutUsTitle, label: AboutUsTitle, widget: string }
-        - { name: aboutUsDescription, label: AboutUsDescription, widget: markdown }
+  - name: "content"
+    label: "Content"
+    folder: content
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle}
+      - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
+      - { name: openingTitle, label: OpeningTitle, widget: string }
+      - { name: openingDescription, label: OpeningDescription, widget: markdown }
+      - { name: aboutUsTitle, label: AboutUsTitle, widget: string }
+      - { name: aboutUsDescription, label: AboutUsDescription, widget: markdown }
+      - label: 'Carousel'
+        name: "carousel"
+        widget: list
+        fields:
+          - { label: "Image", name: "image", widget: "image"}
   - name: blog
     label: Blog
     folder: blog

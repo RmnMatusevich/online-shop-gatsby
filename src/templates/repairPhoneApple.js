@@ -53,7 +53,7 @@ const Template = ({ data, classes, ...rest }) => {
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
-                  marginBottom: 10
+                  marginBottom: 10,
                 }}
               >
                 <img
@@ -95,7 +95,7 @@ const Template = ({ data, classes, ...rest }) => {
                           display: "flex",
                           flexDirection: "row",
                           alignItems: "center",
-                          padding: '5px 5px 5px 0',
+                          padding: "5px 5px 5px 0",
                           borderRadius: 5,
                           maxWidth: 300,
                           margin: "0 10px 10px 0",
@@ -111,8 +111,10 @@ const Template = ({ data, classes, ...rest }) => {
                             height: "100%",
                           }}
                         />
-                        <div style={{marginRight: 10, width: 177}}>
-                        <Typography variant="body2">{service.serviceTitle}</Typography>
+                        <div style={{ marginRight: 10, width: 177 }}>
+                          <Typography variant="body2">
+                            {service.serviceTitle}
+                          </Typography>
                         </div>
                         <Typography variant="body2">
                           {service.serviceCost}

@@ -30,9 +30,7 @@ const StyledCard = withStyles({
 const RepairBrandTemplate = props => {
   const { classes, data, ...rest } = props
   const repairBrandData = data.allMarkdownRemark.edges
-  const sortedItems = repairBrandData.sort((a, b) => (
-    b.node.frontmatter.productYear - a.node.frontmatter.productYear
-  ))
+
   return (
     <div>
       <SEO
@@ -65,7 +63,7 @@ const RepairBrandTemplate = props => {
           margin: "110px auto 50px auto",
           width: "fit-content",
           justifyContent: "center",
-          padding: 20
+          padding: 20,
         }}
       >
         <div
@@ -79,9 +77,10 @@ const RepairBrandTemplate = props => {
             justifyContent: "center",
           }}
         >
-          {sortedItems.map((i, index) => {
+          {repairBrandData.map((i, index) => {
+            const item = i.node.frontmatter
             return (
-              <Link to={i.node.frontmatter.path} key={index}>
+              <Link to={item.path} key={index}>
                 <StyledCard key={index}>
                   <div
                     style={{
@@ -97,17 +96,15 @@ const RepairBrandTemplate = props => {
                       }}
                     >
                       <img
-                        src={require(`../../static/${i.node.frontmatter.productImage}`)}
+                        src={require(`../../static/${item.productImage}`)}
                         alt="Product image"
                         style={{ height: 100, margin: "0 10px 0 0" }}
                       />
                       <div style={{ display: "flex", flexDirection: "column" }}>
-                        <Typography variant="body2">
-                          {i.node.frontmatter.productBrand}
+                        <Typography variant="body1">
+                          {item.productBrand}
                         </Typography>
-                        <Typography variant="h6">
-                          {i.node.frontmatter.productName}
-                        </Typography>
+                        <Typography variant="h6">{item.productName}</Typography>
                       </div>
                     </div>
                   </div>
@@ -126,7 +123,10 @@ export default withStyles(componentsStyle)(RepairBrandTemplate)
 
 export const pageQuery = graphql`
   query RepairBrand($path: String!) {
-    allMarkdownRemark(filter: { frontmatter: { path: { regex: $path } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { path: { regex: $path } } }
+      sort: { fields: frontmatter___productYear, order: DESC }
+    ) {
       edges {
         node {
           frontmatter {
