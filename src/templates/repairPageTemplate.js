@@ -97,7 +97,7 @@ const RepairPageTemplate = props => {
                       style={{ display: "flex", flexDirection: "column" }}
                       key={index}
                     >
-                      <Link to={i.linkTo} key={index}>
+                      <Link to={i.linkTo} key={index} style={{textDecoration: 'none'}}>
                         <StyledCard>
                           <img
                             style={{

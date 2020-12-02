@@ -1,6 +1,6 @@
 ---
 path: /repair/phone/
-title: Repair Phone and Phones
+title: Ремонт телефонов
 subtitle: We can repair EVERYTHING
 repair: /repair
 backgroundImage: img/backgroundphones.svg
