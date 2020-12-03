@@ -49,7 +49,12 @@ const SectionContacts = () => {
         center={position}
         zoom={20}
         scrollWheelZoom={false}
-        style={{ height: 500, width: "100%", borderRadius: 10, boxShadow: "0 12px 20px -10px gray" }}
+        style={{
+          height: 500,
+          width: "100%",
+          borderRadius: 10,
+          boxShadow: "0 12px 20px -10px gray",
+        }}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {/*<Marker position={position}>*/}

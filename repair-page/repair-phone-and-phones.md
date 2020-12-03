@@ -41,4 +41,7 @@ brands:
   - brand: Xiaomi
     image: img/xiaomi.svg
     linkTo: /repair/phone/xiaomi
+  - brand: Honor
+    image: img/honor-logo.png
+    linkTo: /repair/phone/honor
 ---

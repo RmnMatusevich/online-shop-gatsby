@@ -1,12 +1,14 @@
+import React, { useState, useEffect } from "react"
+
 import classNames from "classnames"
 import { Link } from "gatsby"
 import withStyles from "@material-ui/core/styles/withStyles"
-import React from "react"
 import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
 import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
-import { Card, Typography } from "@material-ui/core"
+import { Card, Typography, TextField } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
 import SEO from "../components/seo"
 
 const StyledCard = withStyles({
@@ -27,9 +29,31 @@ const StyledCard = withStyles({
   },
 })(Card)
 
+const SearchTextField = withStyles((theme) => ({
+  root: {
+    '& label.Mui-focused': {
+      borderColor: "red",
+    },
+    width: '80%'
+  },
+}))(TextField);
+
 const RepairBrandTemplate = props => {
   const { classes, data, ...rest } = props
   const repairBrandData = data.allMarkdownRemark.edges
+  const [searchValue, setSearchValue] = useState("")
+  const [products, setProducts] = useState(repairBrandData)
+
+  const sortProducts = value => {
+    const filteredItems = repairBrandData.filter(i =>
+      i.node.frontmatter.productName.toLowerCase().includes(value.toLowerCase())
+    )
+    setProducts(filteredItems)
+  }
+
+  useEffect(() => {
+    sortProducts(searchValue)
+  }, [searchValue])
 
   return (
     <div>
@@ -66,6 +90,25 @@ const RepairBrandTemplate = props => {
           padding: 20,
         }}
       >
+        {/*<form className={classes.root} noValidate autoComplete="off">*/}
+
+        {/*<TextField*/}
+        {/*  id="outlined-basic"*/}
+        {/*  label="Search"*/}
+        {/*  variant="outlined"*/}
+        {/*  onChange={event => {*/}
+        {/*    setSearchValue(event.target.value)*/}
+        {/*  }}*/}
+        {/*/>*/}
+        <SearchTextField
+          value={searchValue}
+          label="Search"
+          variant="outlined"
+          onChange={event => {
+            setSearchValue(event.target.value)
+          }}
+        />
+        {/*</form>*/}
         <div
           style={{
             display: "flex",
@@ -77,10 +120,14 @@ const RepairBrandTemplate = props => {
             justifyContent: "center",
           }}
         >
-          {repairBrandData.map((i, index) => {
+          {products.map((i, index) => {
             const item = i.node.frontmatter
             return (
-              <Link to={item.path} key={index} style={{textDecoration: 'none'}}>
+              <Link
+                to={item.path}
+                key={index}
+                style={{ textDecoration: "none" }}
+              >
                 <StyledCard key={index}>
                   <div
                     style={{
