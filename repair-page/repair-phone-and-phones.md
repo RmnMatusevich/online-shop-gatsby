@@ -43,5 +43,5 @@ brands:
     linkTo: /repair/phone/xiaomi
   - brand: Honor
     image: img/honor-logo.png
-    linkTo: " /repair/phone/honor"
+    linkTo: /repair/phone/honor
 ---
