@@ -12,7 +12,7 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
 
-const StyledCard = withStyles({
+const StyledCard = withStyles(theme => ({
   root: {
     display: "flex",
     gap: 12,
@@ -28,7 +28,7 @@ const StyledCard = withStyles({
       boxShadow: "0 12px 20px -10px gray",
     },
   },
-})(Card)
+}))(Card)
 
 const RepairPageTemplate = props => {
   const { classes, data, ...rest } = props
@@ -97,7 +97,11 @@ const RepairPageTemplate = props => {
                       style={{ display: "flex", flexDirection: "column" }}
                       key={index}
                     >
-                      <Link to={i.linkTo} key={index} style={{textDecoration: 'none'}}>
+                      <Link
+                        to={i.linkTo}
+                        key={index}
+                        style={{ textDecoration: "none" }}
+                      >
                         <StyledCard>
                           <img
                             style={{
