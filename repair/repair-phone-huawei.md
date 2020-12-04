@@ -1,5 +1,5 @@
 ---
-path: /repair/phone/huawei/
+path: /repair/phone/huawei/psmart2017
 type: product
 productImage: img/psmart.png
 productName: P Smart (2017)
