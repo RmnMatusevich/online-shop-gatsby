@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react"
 
 const Context = React.createContext({
-  lang: ''
-});
+  lang: "",
+})
 
-export default Context;
+export default Context

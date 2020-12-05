@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, { useContext } from "react"
 import classNames from "classnames"
 import withStyles from "@material-ui/core/styles/withStyles"
 import Header from "components/Header/Header.jsx"
@@ -18,7 +18,7 @@ import SectionContacts from "../../components/SectionContacts"
 import Context from "../../context/Context"
 
 const Components = props => {
-  const {lang, setLang} = useContext(Context);
+  const { lang, setLang } = useContext(Context)
 
   const { classes, ...rest } = props
 
@@ -90,18 +90,26 @@ const Components = props => {
             <>
               <SectionText
                 title={
-                  data.allMarkdownRemark.edges[0].node.frontmatter[`aboutUsTitle${lang ? `_${lang}`: '' }`]
+                  data.allMarkdownRemark.edges[0].node.frontmatter[
+                    `aboutUsTitle${lang ? `_${lang}` : ""}`
+                  ]
                 }
                 text={
-                  data.allMarkdownRemark.edges[0].node.frontmatter[`aboutUsDescription${lang ? `_${lang}`: '' }`]
+                  data.allMarkdownRemark.edges[0].node.frontmatter[
+                    `aboutUsDescription${lang ? `_${lang}` : ""}`
+                  ]
                 }
               />
               <SectionText
                 title={
-                  data.allMarkdownRemark.edges[0].node.frontmatter[`openingTitle${lang ? `_${lang}`: '' }`]
+                  data.allMarkdownRemark.edges[0].node.frontmatter[
+                    `openingTitle${lang ? `_${lang}` : ""}`
+                  ]
                 }
                 text={
-                  data.allMarkdownRemark.edges[0].node.frontmatter[`openingDescription${lang ? `_${lang}`: '' }`]
+                  data.allMarkdownRemark.edges[0].node.frontmatter[
+                    `openingDescription${lang ? `_${lang}` : ""}`
+                  ]
                 }
               />
             </>

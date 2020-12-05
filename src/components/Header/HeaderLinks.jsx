@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React, {useContext} from "react"
+import React, { useContext } from "react"
 // react components for routing our app without refresh
 import { Link } from "gatsby"
 
@@ -14,7 +14,7 @@ import MonetizationOnOutlinedIcon from "@material-ui/icons/MonetizationOnOutline
 import DevicesOtherIcon from "@material-ui/icons/DevicesOther"
 import SettingsInputHdmiOutlinedIcon from "@material-ui/icons/SettingsInputHdmiOutlined"
 import MemoryIcon from "@material-ui/icons/Memory"
-import LanguageIcon from '@material-ui/icons/Language';
+import LanguageIcon from "@material-ui/icons/Language"
 import classNames from "classnames"
 
 // @material-ui/icons
@@ -33,15 +33,15 @@ import Context from "../../context/Context"
 
 function HeaderLinks({ ...props }) {
   const { classes } = props
-  const {lang, setLang} = useContext(Context)
+  const { lang, setLang } = useContext(Context)
 
-  const onLanguageChange = (lang) => {
-    let langWithoutRu;
-    if (typeof window !== 'undefined') {
-      langWithoutRu = lang === 'ru' ? '' : lang
-      window.localStorage.setItem('lang', langWithoutRu? langWithoutRu : '')
+  const onLanguageChange = lang => {
+    let langWithoutRu
+    if (typeof window !== "undefined") {
+      langWithoutRu = lang === "ru" ? "" : lang
+      window.localStorage.setItem("lang", langWithoutRu ? langWithoutRu : "")
     }
-    setLang(langWithoutRu? langWithoutRu : '')
+    setLang(langWithoutRu ? langWithoutRu : "")
   }
 
   return (
@@ -206,9 +206,39 @@ function HeaderLinks({ ...props }) {
             // <Link to="/sell/watches" className={classes.dropdownLink}>
             //   Продать часы
             // </Link>,
-            <div onClick={() => {onLanguageChange('en')}} className={classNames(classes.dropdownLink, lang === 'en' ? classes.dropdownLinkActive : null )}>En</div>,
-            <div onClick={() => {onLanguageChange('pl')}} className={classNames(classes.dropdownLink, lang === 'pl' ? classes.dropdownLinkActive : null )}>Pl</div>,
-            <div onClick={() => {onLanguageChange('ru')}} className={classNames(classes.dropdownLink, lang === '' ? classes.dropdownLinkActive : null )}>Ru</div>,
+            <div
+              onClick={() => {
+                onLanguageChange("en")
+              }}
+              className={classNames(
+                classes.dropdownLink,
+                lang === "en" ? classes.dropdownLinkActive : null
+              )}
+            >
+              En
+            </div>,
+            <div
+              onClick={() => {
+                onLanguageChange("pl")
+              }}
+              className={classNames(
+                classes.dropdownLink,
+                lang === "pl" ? classes.dropdownLinkActive : null
+              )}
+            >
+              Pl
+            </div>,
+            <div
+              onClick={() => {
+                onLanguageChange("ru")
+              }}
+              className={classNames(
+                classes.dropdownLink,
+                lang === "" ? classes.dropdownLinkActive : null
+              )}
+            >
+              Ru
+            </div>,
           ]}
         />
       </ListItem>

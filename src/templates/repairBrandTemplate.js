@@ -29,14 +29,14 @@ const StyledCard = withStyles({
   },
 })(Card)
 
-const SearchTextField = withStyles((theme) => ({
+const SearchTextField = withStyles(theme => ({
   root: {
-    '& label.Mui-focused': {
+    "& label.Mui-focused": {
       borderColor: "red",
     },
-    width: '80%'
+    width: "80%",
   },
-}))(TextField);
+}))(TextField)
 
 const RepairBrandTemplate = props => {
   const { classes, data, ...rest } = props
