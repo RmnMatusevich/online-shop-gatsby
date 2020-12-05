@@ -28,12 +28,12 @@ const repairObj = [
     linkTo: "/repair/phone",
   },
   {
-    img: "laptop-screen.svg",
+    img: "tablet-screen.svg",
     text: "Ремонт планшетов",
     linkTo: "/repair/tablets",
   },
   {
-    img: "tablet-screen.svg",
+    img: "laptop-screen.svg",
     text: "Ремонт ноутбуков",
     linkTo: "/repair/laptops",
   },

@@ -23,7 +23,12 @@ const Components = props => {
   const { classes, ...rest } = props
 
   return (
-    <div>
+    <div
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(13,104,224,1) 0%, rgba(13,104,224,1) 45%, rgba(13,104,224,1) 54%, rgba(13,104,224,0.9374124649859944) 65%, rgba(13,104,224,0.7161239495798319) 78%, rgba(13,104,224,0.3799894957983193) 90%, rgba(13,104,224,0) 97%)",
+      }}
+    >
       <Helmet>
         <meta name="yandex-verification" content="0d1b788a734b13b9" />
       </Helmet>

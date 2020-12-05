@@ -26,7 +26,6 @@ import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx"
 import Button from "components/CustomButtons/Button.jsx"
-
 import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx"
 import { Typography } from "@material-ui/core"
 import Context from "../../context/Context"

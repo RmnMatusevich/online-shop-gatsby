@@ -10,7 +10,9 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography, TextField } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import SEO from "../components/seo"
-
+import Parallax from "../components/Parallax/Parallax"
+import GridContainer from "components/Grid/GridContainer.jsx"
+import GridItem from "components/Grid/GridItem.jsx"
 const StyledCard = withStyles({
   root: {
     display: "flex",
@@ -34,7 +36,7 @@ const SearchTextField = withStyles(theme => ({
     "& label.Mui-focused": {
       borderColor: "red",
     },
-    width: "80%",
+    width: "100%",
   },
 }))(TextField)
 
@@ -56,7 +58,12 @@ const RepairBrandTemplate = props => {
   }, [searchValue])
 
   return (
-    <div>
+    <div
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(13,104,224,1) 0%, rgba(13,104,224,1) 45%, rgba(13,104,224,1) 54%, rgba(13,104,224,0.9374124649859944) 65%, rgba(13,104,224,0.7161239495798319) 78%, rgba(13,104,224,0.3799894957983193) 90%, rgba(13,104,224,0) 97%)",
+      }}
+    >
       <SEO
         title={
           repairBrandData && repairBrandData[0]
@@ -77,17 +84,30 @@ const RepairBrandTemplate = props => {
         }}
         {...rest}
       />
-
+      <Parallax image={require("../../static/img/backgroundmain.svg")} small>
+        <div className={classes.container}>
+          <GridContainer>
+            <GridItem>
+              <div className={classes.brand}>
+                <h1 className={classes.title}>
+                  {repairBrandData && repairBrandData[0]
+                    ? repairBrandData[0].node.frontmatter.productBrand
+                    : null}
+                </h1>
+              </div>
+            </GridItem>
+          </GridContainer>
+        </div>
+      </Parallax>
       <div
         className={classNames(classes.main, classes.mainRaised)}
         style={{
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
-          margin: "110px auto 50px auto",
-          width: "fit-content",
+          margin: "0 2% 50px 2%",
           justifyContent: "center",
-          padding: 20,
+          padding: 12,
         }}
       >
         {/*<form className={classes.root} noValidate autoComplete="off">*/}

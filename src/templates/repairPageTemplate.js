@@ -35,7 +35,12 @@ const RepairPageTemplate = props => {
   const repairData = data.allMarkdownRemark.edges
 
   return (
-    <div>
+    <div
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(13,104,224,1) 0%, rgba(13,104,224,1) 45%, rgba(13,104,224,1) 54%, rgba(13,104,224,0.9374124649859944) 65%, rgba(13,104,224,0.7161239495798319) 78%, rgba(13,104,224,0.3799894957983193) 90%, rgba(13,104,224,0) 97%)",
+      }}
+    >
       <SEO
         title="Repair"
         description={

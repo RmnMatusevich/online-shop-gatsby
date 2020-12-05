@@ -8,7 +8,6 @@ import "typeface-roboto-slab"
 // pages for this product
 import Components from "./Components/Components.jsx"
 import Context from "../context/Context"
-import RepairPhone from "./RepairPhone/RepairPhone"
 let hist = createMemoryHistory()
 
 const Index = () => {
