@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useContext} from "react"
 import classNames from "classnames"
 import withStyles from "@material-ui/core/styles/withStyles"
 import Header from "components/Header/Header.jsx"
@@ -15,9 +15,13 @@ import { StaticQuery, graphql } from "gatsby"
 import SectionRepair from "../../components/SectionRepair"
 import SectionText from "../../components/SectionText"
 import SectionContacts from "../../components/SectionContacts"
-const pageLang = window.localStorage.getItem('lang');
+import Context from "../../context/Context"
+
 const Components = props => {
+  const {lang, setLang} = useContext(Context);
+
   const { classes, ...rest } = props
+
   return (
     <div>
       <Helmet>
@@ -68,14 +72,14 @@ const Components = props => {
                       aboutUsDescription
                       openingTitle
                       openingDescription
-                      openingTitleen
-                      openingDescriptionen
-                      aboutUsTitleen
-                      aboutUsDescriptionen
-                      openingTitlepl
-                      openingDescriptionpl
-                      aboutUsTitlepl
-                      aboutUsDescriptionpl
+                      aboutUsTitle_en
+                      aboutUsTitle_pl
+                      aboutUsDescription_pl
+                      aboutUsDescription_en
+                      openingDescription_en
+                      openingDescription_pl
+                      openingTitle_en
+                      openingTitle_pl
                     }
                   }
                 }
@@ -86,20 +90,18 @@ const Components = props => {
             <>
               <SectionText
                 title={
-                  data.allMarkdownRemark.edges[0].node.frontmatter.aboutUsTitle+`${pageLang}`
+                  data.allMarkdownRemark.edges[0].node.frontmatter[`aboutUsTitle${lang ? `_${lang}`: '' }`]
                 }
                 text={
-                  data.allMarkdownRemark.edges[0].node.frontmatter
-                    .aboutUsDescription+`-${pageLang}`
+                  data.allMarkdownRemark.edges[0].node.frontmatter[`aboutUsDescription${lang ? `_${lang}`: '' }`]
                 }
               />
               <SectionText
                 title={
-                  data.allMarkdownRemark.edges[0].node.frontmatter.openingTitle
+                  data.allMarkdownRemark.edges[0].node.frontmatter[`openingTitle${lang ? `_${lang}`: '' }`]
                 }
                 text={
-                  data.allMarkdownRemark.edges[0].node.frontmatter
-                    .openingDescription
+                  data.allMarkdownRemark.edges[0].node.frontmatter[`openingDescription${lang ? `_${lang}`: '' }`]
                 }
               />
             </>

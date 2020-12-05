@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React from "react"
+import React, {useContext} from "react"
 // react components for routing our app without refresh
 import { Link } from "gatsby"
 
@@ -15,6 +15,8 @@ import DevicesOtherIcon from "@material-ui/icons/DevicesOther"
 import SettingsInputHdmiOutlinedIcon from "@material-ui/icons/SettingsInputHdmiOutlined"
 import MemoryIcon from "@material-ui/icons/Memory"
 import LanguageIcon from '@material-ui/icons/Language';
+import classNames from "classnames"
+
 // @material-ui/icons
 import { Apps, CloudDownload } from "@material-ui/icons"
 
@@ -27,13 +29,19 @@ import Button from "components/CustomButtons/Button.jsx"
 
 import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx"
 import { Typography } from "@material-ui/core"
+import Context from "../../context/Context"
 
 function HeaderLinks({ ...props }) {
   const { classes } = props
+  const {lang, setLang} = useContext(Context)
 
   const onLanguageChange = (lang) => {
-    console.log(lang)
-    window.localStorage.setItem('lang', lang)
+    let langWithoutRu;
+    if (typeof window !== 'undefined') {
+      langWithoutRu = lang === 'ru' ? '' : lang
+      window.localStorage.setItem('lang', langWithoutRu? langWithoutRu : '')
+    }
+    setLang(langWithoutRu? langWithoutRu : '')
   }
 
   return (
@@ -198,9 +206,9 @@ function HeaderLinks({ ...props }) {
             // <Link to="/sell/watches" className={classes.dropdownLink}>
             //   Продать часы
             // </Link>,
-            <div onClick={() => {onLanguageChange('en')}}>En</div>,
-            <div onClick={() => {onLanguageChange('pl')}}>Pl</div>,
-            <div onClick={() => {onLanguageChange('ru')}}>Ru</div>,
+            <div onClick={() => {onLanguageChange('en')}} className={classNames(classes.dropdownLink, lang === 'en' ? classes.dropdownLinkActive : null )}>En</div>,
+            <div onClick={() => {onLanguageChange('pl')}} className={classNames(classes.dropdownLink, lang === 'pl' ? classes.dropdownLinkActive : null )}>Pl</div>,
+            <div onClick={() => {onLanguageChange('ru')}} className={classNames(classes.dropdownLink, lang === '' ? classes.dropdownLinkActive : null )}>Ru</div>,
           ]}
         />
       </ListItem>
