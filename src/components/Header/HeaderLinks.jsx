@@ -14,6 +14,7 @@ import MonetizationOnOutlinedIcon from "@material-ui/icons/MonetizationOnOutline
 import DevicesOtherIcon from "@material-ui/icons/DevicesOther"
 import SettingsInputHdmiOutlinedIcon from "@material-ui/icons/SettingsInputHdmiOutlined"
 import MemoryIcon from "@material-ui/icons/Memory"
+import LanguageIcon from '@material-ui/icons/Language';
 // @material-ui/icons
 import { Apps, CloudDownload } from "@material-ui/icons"
 
@@ -29,13 +30,19 @@ import { Typography } from "@material-ui/core"
 
 function HeaderLinks({ ...props }) {
   const { classes } = props
+
+  const onLanguageChange = (lang) => {
+    console.log(lang)
+    window.localStorage.setItem('lang', lang)
+  }
+
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           navDropdown
-          buttonText="Ремонт устройств"
+          buttonText="Ремонт"
           buttonProps={{
             className: classes.navLink,
             color: "transparent",
@@ -71,7 +78,7 @@ function HeaderLinks({ ...props }) {
         <CustomDropdown
           noLiPadding
           navDropdown
-          buttonText="Скупка устройств"
+          buttonText="Скупка"
           buttonProps={{
             className: classes.navLink,
             color: "transparent",
@@ -97,7 +104,7 @@ function HeaderLinks({ ...props }) {
         <CustomDropdown
           noLiPadding
           navDropdown
-          buttonText="Продажа устройств"
+          buttonText="Продажа"
           buttonProps={{
             className: classes.navLink,
             color: "transparent",
@@ -167,6 +174,35 @@ function HeaderLinks({ ...props }) {
             Информация
           </Typography>
         </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          buttonText="Язык"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent",
+          }}
+          buttonIcon={LanguageIcon}
+          dropdownList={[
+            // <Link to="/sell/phone" className={classes.dropdownLink}>
+            //   Продать телефон
+            // </Link>,
+            // <Link to="/sell/tablets" className={classes.dropdownLink}>
+            //   Продать планшет
+            // </Link>,
+            // <Link to="/sell/laptops" className={classes.dropdownLink}>
+            //   Продать ноутбук
+            // </Link>,
+            // <Link to="/sell/watches" className={classes.dropdownLink}>
+            //   Продать часы
+            // </Link>,
+            <div onClick={() => {onLanguageChange('en')}}>En</div>,
+            <div onClick={() => {onLanguageChange('pl')}}>Pl</div>,
+            <div onClick={() => {onLanguageChange('ru')}}>Ru</div>,
+          ]}
+        />
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip

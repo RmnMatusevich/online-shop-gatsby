@@ -15,10 +15,9 @@ import { StaticQuery, graphql } from "gatsby"
 import SectionRepair from "../../components/SectionRepair"
 import SectionText from "../../components/SectionText"
 import SectionContacts from "../../components/SectionContacts"
-
+const pageLang = window.localStorage.getItem('lang');
 const Components = props => {
   const { classes, ...rest } = props
-
   return (
     <div>
       <Helmet>
@@ -69,6 +68,14 @@ const Components = props => {
                       aboutUsDescription
                       openingTitle
                       openingDescription
+                      openingTitleen
+                      openingDescriptionen
+                      aboutUsTitleen
+                      aboutUsDescriptionen
+                      openingTitlepl
+                      openingDescriptionpl
+                      aboutUsTitlepl
+                      aboutUsDescriptionpl
                     }
                   }
                 }
@@ -79,11 +86,11 @@ const Components = props => {
             <>
               <SectionText
                 title={
-                  data.allMarkdownRemark.edges[0].node.frontmatter.aboutUsTitle
+                  data.allMarkdownRemark.edges[0].node.frontmatter.aboutUsTitle+`${pageLang}`
                 }
                 text={
                   data.allMarkdownRemark.edges[0].node.frontmatter
-                    .aboutUsDescription
+                    .aboutUsDescription+`-${pageLang}`
                 }
               />
               <SectionText

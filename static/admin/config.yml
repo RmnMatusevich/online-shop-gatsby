@@ -13,11 +13,23 @@ collections:
       - { name: path, label: Path }
       - { name: title, label: Title }
       - { name: subtitle, label: Subtitle}
+      - { name: titleen, label: Title-en }
+      - { name: subtitleen, label: Subtitle-en}
+      - { name: titlepl, label: Title-pl }
+      - { name: subtitlepl, label: Subtitle-pl}
       - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
       - { name: openingTitle, label: OpeningTitle, widget: string }
       - { name: openingDescription, label: OpeningDescription, widget: markdown }
       - { name: aboutUsTitle, label: AboutUsTitle, widget: string }
       - { name: aboutUsDescription, label: AboutUsDescription, widget: markdown }
+      - { name: openingTitleen, label: OpeningTitle-en, widget: string }
+      - { name: openingDescriptionen, label: OpeningDescription-en, widget: markdown }
+      - { name: aboutUsTitleen, label: AboutUsTitle-en, widget: string }
+      - { name: aboutUsDescriptionen, label: AboutUsDescription-en, widget: markdown }
+      - { name: openingTitlepl, label: OpeningTitle-pl, widget: string }
+      - { name: openingDescriptionpl, label: OpeningDescription-pl, widget: markdown }
+      - { name: aboutUsTitlepl, label: AboutUsTitle-pl, widget: string }
+      - { name: aboutUsDescriptionpl, label: AboutUsDescription-pl, widget: markdown }
       - label: 'Carousel'
         name: "carousel"
         widget: list
