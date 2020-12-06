@@ -1,7 +1,11 @@
 ---
 path: /repair/phone/
 title: Ремонт телефонов
-subtitle: We can repair EVERYTHING
+titleen: Repair phones
+titlepl: Naprawa telefonu
+subtitle: Мы оказываем многочисленные услуги по ремонту телефонов
+subtitleen: We provide numerous phone repair services
+subtitlepl: Świadczymy liczne usługi naprawy telefonów
 repair: /repair
 backgroundImage: img/backgroundphones.svg
 brands:
