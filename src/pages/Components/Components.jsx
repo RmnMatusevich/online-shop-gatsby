@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useState } from "react"
 import classNames from "classnames"
 import withStyles from "@material-ui/core/styles/withStyles"
 import Header from "components/Header/Header.jsx"
@@ -15,11 +15,13 @@ import { StaticQuery, graphql } from "gatsby"
 import SectionRepair from "../../components/SectionRepair"
 import SectionText from "../../components/SectionText"
 import SectionContacts from "../../components/SectionContacts"
-import Context from "../../context/Context"
 
 const Components = props => {
-  const { lang, setLang } = useContext(Context)
-
+  let pageLang
+  if (typeof window !== "undefined") {
+    pageLang = window.localStorage.getItem("lang")
+  }
+  const [lang, setLang] = useState(pageLang)
   const { classes, ...rest } = props
 
   return (
@@ -39,7 +41,7 @@ const Components = props => {
         }
       />
       <Header
-        rightLinks={<HeaderLinks />}
+        rightLinks={<HeaderLinks setLang={setLang} lang={lang} />}
         fixed
         color="white"
         changeColorOnScroll={{

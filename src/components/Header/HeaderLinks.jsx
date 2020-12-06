@@ -31,8 +31,8 @@ import { Typography } from "@material-ui/core"
 import Context from "../../context/Context"
 
 function HeaderLinks({ ...props }) {
-  const { classes } = props
-  const { lang, setLang } = useContext(Context)
+  const { classes, lang, setLang } = props
+  // const { lang, setLang } = useContext(Context)
 
   const onLanguageChange = lang => {
     let langWithoutRu
@@ -40,6 +40,7 @@ function HeaderLinks({ ...props }) {
       langWithoutRu = lang === "ru" ? "" : lang
       window.localStorage.setItem("lang", langWithoutRu ? langWithoutRu : "")
     }
+    // setLang(langWithoutRu ? langWithoutRu : "")
     setLang(langWithoutRu ? langWithoutRu : "")
   }
 

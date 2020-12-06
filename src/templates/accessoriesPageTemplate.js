@@ -1,6 +1,6 @@
 import classNames from "classnames"
 import withStyles from "@material-ui/core/styles/withStyles"
-import React from "react"
+import React, { useState } from "react"
 import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
 import GridContainer from "../components/Grid/GridContainer"
@@ -27,6 +27,11 @@ const StyledCard = withStyles({
 
 const BuyPageTemplate = props => {
   const { classes, data, ...rest } = props
+  let pageLang
+  if (typeof window !== "undefined") {
+    pageLang = window.localStorage.getItem("lang")
+  }
+  const [lang, setLang] = useState(pageLang)
   const repairData = data.allMarkdownRemark.edges
   console.log(repairData)
   return (
@@ -44,7 +49,7 @@ const BuyPageTemplate = props => {
         }
       />
       <Header
-        rightLinks={<HeaderLinks />}
+        rightLinks={<HeaderLinks lang={lang} setLang={setLang} />}
         fixed
         color="white"
         changeColorOnScroll={{

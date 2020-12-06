@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import { Link } from "gatsby"
 import withStyles from "@material-ui/core/styles/withStyles"
-import React from "react"
+import React, { useState } from "react"
 import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
 import GridContainer from "../components/Grid/GridContainer"
@@ -11,7 +11,11 @@ import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
-
+// import Context from "../context/Context"
+// let lang
+// if (typeof window !== "undefined") {
+//   lang = window.localStorage.getItem("lang")
+// }
 const StyledCard = withStyles(theme => ({
   root: {
     display: "flex",
@@ -32,8 +36,14 @@ const StyledCard = withStyles(theme => ({
 
 const RepairPageTemplate = props => {
   const { classes, data, ...rest } = props
+  let pageLang
+  if (typeof window !== "undefined") {
+    pageLang = window.localStorage.getItem("lang")
+  }
+  const [lang, setLang] = useState(pageLang)
+  console.log("PROPS: ", props)
   const repairData = data.allMarkdownRemark.edges
-
+  console.log("repairData ", repairData)
   return (
     <div
       style={{
@@ -50,7 +60,7 @@ const RepairPageTemplate = props => {
         }
       />
       <Header
-        rightLinks={<HeaderLinks />}
+        rightLinks={<HeaderLinks setLang={setLang} lang={lang} />}
         fixed
         color="white"
         changeColorOnScroll={{
@@ -67,10 +77,18 @@ const RepairPageTemplate = props => {
             <GridItem>
               <div className={classes.brand}>
                 <h1 className={classes.title}>
-                  {repairData[0].node.frontmatter.title}
+                  {
+                    repairData[0].node.frontmatter[
+                      `title${lang ? `${lang}` : ""}`
+                    ]
+                  }
                 </h1>
                 <h3 className={classes.subtitle}>
-                  {repairData[0].node.frontmatter.subtitle}
+                  {
+                    repairData[0].node.frontmatter[
+                      `subtitle${lang ? `${lang}` : ""}`
+                    ]
+                  }
                 </h3>
               </div>
             </GridItem>
@@ -151,7 +169,11 @@ export const pageQuery = graphql`
           frontmatter {
             path
             title
+            titleen
+            titlepl
             subtitle
+            subtitleen
+            subtitlepl
             backgroundImage
             brands {
               brand

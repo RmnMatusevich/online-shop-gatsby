@@ -55,6 +55,8 @@ collections:
       - { label: "productName", name: "productName", widget: "string", required: true }
       - { label: "productBrand", name: "productBrand", widget: "string", required: true }
       - { label: "productDescription", name: "productDescription", widget: "markdown", required: true }
+      - { label: "productDescription-en", name: "productDescriptionen", widget: "markdown", required: true }
+      - { label: "productDescription-pl", name: "productDescriptionpl", widget: "markdown", required: true }
       - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int", required: true }
       - label: 'Services'
         name: "services"
@@ -62,6 +64,8 @@ collections:
         fields:
         - { label: "ServiceIcon", name: "serviceIcon", widget: "image", required: true }
         - { label: "ServiceTitle", name: "serviceTitle", widget: "markdown", required: true }
+        - { label: "ServiceTitle-en", name: "serviceTitleen", widget: "markdown", required: true }
+        - { label: "ServiceTitle-pl", name: "serviceTitlepl", widget: "markdown", required: true }
         - { label: "ServiceCost", name: "serviceCost", widget: "string", required: true }
   - name: repairPage
     label: RepairPage
@@ -70,7 +74,11 @@ collections:
     fields:
       - { name: path, label: Path, required: true  }
       - { name: title, label: Title, required: true  }
+      - { name: titleen, label: Title-en, required: true  }
+      - { name: titlepl, label: Title-pl, required: true  }
       - { name: subtitle, label: Subtitle, required: true }
+      - { name: subtitleen, label: Subtitle-en, required: true }
+      - { name: subtitlepl, label: Subtitle-pl, required: true }
       - { name: repair, label: Repair, default: "/repair", widget: "string", required: true }
       - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
       - label: 'Brands'
@@ -86,19 +94,31 @@ collections:
     create: true
     fields:
       - { name: path, label: Path, required: true }
-      - { name: title, label: Title, required: true }
+      - { name: title, label: Title, required: true  }
+      - { name: titleen, label: Title-en, required: true  }
+      - { name: titlepl, label: Title-pl, required: true  }
       - { name: subtitle, label: Subtitle, required: true }
+      - { name: subtitleen, label: Subtitle-en, required: true }
+      - { name: subtitlepl, label: Subtitle-pl, required: true }
       - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
       - { name: sellTitle, label: SellTitle, widget: "string", required: true }
+      - { name: sellTitleen, label: SellTitle-en, widget: "string", required: true }
+      - { name: sellTitlepl, label: SellTitle-pl, widget: "string", required: true }
       - { name: sellText, label: SellText, widget: "markdown", required: true }
+      - { name: sellTexten, label: SellText-en, widget: "markdown", required: true }
+      - { name: sellTextpl, label: SellText-pl, widget: "markdown", required: true }
   - name: buyPage
     label: BuyPage
     folder: buy-page
     create: true
     fields:
       - { name: path, label: Path }
-      - { name: title, label: Title }
-      - { name: subtitle, label: Subtitle}
+      - { name: title, label: Title, required: true  }
+      - { name: titleen, label: Title-en, required: true  }
+      - { name: titlepl, label: Title-pl, required: true  }
+      - { name: subtitle, label: Subtitle, required: true }
+      - { name: subtitleen, label: Subtitle-en, required: true }
+      - { name: subtitlepl, label: Subtitle-pl, required: true }
       - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
       - label: 'Products'
         name: "products"
@@ -108,6 +128,8 @@ collections:
           - { label: "productName", name: "productName", widget: "string", required: true }
           - { label: "productBrand", name: "productBrand", widget: "string", required: true }
           - { label: "productDescription", name: "productDescription", widget: "markdown", required: true }
+          - { label: "productDescription-en", name: "productDescriptionen", widget: "markdown", required: true }
+          - { label: "productDescription-pl", name: "productDescriptionpl", widget: "markdown", required: true }
           - { label: "productYear", name: "productYear", widget: "number", default: 2020, value_type: "int", required: true }
           - { label: "productCost", name: "productCost", widget: "string", required: true }
   - name: accessoriesPage
@@ -116,8 +138,12 @@ collections:
     create: true
     fields:
       - { name: path, label: Path }
-      - { name: title, label: Title }
-      - { name: subtitle, label: Subtitle}
+      - { name: title, label: Title, required: true  }
+      - { name: titleen, label: Title-en, required: true  }
+      - { name: titlepl, label: Title-pl, required: true  }
+      - { name: subtitle, label: Subtitle, required: true }
+      - { name: subtitleen, label: Subtitle-en, required: true }
+      - { name: subtitlepl, label: Subtitle-pl, required: true }
       - { label: "BackgroundImage", name: "backgroundImage", widget: "image", required: true }
       - label: 'Products'
         name: "products"

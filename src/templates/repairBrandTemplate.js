@@ -43,6 +43,11 @@ const SearchTextField = withStyles(theme => ({
 const RepairBrandTemplate = props => {
   const { classes, data, ...rest } = props
   const repairBrandData = data.allMarkdownRemark.edges
+  let pageLang
+  if (typeof window !== "undefined") {
+    pageLang = window.localStorage.getItem("lang")
+  }
+  const [lang, setLang] = useState(pageLang)
   const [searchValue, setSearchValue] = useState("")
   const [products, setProducts] = useState(repairBrandData)
 
@@ -75,7 +80,7 @@ const RepairBrandTemplate = props => {
         }
       />
       <Header
-        rightLinks={<HeaderLinks />}
+        rightLinks={<HeaderLinks lang={lang} setLang={setLang} />}
         fixed
         color="white"
         changeColorOnScroll={{
