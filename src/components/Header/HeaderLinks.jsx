@@ -17,12 +17,6 @@ import MemoryIcon from "@material-ui/icons/Memory"
 import LanguageIcon from "@material-ui/icons/Language"
 import classNames from "classnames"
 
-// @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons"
-
-// React icons
-import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"
-
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx"
 import Button from "components/CustomButtons/Button.jsx"
@@ -243,7 +237,7 @@ function HeaderLinks({ ...props }) {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"
-          title="Follow us on instagram"
+          title={data.instagramTooltip}
           placement={"top"}
           classes={{ tooltip: classes.tooltip }}
         >
@@ -253,7 +247,11 @@ function HeaderLinks({ ...props }) {
             target="_blank"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-instagram"} />
+            {/*<i className={classes.socialIcons + " fab fa-instagram"} />*/}
+            <img
+              src={require("../../assets/img/instagram.svg")}
+              alt="instagram"
+            />
           </Button>
         </Tooltip>
       </ListItem>

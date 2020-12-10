@@ -50,7 +50,8 @@
     "contacts": {
       "title": "Contacts",
       "place": "ul. Warszawska, No. 6, office 32, place Białystok, 15-063"
-    }
+    },
+    "instagramTooltip": "Follow us on instagram"
   },
   "pl": {
     "main": {
@@ -103,7 +104,8 @@
     "contacts": {
       "title": "Kontakty",
       "place": "ul. Warszawska, nr 6, lok. 32, miejsc. Białystok, 15-063"
-    }
+    },
+    "instagramTooltip": "Obserwuj nas na Instagramie"
   },
   "ru": {
     "main": {
@@ -156,6 +158,7 @@
     "contacts": {
       "title": "Контакты",
       "place": "ул. Варшавская, д.6, оф. 32, Белосток, 15-063"
-    }
+    },
+    "instagramTooltip": "Следите за нами в instagram"
   }
 }
