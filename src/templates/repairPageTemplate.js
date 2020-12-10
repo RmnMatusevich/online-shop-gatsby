@@ -19,7 +19,7 @@ import SEO from "../components/seo"
 const StyledCard = withStyles(theme => ({
   root: {
     display: "flex",
-    gap: 12,
+    margin: 6,
     width: 260,
     height: 260,
     justifyContent: "center",
@@ -108,7 +108,6 @@ const RepairPageTemplate = props => {
                   display: "flex",
                   flexDirection: "row",
                   flexWrap: "wrap",
-                  gap: 10,
                   margin: "0 auto",
                   width: "fit-content",
                   justifyContent: "center",

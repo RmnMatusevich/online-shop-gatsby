@@ -15,6 +15,8 @@ import { StaticQuery, graphql } from "gatsby"
 import SectionRepair from "../../components/SectionRepair"
 import SectionText from "../../components/SectionText"
 import SectionContacts from "../../components/SectionContacts"
+import { navigation } from "../../locales/navigation"
+navigation()
 
 const Components = props => {
   let pageLang
@@ -23,6 +25,7 @@ const Components = props => {
   }
   const [lang, setLang] = useState(pageLang)
   const { classes, ...rest } = props
+  const data = navigation(lang ? lang : "ru")
 
   return (
     <div
@@ -56,7 +59,7 @@ const Components = props => {
             <GridItem>
               <div className={classes.brand}>
                 <h1 className={classes.title}>Tech Tag</h1>
-                <h3 className={classes.subtitle}>Look into the future</h3>
+                <h3 className={classes.subtitle}>{data.main.subtitle}</h3>
               </div>
             </GridItem>
           </GridContainer>
@@ -64,7 +67,7 @@ const Components = props => {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <SectionRepair />
+        <SectionRepair lang={lang} />
         <SectionCarousel />
         <StaticQuery
           query={graphql`
@@ -127,7 +130,7 @@ const Components = props => {
         className={classNames(classes.main, classes.mainRaised)}
         style={{ marginTop: 10 }}
       >
-        <SectionContacts />
+        <SectionContacts lang={lang} />
       </div>
       <Footer />
     </div>

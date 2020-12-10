@@ -8,7 +8,6 @@ import HeaderLinks from "../components/Header/HeaderLinks"
 import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography, TextField } from "@material-ui/core"
-import { makeStyles } from "@material-ui/core/styles"
 import SEO from "../components/seo"
 import Parallax from "../components/Parallax/Parallax"
 import GridContainer from "components/Grid/GridContainer.jsx"
@@ -16,9 +15,10 @@ import GridItem from "components/Grid/GridItem.jsx"
 const StyledCard = withStyles({
   root: {
     display: "flex",
-    width: 335,
+    width: 300,
     height: 145,
     padding: 20,
+    margin: 6,
     justifyContent: "flex-start",
     alignItems: "flex-start",
     flexDirection: "column",
@@ -139,7 +139,6 @@ const RepairBrandTemplate = props => {
             display: "flex",
             flexDirection: "row",
             flexWrap: "wrap",
-            gap: 10,
             margin: "0 auto",
             width: "fit-content",
             justifyContent: "center",
