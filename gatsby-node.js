@@ -87,7 +87,11 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
         frontmatter {
           path
           title
+          titleen
+          titlepl
           subtitle
+          subtitleen
+          subtitlepl
           backgroundImage
           brands {
             brand

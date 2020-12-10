@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import classNames from "classnames"
 import withStyles from "@material-ui/core/styles/withStyles"
 import Header from "components/Header/Header.jsx"
@@ -15,12 +15,25 @@ import { StaticQuery, graphql } from "gatsby"
 import SectionRepair from "../../components/SectionRepair"
 import SectionText from "../../components/SectionText"
 import SectionContacts from "../../components/SectionContacts"
+import { navigation } from "../../locales/navigation"
+navigation()
 
 const Components = props => {
+  let pageLang
+  if (typeof window !== "undefined") {
+    pageLang = window.localStorage.getItem("lang")
+  }
+  const [lang, setLang] = useState(pageLang)
   const { classes, ...rest } = props
+  const data = navigation(lang ? lang : "ru")
 
   return (
-    <div>
+    <div
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(13,104,224,1) 0%, rgba(13,104,224,1) 45%, rgba(13,104,224,1) 54%, rgba(13,104,224,0.9374124649859944) 65%, rgba(13,104,224,0.7161239495798319) 78%, rgba(13,104,224,0.3799894957983193) 90%, rgba(13,104,224,0) 97%)",
+      }}
+    >
       <Helmet>
         <meta name="yandex-verification" content="0d1b788a734b13b9" />
       </Helmet>
@@ -31,7 +44,7 @@ const Components = props => {
         }
       />
       <Header
-        rightLinks={<HeaderLinks />}
+        rightLinks={<HeaderLinks setLang={setLang} lang={lang} />}
         fixed
         color="white"
         changeColorOnScroll={{
@@ -46,7 +59,7 @@ const Components = props => {
             <GridItem>
               <div className={classes.brand}>
                 <h1 className={classes.title}>Tech Tag</h1>
-                <h3 className={classes.subtitle}>Look into the future</h3>
+                <h3 className={classes.subtitle}>{data.main.subtitle}</h3>
               </div>
             </GridItem>
           </GridContainer>
@@ -54,7 +67,7 @@ const Components = props => {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <SectionRepair />
+        <SectionRepair lang={lang} />
         <SectionCarousel />
         <StaticQuery
           query={graphql`
@@ -69,6 +82,14 @@ const Components = props => {
                       aboutUsDescription
                       openingTitle
                       openingDescription
+                      aboutUsTitle_en
+                      aboutUsTitle_pl
+                      aboutUsDescription_pl
+                      aboutUsDescription_en
+                      openingDescription_en
+                      openingDescription_pl
+                      openingTitle_en
+                      openingTitle_pl
                     }
                   }
                 }
@@ -79,20 +100,26 @@ const Components = props => {
             <>
               <SectionText
                 title={
-                  data.allMarkdownRemark.edges[0].node.frontmatter.aboutUsTitle
+                  data.allMarkdownRemark.edges[0].node.frontmatter[
+                    `aboutUsTitle${lang ? `_${lang}` : ""}`
+                  ]
                 }
                 text={
-                  data.allMarkdownRemark.edges[0].node.frontmatter
-                    .aboutUsDescription
+                  data.allMarkdownRemark.edges[0].node.frontmatter[
+                    `aboutUsDescription${lang ? `_${lang}` : ""}`
+                  ]
                 }
               />
               <SectionText
                 title={
-                  data.allMarkdownRemark.edges[0].node.frontmatter.openingTitle
+                  data.allMarkdownRemark.edges[0].node.frontmatter[
+                    `openingTitle${lang ? `_${lang}` : ""}`
+                  ]
                 }
                 text={
-                  data.allMarkdownRemark.edges[0].node.frontmatter
-                    .openingDescription
+                  data.allMarkdownRemark.edges[0].node.frontmatter[
+                    `openingDescription${lang ? `_${lang}` : ""}`
+                  ]
                 }
               />
             </>
@@ -103,7 +130,7 @@ const Components = props => {
         className={classNames(classes.main, classes.mainRaised)}
         style={{ marginTop: 10 }}
       >
-        <SectionContacts />
+        <SectionContacts lang={lang} />
       </div>
       <Footer />
     </div>

@@ -1,0 +1,164 @@
+{
+  "en": {
+    "main": {
+      "subtitle": "Look into the future"
+    },
+    "repair": {
+      "title": "Repair",
+      "dropdown": {
+        "phoneRepair": "Phone repair",
+        "tabletRepair": "Tablet repair",
+        "laptopRepair": "Laptop repair",
+        "watchRepair": "Watch repair",
+        "iqosRepair": "Iqos repair"
+      }
+    },
+    "buy": {
+      "title": "Buy",
+      "dropdown": {
+        "phoneBuy": "Buy phone",
+        "tabletBuy": "Buy tablet",
+        "laptopBuy": "Buy laptop"
+      }
+    },
+    "sell": {
+      "title": "Sell",
+      "dropdown": {
+        "phoneSell": "Sell phone",
+        "tabletSell": "Sell tablet",
+        "laptopSell": "Sell laptop",
+        "watchSell": "Sell watch"
+      }
+    },
+    "accessories": {
+      "title": "Accessories",
+      "dropdown": {
+        "cableAndCharging": "Cable and charging",
+        "cases": "Cases",
+        "styluses": "Styluses"
+      }
+    },
+    "spares": {
+      "title": "Spares"
+    },
+    "information": {
+      "title": "Information"
+    },
+    "language": {
+      "title": "Language"
+    },
+    "contacts": {
+      "title": "Contacts",
+      "place": "ul. Warszawska, No. 6, office 32, place Białystok, 15-063"
+    },
+    "instagramTooltip": "Follow us on instagram"
+  },
+  "pl": {
+    "main": {
+      "subtitle": "Spójrz w przyszłość"
+    },
+    "repair": {
+      "title": "Naprawa",
+      "dropdown": {
+        "phoneRepair": "Naprawa telefonu",
+        "tabletRepair": "Naprawa tabletu",
+        "laptopRepair": "Naprawa laptopa",
+        "watchRepair": "Naprawa zegarka",
+        "iqosRepair": "Naprawa Iqos"
+      }
+    },
+    "buy": {
+      "title": "Kup",
+      "dropdown": {
+        "phoneBuy": "Kup telefon",
+        "tabletBuy": "Kup tablet",
+        "laptopBuy": "Kup laptopa"
+      }
+    },
+    "sell": {
+      "title": "Sprzedaj",
+      "dropdown": {
+        "phoneSell": "Sprzedaj telefon",
+        "tabletSell": "Sprzedaj tablet",
+        "laptopSell": "Sprzedaj laptopa",
+        "watchSell": "Sprzedaj zegarek"
+      }
+    },
+    "accessories": {
+      "title": "Akcesoria",
+      "dropdown": {
+        "cableAndCharging": "Kabel i ładowanie",
+        "cases": "Sprawy",
+        "styluses": "Rysik"
+      }
+    },
+    "spares": {
+      "title": "Części zamienne"
+    },
+    "information": {
+      "title": "Informacje"
+    },
+    "language": {
+      "title": "Język"
+    },
+    "contacts": {
+      "title": "Kontakty",
+      "place": "ul. Warszawska, nr 6, lok. 32, miejsc. Białystok, 15-063"
+    },
+    "instagramTooltip": "Obserwuj nas na Instagramie"
+  },
+  "ru": {
+    "main": {
+      "subtitle": "Загляни в будущее"
+    },
+    "repair": {
+      "title": "Ремонт",
+      "dropdown": {
+        "phoneRepair": "Ремонт телефонов",
+        "tabletRepair": "Ремонт планшетов",
+        "laptopRepair": "Ремонт ноутбуков",
+        "watchRepair": "Ремонт часов",
+        "iqosRepair": "Ремонт iqos"
+      }
+    },
+    "buy": {
+      "title": "Купить",
+      "dropdown": {
+        "phoneBuy": "Купить телефон",
+        "tabletBuy": "Купить планшет",
+        "laptopBuy": "Купить ноутбук"
+      }
+    },
+    "sell": {
+      "title": "Продать",
+      "dropdown": {
+        "phoneSell": "Продать телефон",
+        "tabletSell": "Продать планшет",
+        "laptopSell": "Продать ноутбук",
+        "watchSell": "Продать часы"
+      }
+    },
+    "accessories": {
+      "title": "Аксессуары",
+      "dropdown": {
+        "cableAndCharging": "Кабеля и зарядка",
+        "cases": "Чехлы",
+        "styluses": "Cтилусы"
+      }
+    },
+    "spares": {
+      "title": "Запчасти"
+    },
+    "information": {
+      "title": "Информация"
+    },
+    "language": {
+      "title": "Язык"
+    },
+    "contacts": {
+      "title": "Контакты",
+      "place": "ул. Варшавская, д.6, оф. 32, Белосток, 15-063"
+    },
+    "instagramTooltip": "Следите за нами в instagram"
+  }
+}

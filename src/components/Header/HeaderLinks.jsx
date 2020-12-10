@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React from "react"
+import React, { useContext } from "react"
 // react components for routing our app without refresh
 import { Link } from "gatsby"
 
@@ -14,28 +14,35 @@ import MonetizationOnOutlinedIcon from "@material-ui/icons/MonetizationOnOutline
 import DevicesOtherIcon from "@material-ui/icons/DevicesOther"
 import SettingsInputHdmiOutlinedIcon from "@material-ui/icons/SettingsInputHdmiOutlined"
 import MemoryIcon from "@material-ui/icons/Memory"
-// @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons"
-
-// React icons
-import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"
+import LanguageIcon from "@material-ui/icons/Language"
+import classNames from "classnames"
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx"
 import Button from "components/CustomButtons/Button.jsx"
-
 import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx"
 import { Typography } from "@material-ui/core"
+import { navigation } from "../../locales/navigation"
 
 function HeaderLinks({ ...props }) {
-  const { classes } = props
+  const { classes, lang, setLang } = props
+
+  const onLanguageChange = lang => {
+    let langWithoutRu
+    if (typeof window !== "undefined") {
+      langWithoutRu = lang === "ru" ? "" : lang
+      window.localStorage.setItem("lang", langWithoutRu ? langWithoutRu : "")
+    }
+    setLang(langWithoutRu ? langWithoutRu : "")
+  }
+  const data = navigation(lang ? lang : "ru")
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           navDropdown
-          buttonText="Ремонт устройств"
+          buttonText={data.repair.title}
           buttonProps={{
             className: classes.navLink,
             color: "transparent",
@@ -43,19 +50,19 @@ function HeaderLinks({ ...props }) {
           buttonIcon={BuildOutlinedIcon}
           dropdownList={[
             <Link to="/repair/phone" className={classes.dropdownLink}>
-              Ремонт телефонов
+              {data.repair.dropdown.phoneRepair}
             </Link>,
             <Link to="/repair/tablets" className={classes.dropdownLink}>
-              Ремонт планшетов
+              {data.repair.dropdown.tabletRepair}
             </Link>,
             <Link to="/repair/laptops" className={classes.dropdownLink}>
-              Ремонт ноутбуков
+              {data.repair.dropdown.laptopRepair}
             </Link>,
             <Link to="/repair/watches" className={classes.dropdownLink}>
-              Ремонт часов
+              {data.repair.dropdown.watchRepair}
             </Link>,
             <Link to="/repair/iqos" className={classes.dropdownLink}>
-              Ремонт iqos
+              {data.repair.dropdown.iqosRepair}
             </Link>,
             // <a
             //   href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"
@@ -71,7 +78,7 @@ function HeaderLinks({ ...props }) {
         <CustomDropdown
           noLiPadding
           navDropdown
-          buttonText="Скупка устройств"
+          buttonText={data.sell.title}
           buttonProps={{
             className: classes.navLink,
             color: "transparent",
@@ -79,16 +86,16 @@ function HeaderLinks({ ...props }) {
           buttonIcon={MonetizationOnOutlinedIcon}
           dropdownList={[
             <Link to="/sell/phone" className={classes.dropdownLink}>
-              Продать телефон
+              {data.sell.dropdown.phoneSell}
             </Link>,
             <Link to="/sell/tablets" className={classes.dropdownLink}>
-              Продать планшет
+              {data.sell.dropdown.tabletSell}
             </Link>,
             <Link to="/sell/laptops" className={classes.dropdownLink}>
-              Продать ноутбук
+              {data.sell.dropdown.laptopSell}
             </Link>,
             <Link to="/sell/watches" className={classes.dropdownLink}>
-              Продать часы
+              {data.sell.dropdown.watchSell}
             </Link>,
           ]}
         />
@@ -97,7 +104,7 @@ function HeaderLinks({ ...props }) {
         <CustomDropdown
           noLiPadding
           navDropdown
-          buttonText="Продажа устройств"
+          buttonText={data.buy.title}
           buttonProps={{
             className: classes.navLink,
             color: "transparent",
@@ -105,13 +112,13 @@ function HeaderLinks({ ...props }) {
           buttonIcon={DevicesOtherIcon}
           dropdownList={[
             <Link to="/buy/phone" className={classes.dropdownLink}>
-              Купить телефон
+              {data.buy.dropdown.phoneBuy}
             </Link>,
             <Link to="/buy/tablets" className={classes.dropdownLink}>
-              Купить планшет
+              {data.buy.dropdown.tabletBuy}
             </Link>,
             <Link to="/buy/laptops" className={classes.dropdownLink}>
-              Купить ноутбук
+              {data.buy.dropdown.laptopBuy}
             </Link>,
           ]}
         />
@@ -120,7 +127,7 @@ function HeaderLinks({ ...props }) {
         <CustomDropdown
           noLiPadding
           navDropdown
-          buttonText="Аксессуары"
+          buttonText={data.accessories.title}
           buttonProps={{
             className: classes.navLink,
             color: "transparent",
@@ -131,13 +138,13 @@ function HeaderLinks({ ...props }) {
               to="/accessories/cable-charges"
               className={classes.dropdownLink}
             >
-              Кабеля и зарядки
+              {data.accessories.dropdown.cableAndCharging}
             </Link>,
             <Link to="/accessories/cases" className={classes.dropdownLink}>
-              Чехлы
+              {data.accessories.dropdown.cases}
             </Link>,
             <Link to="/accessories/stylus" className={classes.dropdownLink}>
-              Стилусы
+              {data.accessories.dropdown.styluses}
             </Link>,
           ]}
         />
@@ -151,7 +158,7 @@ function HeaderLinks({ ...props }) {
         >
           <MemoryIcon className={classes.icons} />
           <Typography variant="body2" style={{ fontSize: 14 }}>
-            Запчасти
+            {data.spares.title}
           </Typography>
         </Button>
       </ListItem>
@@ -164,14 +171,73 @@ function HeaderLinks({ ...props }) {
         >
           <InfoOutlinedIcon className={classes.icons} />
           <Typography variant="body2" style={{ fontSize: 14 }}>
-            Информация
+            {data.information.title}
           </Typography>
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          buttonText={data.language.title}
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent",
+          }}
+          buttonIcon={LanguageIcon}
+          dropdownList={[
+            // <Link to="/sell/phone" className={classes.dropdownLink}>
+            //   Продать телефон
+            // </Link>,
+            // <Link to="/sell/tablets" className={classes.dropdownLink}>
+            //   Продать планшет
+            // </Link>,
+            // <Link to="/sell/laptops" className={classes.dropdownLink}>
+            //   Продать ноутбук
+            // </Link>,
+            // <Link to="/sell/watches" className={classes.dropdownLink}>
+            //   Продать часы
+            // </Link>,
+            <div
+              onClick={() => {
+                onLanguageChange("en")
+              }}
+              className={classNames(
+                classes.dropdownLink,
+                lang === "en" ? classes.dropdownLinkActive : null
+              )}
+            >
+              En
+            </div>,
+            <div
+              onClick={() => {
+                onLanguageChange("pl")
+              }}
+              className={classNames(
+                classes.dropdownLink,
+                lang === "pl" ? classes.dropdownLinkActive : null
+              )}
+            >
+              Pl
+            </div>,
+            <div
+              onClick={() => {
+                onLanguageChange("ru")
+              }}
+              className={classNames(
+                classes.dropdownLink,
+                lang === "" ? classes.dropdownLinkActive : null
+              )}
+            >
+              Ru
+            </div>,
+          ]}
+        />
+      </ListItem>
+      <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"
-          title="Follow us on instagram"
+          title={data.instagramTooltip}
           placement={"top"}
           classes={{ tooltip: classes.tooltip }}
         >
@@ -181,7 +247,11 @@ function HeaderLinks({ ...props }) {
             target="_blank"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-instagram"} />
+            {/*<i className={classes.socialIcons + " fab fa-instagram"} />*/}
+            <img
+              src={require("../../assets/img/instagram.svg")}
+              alt="instagram"
+            />
           </Button>
         </Tooltip>
       </ListItem>

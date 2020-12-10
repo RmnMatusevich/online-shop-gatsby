@@ -6,14 +6,19 @@ import AlternateEmailIcon from "@material-ui/icons/AlternateEmail"
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
 
 import "leaflet/dist/leaflet.css"
+import { navigation } from "../locales/navigation"
 
 const position = [52.2533308, 20.9910625]
 // import { Map } from 'react-leaflet'
-const SectionContacts = () => {
+const SectionContacts = ({ lang }) => {
+  const data = navigation(lang ? lang : "ru")
   return (
     <div style={{ padding: 30 }}>
-      <Typography variant="h3" style={{ textAlign: "center" }}>
-        Контакты
+      <Typography
+        variant="h3"
+        style={{ textAlign: "center", marginBottom: 20 }}
+      >
+        {data.contacts.title}
       </Typography>
       <ContactItem
         leftIcon={
@@ -23,7 +28,11 @@ const SectionContacts = () => {
           />
         }
         leftText={"Номер телефона: "}
-        rightText={"+48 889 559 888"}
+        rightText={
+          <a href="tel:+48889559888" style={{ color: "rgba(0, 0, 0, 0.87)" }}>
+            +48 889 559 888
+          </a>
+        }
       />
       <ContactItem
         leftIcon={
@@ -33,7 +42,7 @@ const SectionContacts = () => {
           />
         }
         leftText={"Адрес: "}
-        rightText={"ul. Warszawska, nr 6, lok. 32, miejsc. Białystok, 15-063"}
+        rightText={data.contacts.place}
       />
       <ContactItem
         leftIcon={
@@ -43,7 +52,14 @@ const SectionContacts = () => {
           />
         }
         leftText={"Почта: "}
-        rightText={"info@techtag.pl"}
+        rightText={
+          <a
+            style={{ color: "rgba(0, 0, 0, 0.87)" }}
+            href="mailto:info@techtag.pl"
+          >
+            info@techtag.pl
+          </a>
+        }
       />
       <MapContainer
         center={position}

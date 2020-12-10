@@ -2,11 +2,12 @@ import React from "react"
 import withStyles from "@material-ui/core/styles/withStyles"
 import { Card, Typography } from "@material-ui/core"
 import { Link } from "gatsby"
+import { navigation } from "../locales/navigation"
 
 const StyledCard = withStyles({
   root: {
     display: "flex",
-    gap: 12,
+    margin: 6,
     width: 240,
     height: 240,
     justifyContent: "center",
@@ -21,45 +22,46 @@ const StyledCard = withStyles({
   },
 })(Card)
 
-const repairObj = [
-  {
-    img: "repair-screen.svg",
-    text: "Ремонт телефонов",
-    linkTo: "/repair/phone",
-  },
-  {
-    img: "laptop-screen.svg",
-    text: "Ремонт планшетов",
-    linkTo: "/repair/tablets",
-  },
-  {
-    img: "tablet-screen.svg",
-    text: "Ремонт ноутбуков",
-    linkTo: "/repair/laptops",
-  },
-]
-
-const SectionRepair = () => {
+const repairObj = data => {
+  return [
+    {
+      img: "repair-screen.svg",
+      text: data.repair.dropdown.phoneRepair,
+      linkTo: "/repair/phone",
+    },
+    {
+      img: "tablet-screen.svg",
+      text: data.repair.dropdown.tabletRepair,
+      linkTo: "/repair/tablets",
+    },
+    {
+      img: "laptop-screen.svg",
+      text: data.repair.dropdown.laptopRepair,
+      linkTo: "/repair/laptops",
+    },
+  ]
+}
+const SectionRepair = ({ lang }) => {
+  const data = navigation(lang ? lang : "ru")
   return (
     <div style={{ padding: 20 }}>
       <Typography
         variant="h3"
         style={{ marginBottom: 20, textAlign: "center" }}
       >
-        Ремонт
+        {data.repair.title}
       </Typography>
       <div
         style={{
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
-          gap: 10,
           margin: "0 auto",
           width: "fit-content",
           justifyContent: "center",
         }}
       >
-        {repairObj.map((i, index) => {
+        {repairObj(data).map((i, index) => {
           return (
             <Link to={i.linkTo} key={index}>
               <StyledCard>

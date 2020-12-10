@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import classNames from "classnames"
 import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
@@ -11,6 +11,12 @@ import ReactMarkdown from "react-markdown"
 
 const Template = ({ data, classes, ...rest }) => {
   const phonesData = data.allMarkdownRemark.edges
+  let pageLang
+  if (typeof window !== "undefined") {
+    pageLang = window.localStorage.getItem("lang")
+  }
+  const [lang, setLang] = useState(pageLang)
+  console.log(phonesData)
   return (
     <div>
       <SEO
@@ -26,7 +32,7 @@ const Template = ({ data, classes, ...rest }) => {
         }
       />
       <Header
-        rightLinks={<HeaderLinks />}
+        rightLinks={<HeaderLinks lang={lang} setLang={setLang} />}
         fixed
         color="white"
         changeColorOnScroll={{
@@ -77,7 +83,11 @@ const Template = ({ data, classes, ...rest }) => {
                 </div>
               </div>
               <ReactMarkdown>
-                {i.node.frontmatter.productDescription}
+                {
+                  i.node.frontmatter[
+                    `productDescription${lang ? `${lang}` : ""}`
+                  ]
+                }
               </ReactMarkdown>
               <div
                 style={{
@@ -113,7 +123,7 @@ const Template = ({ data, classes, ...rest }) => {
                         />
                         <div style={{ marginRight: 10, width: 177 }}>
                           <Typography variant="body2">
-                            {service.serviceTitle}
+                            {service[`serviceTitle${lang ? `${lang}` : ""}`]}
                           </Typography>
                         </div>
                         <Typography variant="body2">
@@ -156,10 +166,14 @@ export const pageQuery = graphql`
             productImage
             productYear
             productDescription
+            productDescriptionen
+            productDescriptionpl
             productName
             services {
               serviceIcon
               serviceTitle
+              serviceTitleen
+              serviceTitlepl
               serviceCost
             }
             productBrand

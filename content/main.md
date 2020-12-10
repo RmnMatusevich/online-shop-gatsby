@@ -1,70 +1,106 @@
 ---
 path: /
-title: "TechTag "
-subtitle: Ремонт телефонов и продажа
-backgroundImage: /img/header_photo.jpg
-openingTitle: О нас
-openingDescription: >-
-  > **Ремонт цифровой техники в сервисном центре TechTag**
+title: TechTag
+subtitle: Мы специализируемся на ремонте, продаже, скупке, аксессуарах, поставки
+  запчастей
+titleen: TechTag
+subtitleen: We specialize in repair, sale, purchase, accessories, supply of spare parts
+titlepl: TechTag
+subtitlepl: Specjalizujemy się w naprawach, sprzedaży, skupie, akcesoriach,
+  dostawach części zamiennych
+backgroundImage: img/backgroundmain.svg
+openingTitle: RU RU RU
+openingDescription: |-
+  ## **RU RU RU RU RU RU RU RU RU RU RU RU RU RU RU RU RU RU** 
 
-  > Ремонт смартфонов: iPhone, Samsung, Xiaomi, Huawei, Sony, Lenovo, ZTE, Nokia, HTC, LG.
+  ## **RU RU RU** 
 
-  > Ремонт ноутбуков: MacBook, HP, ASUS, Acer, Lenovo, Toshiba, MSI, Dell.
+  ## **RU RU RU** 
 
-  > Ремонт планшетов: iPad, Samsung, ASUS, Lenovo, Xiaomi, TeXet, Huawei, Prestigio, Digma.
+  ## **RU RU RU RU RU RU**
+aboutUsTitle: RU RU RU
+aboutUsDescription: |-
+  ## **RU RU RU  RU RU RU  RU RU RU  RU RU RU** 
 
-  > Ремонт часов: Apple, Samsung, LG.
+  ## **RU RU RU** 
 
-  > Ремонт навигаторов.
+  ## **RU RU RU** 
 
-  > Ремонт электронных книг.
+  ## **RU RU RU**
+openingTitleen: EN EN EN
+openingDescriptionen: |-
+  EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN
 
-  > Восстановление ПО.
+  EN EN EN EN EN EN EN EN EN
 
-  > Это только малая часть того, что способны отремонтировать наши мастера. Мы также берёмся за починку цифровой техники малоизвестных брендов. Большинство сервисных центров боятся таких сложностей, но только не TechTag.
+  EN EN EN EN EN EN
+aboutUsTitleen: EN EN EN EN EN EN EN EN EN
+openingTitlepl: PL PL PL PL
+openingDescriptionpl: |-
+  PL PL PL PL PL PL PL PL PL PL PL PL PL PL PL PL 
 
+  PL PL PL PL 
 
-  *Обращайтесь за консультацией к нашим операторам, мы наверняка сможем вам помочь!*
-
-
-  Помимо этого, наша компания поможет разобраться с программным обеспечением: перепрошить, разблокировать смартфон или планшет, русифицировать устройство. Мы можем восстановить утерянные данные. Также у нас можно приобрести аксессуары бренда Apple: наушники, зарядные устройства, чехлы и защитные плёнки.
-
-
-  Для офисов и юридических лиц оказываем индивидуальные услуги по подготовке и настройке рабочих мест. Проводим интернет-соединение, комплексное обслуживание офисной техники, ставим необходимый для сотрудников софт.
+  PL PL PL PL PL PL PL PL
 carousel:
   - image: /img/acer_brand.svg
   - image: /img/apple_brand.svg
   - image: /img/header_photo.jpg
-aboutUsTitle: О нас
-aboutUsDescription: >-
-  
+aboutUsDescription-en: |-
+  ## **EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN**
 
-  ## **Ремонт цифровой техники в сервисном центре TechTag**
+  ## **EN EN EN EN EN**
 
+  ## **EN EN EN EN EN**
 
+  ## **EN EN EN EN EN**
+openingDescription-pl: |-
+  ##  **PL PL PL PL PL  PL PL PL PL PL  PL PL PL PL PL  PL PL PL PL PL**
 
-  Ремонт смартфонов: iPhone, Samsung, Xiaomi, Huawei, Sony, Lenovo, ZTE, Nokia, HTC, LG.
+  ##  **PL PL PL PL PL**
 
-  Ремонт ноутбуков: MacBook, HP, ASUS, Acer, Lenovo, Toshiba, MSI, Dell.
+  ##  **PL PL PL PL PL**
 
-  Ремонт планшетов: iPad, Samsung, ASUS, Lenovo, Xiaomi, TeXet, Huawei, Prestigio, Digma.
+  ##  **PL PL PL PL PL**
 
-  Ремонт часов: Apple, Samsung, LG.
+  ##  **PL PL PL PL PL**
+aboutUsTitle-en: EN EN EN EN EN
+aboutUsTitlepl: "PL PL PL PL "
+openingTitle-pl: PL PL PL PL PL
+aboutUsDescriptionpl: |-
+  PL PL PL PL PL PL PL PL PL PL PL PL 
 
-  Ремонт навигаторов.
+  PL PL PL PL PL PL PL PL 
 
-  Ремонт электронных книг.
+  PL PL PL PL PL PL PL PL
+title-pl: TechTag
+subtitle-pl: " Naprawa i sprzedaż telefonów"
+openingDescription-en: |-
+  ## **EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN EN**
 
-  Восстановление ПО.
+  ## **EN EN EN EN EN**
 
-  Это только малая часть того, что способны отремонтировать наши мастера. Мы также берёмся за починку цифровой техники малоизвестных брендов. Большинство сервисных центров боятся таких сложностей, но только не TechTag.
+  ## **EN EN EN EN EN**
 
+  ## **EN EN EN EN EN**
+openingTitle-en: EN EN EN EN EN
+aboutUsDescription-pl: |-
+  ##  **PL PL PL PL PL  PL PL PL PL PL  PL PL PL PL PL  PL PL PL PL PL**
 
-  ### *Обращайтесь за консультацией к нашим операторам, мы наверняка сможем вам помочь!*
+  ##  **PL PL PL PL PL**
 
+  ##  **PL PL PL PL PL**
 
-  ***Помимо этого, наша компания поможет разобраться с программным обеспечением: перепрошить, разблокировать смартфон или планшет, русифицировать устройство. Мы можем восстановить утерянные данные. Также у нас можно приобрести аксессуары бренда Apple: наушники, зарядные устройства, чехлы и защитные плёнки.***
+  ##  **PL PL PL PL PL**
+aboutUsDescriptionen: |-
+  EN EN EN EN EN EN EN EN EN 
 
+  EN EN EN EN EN EN EN EN EN
 
-  Для офисов и юридических лиц оказываем индивидуальные услуги по подготовке и настройке рабочих мест. Проводим интернет-соединение, комплексное обслуживание офисной техники, ставим необходимый для сотрудников софт.
+  EN EN EN
+
+  EN EN EN
+aboutUsTitle-pl: PL PL PL PL PL
+title-en: TechTag
+subtitle-en: Phone repair and sale
 ---
