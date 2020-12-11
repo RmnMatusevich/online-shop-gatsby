@@ -33,9 +33,8 @@ const useStyles = makeStyles(() => ({
   },
   advantageImage: {
     width: "33%",
-    [theme.breakpoints.down("xs")]: {
-      width: "33%",
-    },
+    maxWidth: 350,
+    backgroundColor: 'white'
   },
 }))
 
@@ -52,12 +51,12 @@ const SectionAdvantages = ({ lang }) => {
           alt="advantage"
         />
         <img
-          src={require("../assets/img/mobileDevices.svg")}
+          src={require("../assets/img/deviceWatch.svg")}
           className={classes.advantageImage}
           alt="advantage"
         />
         <img
-          src={require("../assets/img/deviceWatch.svg")}
+          src={require("../assets/img/mobileDevices.svg")}
           className={classes.advantageImage}
           alt="advantage"
         />
@@ -104,6 +103,23 @@ const SectionAdvantages = ({ lang }) => {
           </>
         )}
       />
+      <div className={classes.imageContainer}>
+        <img
+          src={require("../assets/img/bugFixing.svg")}
+          className={classes.advantageImage}
+          alt="advantage"
+        />
+        <img
+          src={require("../assets/img/developApp.svg")}
+          className={classes.advantageImage}
+          alt="advantage"
+        />
+        <img
+          src={require("../assets/img/webDevices.svg")}
+          className={classes.advantageImage}
+          alt="advantage"
+        />
+      </div>
     </div>
   )
 }
