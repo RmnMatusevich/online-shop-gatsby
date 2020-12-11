@@ -13,7 +13,7 @@ const position = [52.2533308, 20.9910625]
 const SectionContacts = ({ lang }) => {
   const data = navigation(lang ? lang : "ru")
   return (
-    <div style={{ padding: 30 }}>
+    <div>
       <Typography
         variant="h3"
         style={{ textAlign: "center", marginBottom: 20 }}

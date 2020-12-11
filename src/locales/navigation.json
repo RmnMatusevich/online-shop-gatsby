@@ -51,7 +51,8 @@
       "title": "Contacts",
       "place": "ul. Warszawska, No. 6, office 32, place Białystok, 15-063"
     },
-    "instagramTooltip": "Follow us on instagram"
+    "instagramTooltip": "Follow us on instagram",
+    "imagesText": "TechTag is a certified service center in Poland.\nIn the event of a breakdown or failure of the device, fast, qualified assistance in repairing digital equipment is often needed. The technicians of TechTag service centers will quickly cope with a breakdown of almost any complexity. All recommendations for carrying out repair work are strictly followed. If you need a comprehensive replacement of parts, delivery is organized as soon as possible.\n\nThe work uses original spare parts. Your personal information will remain confidential. We try to do all the work within half an hour - this is our main advantage. If the repair of electronic equipment requires more time, details and terms are agreed individually.\n\nPlease contact our operators for advice, we can certainly help you!\n\nIn addition, our company will help you deal with the software: reflash, unlock your smartphone or tablet, and Russify your device. We can recover lost data. You can also buy Apple brand accessories from us: headphones, chargers, cases and protective films.\n\nFor offices and legal entities, we provide individual services for the preparation and setting up of workplaces. We provide an Internet connection, comprehensive maintenance of office equipment, install the software necessary for employees."
   },
   "pl": {
     "main": {
@@ -105,7 +106,8 @@
       "title": "Kontakty",
       "place": "ul. Warszawska, nr 6, lok. 32, miejsc. Białystok, 15-063"
     },
-    "instagramTooltip": "Obserwuj nas na Instagramie"
+    "instagramTooltip": "Obserwuj nas na Instagramie",
+    "imagesText": "TechTag to certyfikowane centrum serwisowe w Polsce.\nW przypadku awarii lub awarii urządzenia często potrzebna jest szybka, wykwalifikowana pomoc w naprawie sprzętu cyfrowego. Technicy centrów serwisowych TechTag szybko poradzą sobie z załamaniem prawie każdej złożoności. Ściśle przestrzegane są wszystkie zalecenia dotyczące wykonywania napraw. Jeśli potrzebujesz kompleksowej wymiany części, dostawa jest zorganizowana tak szybko, jak to możliwe.\n\nPraca wykorzystuje oryginalne części zamienne. Twoje dane osobowe pozostaną poufne. Całość prac staramy się wykonać w pół godziny - to nasza główna zaleta. Jeśli naprawa sprzętu elektronicznego wymaga więcej czasu, szczegóły i warunki ustalamy indywidualnie.\n\nSkontaktuj się z naszymi operatorami w celu uzyskania porady, z pewnością możemy Ci pomóc!\n\nPonadto nasza firma pomoże Ci uporać się z oprogramowaniem: przeładować, odblokować smartfon lub tablet i zrusyfikować urządzenie. Możemy odzyskać utracone dane. U nas kupisz też akcesoria marki Apple: słuchawki, ładowarki, etui i folie ochronne.\n\nDla biur i osób prawnych świadczymy indywidualne usługi w zakresie przygotowania i tworzenia miejsc pracy. Zapewniamy łącze internetowe, kompleksową obsługę sprzętu biurowego, instalujemy oprogramowanie niezbędne dla pracowników."
   },
   "ru": {
     "main": {
@@ -159,6 +161,7 @@
       "title": "Контакты",
       "place": "ул. Варшавская, д.6, оф. 32, Белосток, 15-063"
     },
-    "instagramTooltip": "Следите за нами в instagram"
+    "instagramTooltip": "Следите за нами в instagram",
+    "imagesText": "TechTag  — сертифицированный сервисный центр в Польше.\nПри поломке или сбое устройства, зачастую необходима быстрая, квалифицированная помощь по ремонту цифровой техники. Мастера сервисных центров TechTag быстро справятся с поломкой практически любой сложности. Чётко соблюдаются все рекомендации по проведению ремонтных работ. При необходимости комплексной замены деталей, доставка организуется в кратчайшие сроки.\nВ работе используются оригинальные запчасти. Ваша личная информация останется конфиденциальной. Мы стараемся выполнять все работы в течение получаса — это наше основное преимущество. Если ремонт электронной техники потребует большего количества времени, детали и сроки согласовываются индивидуально.\nОбращайтесь за консультацией к нашим операторам, мы наверняка сможем вам помочь!\nПомимо этого, наша компания поможет разобраться с программным обеспечением: перепрошить, разблокировать смартфон или планшет, русифицировать устройство. Мы можем восстановить утерянные данные. Также у нас можно приобрести аксессуары бренда Apple: наушники, зарядные устройства, чехлы и защитные плёнки.\nДля офисов и юридических лиц оказываем индивидуальные услуги по подготовке и настройке рабочих мест. Проводим интернет-соединение, комплексное обслуживание офисной техники, ставим необходимый для сотрудников софт."
   }
 }
