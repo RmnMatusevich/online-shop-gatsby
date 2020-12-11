@@ -85,14 +85,14 @@ const Components = props => {
                       aboutUsDescription
                       openingTitle
                       openingDescription
-                      aboutUsTitle_en
-                      aboutUsTitle_pl
-                      aboutUsDescription_pl
-                      aboutUsDescription_en
-                      openingDescription_en
-                      openingDescription_pl
-                      openingTitle_en
-                      openingTitle_pl
+                      aboutUsTitleen
+                      aboutUsTitlepl
+                      aboutUsDescriptionpl
+                      aboutUsDescriptionen
+                      openingDescriptionen
+                      openingDescriptionpl
+                      openingTitleen
+                      openingTitlepl
                     }
                   }
                 }
@@ -104,12 +104,12 @@ const Components = props => {
               <SectionText
                 title={
                   data.allMarkdownRemark.edges[0].node.frontmatter[
-                    `aboutUsTitle${lang ? `_${lang}` : ""}`
+                    `aboutUsTitle${lang ? `${lang}` : ""}`
                   ]
                 }
                 text={
                   data.allMarkdownRemark.edges[0].node.frontmatter[
-                    `aboutUsDescription${lang ? `_${lang}` : ""}`
+                    `aboutUsDescription${lang ? `${lang}` : ""}`
                   ]
                 }
               />

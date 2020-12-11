@@ -73,14 +73,14 @@ const SectionAdvantages = ({ lang }) => {
                     aboutUsDescription
                     openingTitle
                     openingDescription
-                    aboutUsTitle_en
-                    aboutUsTitle_pl
-                    aboutUsDescription_pl
-                    aboutUsDescription_en
-                    openingDescription_en
-                    openingDescription_pl
-                    openingTitle_en
-                    openingTitle_pl
+                    aboutUsTitleen
+                    aboutUsTitlepl
+                    aboutUsDescriptionpl
+                    aboutUsDescriptionen
+                    openingDescriptionen
+                    openingDescriptionpl
+                    openingTitleen
+                    openingTitlepl
                   }
                 }
               }
@@ -92,12 +92,12 @@ const SectionAdvantages = ({ lang }) => {
             <SectionText
               title={
                 data.allMarkdownRemark.edges[0].node.frontmatter[
-                  `openingTitle${lang ? `_${lang}` : ""}`
+                  `openingTitle${lang ? `${lang}` : ""}`
                 ]
               }
               text={
                 data.allMarkdownRemark.edges[0].node.frontmatter[
-                  `openingDescription${lang ? `_${lang}` : ""}`
+                  `openingDescription${lang ? `${lang}` : ""}`
                 ]
               }
             />
