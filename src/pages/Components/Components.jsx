@@ -16,7 +16,7 @@ import SectionRepair from "../../components/SectionRepair"
 import SectionText from "../../components/SectionText"
 import SectionContacts from "../../components/SectionContacts"
 import { navigation } from "../../locales/navigation"
-navigation()
+import SectionAdvantages from "../../components/SectionAdvantages"
 
 const Components = props => {
   let pageLang
@@ -66,7 +66,10 @@ const Components = props => {
         </div>
       </Parallax>
 
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div
+        className={classNames(classes.main, classes.mainRaised)}
+        style={{ padding: 15 }}
+      >
         <SectionRepair lang={lang} />
         <SectionCarousel />
         <StaticQuery
@@ -110,25 +113,19 @@ const Components = props => {
                   ]
                 }
               />
-              <SectionText
-                title={
-                  data.allMarkdownRemark.edges[0].node.frontmatter[
-                    `openingTitle${lang ? `_${lang}` : ""}`
-                  ]
-                }
-                text={
-                  data.allMarkdownRemark.edges[0].node.frontmatter[
-                    `openingDescription${lang ? `_${lang}` : ""}`
-                  ]
-                }
-              />
             </>
           )}
         />
       </div>
       <div
         className={classNames(classes.main, classes.mainRaised)}
-        style={{ marginTop: 10 }}
+        style={{ marginTop: 10, padding: 15 }}
+      >
+        <SectionAdvantages lang={lang} />
+      </div>
+      <div
+        className={classNames(classes.main, classes.mainRaised)}
+        style={{ marginTop: 10, padding: 15 }}
       >
         <SectionContacts lang={lang} />
       </div>

@@ -44,7 +44,7 @@ const repairObj = data => {
 const SectionRepair = ({ lang }) => {
   const data = navigation(lang ? lang : "ru")
   return (
-    <div style={{ padding: 20 }}>
+    <div>
       <Typography
         variant="h3"
         style={{ marginBottom: 20, textAlign: "center" }}
