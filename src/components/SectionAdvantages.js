@@ -21,6 +21,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     alignItems: "center",
     width: "98vw",
+    margin: '0 auto',
     marginBottom: 15,
   },
 
@@ -31,7 +32,7 @@ const useStyles = makeStyles(() => ({
     },
   },
   advantageImage: {
-    width: '30vw',
+    width: '28%',
     maxWidth: 350,
   },
 }))
@@ -43,21 +44,21 @@ const SectionAdvantages = ({ lang }) => {
   return (
     <div className={classes.root}>
       <div className={classes.imageContainer}>
-        {/*<img*/}
-        {/*  src={require("../assets/img/devicesLaptop.svg")}*/}
-        {/*  className={classes.advantageImage}*/}
-        {/*  alt="advantage"*/}
-        {/*/>*/}
-        {/*<img*/}
-        {/*  src={require("../assets/img/deviceWatch.svg")}*/}
-        {/*  className={classes.advantageImage}*/}
-        {/*  alt="advantage"*/}
-        {/*/>*/}
-        {/*<img*/}
-        {/*  src={require("../assets/img/mobileDevices.svg")}*/}
-        {/*  className={classes.advantageImage}*/}
-        {/*  alt="advantage"*/}
-        {/*/>*/}
+        <img
+          src={require("../assets/img/devicesLaptop.svg")}
+          className={classes.advantageImage}
+          alt="advantage"
+        />
+        <img
+          src={require("../assets/img/deviceWatch.svg")}
+          className={classes.advantageImage}
+          alt="advantage"
+        />
+        <img
+          src={require("../assets/img/mobileDevices.svg")}
+          className={classes.advantageImage}
+          alt="advantage"
+        />
       </div>
       <StaticQuery
         query={graphql`
@@ -102,21 +103,21 @@ const SectionAdvantages = ({ lang }) => {
         )}
       />
       <div className={classes.imageContainer}>
-        {/*<img*/}
-        {/*  src={require("../assets/img/bugFixing.svg")}*/}
-        {/*  className={classes.advantageImage}*/}
-        {/*  alt="advantage"*/}
-        {/*/>*/}
-        {/*<img*/}
-        {/*  src={require("../assets/img/developApp.svg")}*/}
-        {/*  className={classes.advantageImage}*/}
-        {/*  alt="advantage"*/}
-        {/*/>*/}
-        {/*<img*/}
-        {/*  src={require("../assets/img/webDevices.svg")}*/}
-        {/*  className={classes.advantageImage}*/}
-        {/*  alt="advantage"*/}
-        {/*/>*/}
+        <img
+          src={require("../assets/img/bugFixing.svg")}
+          className={classes.advantageImage}
+          alt="advantage"
+        />
+        <img
+          src={require("../assets/img/developApp.svg")}
+          className={classes.advantageImage}
+          alt="advantage"
+        />
+        <img
+          src={require("../assets/img/webDevices.svg")}
+          className={classes.advantageImage}
+          alt="advantage"
+        />
       </div>
     </div>
   )
