@@ -31,7 +31,7 @@ const useStyles = makeStyles(() => ({
     },
   },
   advantageImage: {
-    width: "33%",
+    width: '30vw',
     maxWidth: 350,
   },
 }))
