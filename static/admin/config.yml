@@ -30,6 +30,24 @@ collections:
       - { name: openingDescriptionpl, label: OpeningDescription-pl, widget: markdown }
       - { name: aboutUsTitlepl, label: AboutUsTitle-pl, widget: string }
       - { name: aboutUsDescriptionpl, label: AboutUsDescription-pl, widget: markdown }
+      - { name: repairDescription, label: repairDescription, widget: markdown }
+      - { name: repairDescriptionen, label: repairDescription-en, widget: markdown }
+      - { name: repairDescriptionpl, label: repairDescription-pl, widget: markdown }
+      - { name: sellDescription, label: sellDescription, widget: markdown }
+      - { name: sellDescriptionen, label: sellDescription-en, widget: markdown }
+      - { name: sellDescriptionpl, label: sellDescription-pl, widget: markdown }
+      - { name: buyDescription, label: buyDescription, widget: markdown }
+      - { name: buyDescriptionen, label: buyDescription-en, widget: markdown }
+      - { name: buyDescriptionpl, label: buyDescription-pl, widget: markdown }
+      - { name: accessoriesDescription, label: accessoriesDescription, widget: markdown }
+      - { name: accessoriesDescriptionen, label: accessoriesDescription-en, widget: markdown }
+      - { name: accessoriesDescriptionpl, label: accessoriesDescription-pl, widget: markdown }
+      - { name: sparesDescription, label: sparesDescription, widget: markdown }
+      - { name: sparesDescriptionen, label: sparesDescription-en, widget: markdown }
+      - { name: sparesDescriptionpl, label: sparesDescription-pl, widget: markdown }
+      - { name: informationDescription, label: informationDescription, widget: markdown }
+      - { name: informationDescriptionen, label: informationDescription-en, widget: markdown }
+      - { name: informationDescriptionpl, label: informationDescription-pl, widget: markdown }
       - label: 'Carousel'
         name: "carousel"
         widget: list

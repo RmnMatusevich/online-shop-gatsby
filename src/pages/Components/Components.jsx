@@ -17,7 +17,7 @@ import SectionText from "../../components/SectionText"
 import SectionContacts from "../../components/SectionContacts"
 import { navigation } from "../../locales/navigation"
 import SectionAdvantages from "../../components/SectionAdvantages"
-
+import SectionPills from "./Sections/SectionPills"
 const Components = props => {
   let pageLang
   if (typeof window !== "undefined") {
@@ -122,6 +122,12 @@ const Components = props => {
         style={{ marginTop: 10, padding: 15 }}
       >
         <SectionAdvantages lang={lang} />
+      </div>
+      <div
+        className={classNames(classes.main, classes.mainRaised)}
+        style={{ marginTop: 10, padding: 15 }}
+      >
+        <SectionPills lang={lang} />
       </div>
       <div
         className={classNames(classes.main, classes.mainRaised)}

@@ -1,7 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/styles"
 import { createMuiTheme } from "@material-ui/core"
-import Typography from "@material-ui/core/Typography"
 import { navigation } from "../locales/navigation"
 import { graphql, StaticQuery } from "gatsby"
 import SectionText from "./SectionText"
@@ -34,7 +33,7 @@ const useStyles = makeStyles(() => ({
   advantageImage: {
     width: "33%",
     maxWidth: 350,
-    backgroundColor: 'white'
+    backgroundColor: "white",
   },
 }))
 
