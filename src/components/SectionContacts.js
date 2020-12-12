@@ -15,11 +15,11 @@ const theme = createMuiTheme()
 
 const useStyles = makeStyles(() => ({
   item: {
-    width: "100%",
+    width: "98%",
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "center",
-    margin: "6px 0",
+    margin: "0 auto",
     [theme.breakpoints.down("sm")]: {
       justifyContent: "flex-start",
     },

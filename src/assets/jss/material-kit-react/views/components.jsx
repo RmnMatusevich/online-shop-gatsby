@@ -21,7 +21,7 @@ const componentsStyle = {
     maxWidth: "500px",
     margin: "10px 0 0",
     borderRadius: 6,
-    backgroundColor: "#0D68E0",
+    // backgroundColor: "#0D68E0",
   },
   main: {
     background: "#FFFFFF",
