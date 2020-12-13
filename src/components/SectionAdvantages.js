@@ -1,7 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/styles"
 import { createMuiTheme } from "@material-ui/core"
-import Typography from "@material-ui/core/Typography"
 import { navigation } from "../locales/navigation"
 import { graphql, StaticQuery } from "gatsby"
 import SectionText from "./SectionText"
@@ -21,7 +20,8 @@ const useStyles = makeStyles(() => ({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
+    width: "85vw",
+    margin: "0 auto",
     marginBottom: 15,
   },
 
@@ -32,9 +32,8 @@ const useStyles = makeStyles(() => ({
     },
   },
   advantageImage: {
-    width: "33%",
+    width: "28%",
     maxWidth: 350,
-    backgroundColor: 'white'
   },
 }))
 
@@ -44,21 +43,11 @@ const SectionAdvantages = ({ lang }) => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.imageContainer}>
-        <img
-          src={require("../assets/img/devicesLaptop.svg")}
-          className={classes.advantageImage}
-          alt="advantage"
-        />
-        <img
-          src={require("../assets/img/deviceWatch.svg")}
-          className={classes.advantageImage}
-          alt="advantage"
-        />
+      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <img
           src={require("../assets/img/mobileDevices.svg")}
-          className={classes.advantageImage}
-          alt="advantage"
+          alt="contact_us"
+          style={{ width: "100%", height: '100%', maxWidth: 500 }}
         />
       </div>
       <StaticQuery
@@ -103,21 +92,11 @@ const SectionAdvantages = ({ lang }) => {
           </>
         )}
       />
-      <div className={classes.imageContainer}>
+      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <img
           src={require("../assets/img/bugFixing.svg")}
-          className={classes.advantageImage}
-          alt="advantage"
-        />
-        <img
-          src={require("../assets/img/developApp.svg")}
-          className={classes.advantageImage}
-          alt="advantage"
-        />
-        <img
-          src={require("../assets/img/webDevices.svg")}
-          className={classes.advantageImage}
-          alt="advantage"
+          alt="contact_us"
+          style={{ width: "100%", height: '100%', maxWidth: 500 }}
         />
       </div>
     </div>

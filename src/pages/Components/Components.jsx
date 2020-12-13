@@ -11,12 +11,13 @@ import SectionCarousel from "./Sections/SectionCarousel.jsx"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import SEO from "../../components/seo"
 import { Helmet } from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, withPrefix } from "gatsby"
 import SectionRepair from "../../components/SectionRepair"
 import SectionText from "../../components/SectionText"
 import SectionContacts from "../../components/SectionContacts"
 import { navigation } from "../../locales/navigation"
 import SectionAdvantages from "../../components/SectionAdvantages"
+import SectionPills from "./Sections/SectionPills"
 
 const Components = props => {
   let pageLang
@@ -35,6 +36,7 @@ const Components = props => {
       }}
     >
       <Helmet>
+        <script src={withPrefix("callback.js")} type="text/javascript" />
         <meta name="yandex-verification" content="0d1b788a734b13b9" />
       </Helmet>
       <SEO
@@ -122,6 +124,12 @@ const Components = props => {
         style={{ marginTop: 10, padding: 15 }}
       >
         <SectionAdvantages lang={lang} />
+      </div>
+      <div
+        className={classNames(classes.main, classes.mainRaised)}
+        style={{ marginTop: 10, padding: 15 }}
+      >
+        <SectionPills lang={lang} />
       </div>
       <div
         className={classNames(classes.main, classes.mainRaised)}

@@ -1,5 +1,5 @@
 import classNames from "classnames"
-import { Link } from "gatsby"
+import { Link, withPrefix } from "gatsby"
 import withStyles from "@material-ui/core/styles/withStyles"
 import React, { useState } from "react"
 import Header from "../components/Header/Header"
@@ -11,6 +11,7 @@ import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
+import { Helmet } from "react-helmet"
 // import Context from "../context/Context"
 // let lang
 // if (typeof window !== "undefined") {
@@ -59,6 +60,10 @@ const RepairPageTemplate = props => {
             : "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
         }
       />
+      <Helmet>
+        <script src={withPrefix("callback.js")} type="text/javascript" />
+        <meta name="yandex-verification" content="0d1b788a734b13b9" />
+      </Helmet>
       <Header
         rightLinks={<HeaderLinks setLang={setLang} lang={lang} />}
         fixed

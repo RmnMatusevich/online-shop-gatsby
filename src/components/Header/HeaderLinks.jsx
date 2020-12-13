@@ -36,6 +36,7 @@ function HeaderLinks({ ...props }) {
     setLang(langWithoutRu ? langWithoutRu : "")
   }
   const data = navigation(lang ? lang : "ru")
+
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>

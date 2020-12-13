@@ -3,15 +3,33 @@ import Typography from "@material-ui/core/Typography"
 import LocationOnIcon from "@material-ui/icons/LocationOn"
 import PhoneIcon from "@material-ui/icons/Phone"
 import AlternateEmailIcon from "@material-ui/icons/AlternateEmail"
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
+import ScheduleIcon from "@material-ui/icons/Schedule"
+import { MapContainer, TileLayer } from "react-leaflet"
 
 import "leaflet/dist/leaflet.css"
 import { navigation } from "../locales/navigation"
+import { createMuiTheme } from "@material-ui/core"
+import makeStyles from "@material-ui/styles/makeStyles"
 
+const theme = createMuiTheme()
+
+const useStyles = makeStyles(() => ({
+  item: {
+    width: "98%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    margin: "0 auto",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "flex-start",
+    },
+  },
+}))
 const position = [52.2533308, 20.9910625]
-// import { Map } from 'react-leaflet'
+
 const SectionContacts = ({ lang }) => {
   const data = navigation(lang ? lang : "ru")
+
   return (
     <div>
       <Typography
@@ -23,7 +41,7 @@ const SectionContacts = ({ lang }) => {
       <ContactItem
         leftIcon={
           <PhoneIcon
-            fontSize="large"
+            fontSize="default"
             style={{ color: "#0D68E0", marginRight: 10 }}
           />
         }
@@ -37,7 +55,7 @@ const SectionContacts = ({ lang }) => {
       <ContactItem
         leftIcon={
           <LocationOnIcon
-            fontSize="large"
+            fontSize="default"
             style={{ color: "#0D68E0", marginRight: 10 }}
           />
         }
@@ -47,7 +65,7 @@ const SectionContacts = ({ lang }) => {
       <ContactItem
         leftIcon={
           <AlternateEmailIcon
-            fontSize="large"
+            fontSize="default"
             style={{ color: "#0D68E0", marginRight: 10 }}
           />
         }
@@ -61,6 +79,25 @@ const SectionContacts = ({ lang }) => {
           </a>
         }
       />
+      <ContactItem
+        leftIcon={
+          <ScheduleIcon
+            fontSize="default"
+            style={{ color: "#0D68E0", marginRight: 10 }}
+          />
+        }
+        leftText={"Адрес: "}
+        rightText={
+          <a style={{ color: "rgba(0, 0, 0, 0.87)" }}>{data.contacts.time}</a>
+        }
+      />
+      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <img
+          src={require("../assets/img/contactUs.svg")}
+          alt="contact_us"
+          style={{ width: "100%", height: '100%', maxWidth: 1000 }}
+        />
+      </div>
       <MapContainer
         center={position}
         zoom={20}
@@ -73,11 +110,6 @@ const SectionContacts = ({ lang }) => {
         }}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        {/*<Marker position={position}>*/}
-        {/*  <Popup>*/}
-        {/*    A pretty CSS3 popup. <br /> Easily customizable.*/}
-        {/*  </Popup>*/}
-        {/*</Marker>*/}
       </MapContainer>
     </div>
   )
@@ -86,17 +118,11 @@ const SectionContacts = ({ lang }) => {
 export default SectionContacts
 
 const ContactItem = ({ leftIcon, leftText, rightText }) => {
+  const classes = useStyles()
+
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "row",
-        margin: "6px 0",
-      }}
-    >
+    <div className={classes.item}>
       {leftIcon}
-      {/*<Typography variant="body1">{leftText}</Typography>*/}
       <Typography variant="h6" style={{ textTransform: "none" }}>
         {rightText}
       </Typography>

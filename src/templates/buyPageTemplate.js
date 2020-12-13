@@ -11,6 +11,8 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Card, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
 import ReactMarkdown from "react-markdown"
+import { withPrefix } from "gatsby"
+import { Helmet } from "react-helmet"
 
 const StyledCard = withStyles(theme => ({
   root: {
@@ -49,6 +51,10 @@ const BuyPageTemplate = props => {
             : "Buy phone, Buy tablets, Buy watch, Buy iqos, Buy laptops."
         }
       />
+      <Helmet>
+        <script src={withPrefix("callback.js")} type="text/javascript" />
+        <meta name="yandex-verification" content="0d1b788a734b13b9" />
+      </Helmet>
       <Header
         rightLinks={<HeaderLinks lang={lang} setLang={setLang} />}
         fixed

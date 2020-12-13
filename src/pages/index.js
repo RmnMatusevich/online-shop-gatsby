@@ -8,6 +8,8 @@ import "typeface-roboto-slab"
 // pages for this product
 import Components from "./Components/Components.jsx"
 import Context from "../context/Context"
+import { withPrefix } from "gatsby"
+import { Helmet } from "react-helmet"
 let hist = createMemoryHistory()
 
 const Index = () => {
@@ -26,6 +28,10 @@ const Index = () => {
         setLang,
       }}
     >
+      <Helmet>
+        <script src={withPrefix("callback.js")} type="text/javascript" />
+        <meta name="yandex-verification" content="0d1b788a734b13b9" />
+      </Helmet>
       <Router history={hist}>
         <Switch>
           <Route path="/" component={Components} />

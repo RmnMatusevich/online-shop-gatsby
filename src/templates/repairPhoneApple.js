@@ -8,6 +8,8 @@ import { Typography } from "@material-ui/core"
 import Footer from "../components/Footer/Footer"
 import SEO from "../components/seo"
 import ReactMarkdown from "react-markdown"
+import { withPrefix } from "gatsby"
+import { Helmet } from "react-helmet"
 
 const Template = ({ data, classes, ...rest }) => {
   const phonesData = data.allMarkdownRemark.edges
@@ -31,6 +33,10 @@ const Template = ({ data, classes, ...rest }) => {
             : "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
         }
       />
+      <Helmet>
+        <script src={withPrefix("callback.js")} type="text/javascript" />
+        <meta name="yandex-verification" content="0d1b788a734b13b9" />
+      </Helmet>
       <Header
         rightLinks={<HeaderLinks lang={lang} setLang={setLang} />}
         fixed
