@@ -61,7 +61,7 @@ const BuyPageTemplate = props => {
         {...rest}
       />
       <Helmet>
-        <script src={withPrefix('callback.js')} type="text/javascript" />
+        <script src={withPrefix("callback.js")} type="text/javascript" />
         <meta name="yandex-verification" content="0d1b788a734b13b9" />
       </Helmet>
       <Parallax
