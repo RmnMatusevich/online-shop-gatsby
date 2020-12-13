@@ -95,7 +95,7 @@ const SectionContacts = ({ lang }) => {
         <img
           src={require("../assets/img/contactUs.svg")}
           alt="contact_us"
-          style={{ width: "100%", height: "auto", maxWidth: 1000 }}
+          style={{ width: "100%", height: '100%', maxWidth: 1000 }}
         />
       </div>
       <MapContainer
