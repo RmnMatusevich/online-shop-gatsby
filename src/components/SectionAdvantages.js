@@ -43,12 +43,28 @@ const SectionAdvantages = ({ lang }) => {
 
   return (
     <div className={classes.root}>
-      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      <div className={classes.imageContainer}>
+      <div style={{ width: "33%", display: "flex", justifyContent: "center" }}>
         <img
           src={require("../assets/img/mobileDevices.svg")}
           alt="contact_us"
-          style={{ width: "100%", height: "auto", maxWidth: 1000 }}
+          style={{ width: "100%", height: "auto", maxWidth: 400 }}
         />
+      </div>
+        <div style={{ width: "33%", display: "flex", justifyContent: "center" }}>
+          <img
+            src={require("../assets/img/deviceWatch.svg")}
+            alt="contact_us"
+            style={{ width: "100%", height: "auto", maxWidth: 400 }}
+          />
+        </div>
+        <div style={{ width: "33%", display: "flex", justifyContent: "center" }}>
+          <img
+            src={require("../assets/img/webDevices.svg")}
+            alt="contact_us"
+            style={{ width: "100%", height: "auto", maxWidth: 400 }}
+          />
+        </div>
       </div>
       <StaticQuery
         query={graphql`
