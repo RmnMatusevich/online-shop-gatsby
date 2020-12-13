@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 
 import classNames from "classnames"
-import { Link } from "gatsby"
+import { Link, withPrefix } from "gatsby"
 import withStyles from "@material-ui/core/styles/withStyles"
 import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
@@ -12,6 +12,7 @@ import SEO from "../components/seo"
 import Parallax from "../components/Parallax/Parallax"
 import GridContainer from "components/Grid/GridContainer.jsx"
 import GridItem from "components/Grid/GridItem.jsx"
+import { Helmet } from "react-helmet"
 const StyledCard = withStyles({
   root: {
     display: "flex",
@@ -79,6 +80,10 @@ const RepairBrandTemplate = props => {
           "Repair phone, Repair tablets, Repair watch, Repair iqos, Repair laptops."
         }
       />
+      <Helmet>
+        <script src={withPrefix('callback.js')} type="text/javascript" />
+        <meta name="yandex-verification" content="0d1b788a734b13b9" />
+      </Helmet>
       <Header
         rightLinks={<HeaderLinks lang={lang} setLang={setLang} />}
         fixed

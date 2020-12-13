@@ -11,6 +11,8 @@ import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
 import { Typography } from "@material-ui/core"
 import SEO from "../components/seo"
 import ReactMarkdown from "react-markdown"
+import { withPrefix } from "gatsby"
+import { Helmet } from "react-helmet"
 
 const SellPageTemplate = props => {
   const { classes, data, ...rest } = props
@@ -45,6 +47,10 @@ const SellPageTemplate = props => {
         }}
         {...rest}
       />
+      <Helmet>
+        <script src={withPrefix('callback.js')} type="text/javascript" />
+        <meta name="yandex-verification" content="0d1b788a734b13b9" />
+      </Helmet>
       <Parallax
         image={require(`../../static/${repairData[0].node.frontmatter.backgroundImage}`)}
       >
