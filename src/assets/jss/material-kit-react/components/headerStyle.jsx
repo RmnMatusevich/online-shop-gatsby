@@ -54,6 +54,8 @@ const headerStyle = theme => ({
   },
   flex: {
     flex: 1,
+    width: 786,
+    justifyContent: "flex-start"
   },
   title: {
     ...defaultFont,
@@ -62,7 +64,7 @@ const headerStyle = theme => ({
     borderRadius: "3px",
     textTransform: "none",
     color: "inherit",
-    padding: "8px 16px",
+    padding: 0,
     "&:hover,&:focus": {
       color: "inherit",
       background: "transparent",

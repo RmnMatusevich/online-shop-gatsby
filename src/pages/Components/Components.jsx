@@ -73,7 +73,7 @@ const Components = props => {
         style={{ padding: 15 }}
       >
         <SectionRepair lang={lang} />
-        <SectionCarousel />
+        {/*<SectionCarousel />*/}
         <StaticQuery
           query={graphql`
             query MainPage {
