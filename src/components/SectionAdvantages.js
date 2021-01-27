@@ -14,27 +14,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-  },
-  imageContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "85vw",
-    margin: "0 auto",
-    marginBottom: 15,
-  },
-
-  advantageText: {
-    width: "100%",
-    [theme.breakpoints.down("xs")]: {
-      width: "100%",
-    },
-  },
-  advantageImage: {
-    width: "28%",
-    maxWidth: 350,
-  },
+  }
 }))
 
 const SectionAdvantages = ({ lang }) => {
