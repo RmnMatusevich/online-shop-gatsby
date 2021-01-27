@@ -10,6 +10,9 @@ import Components from "./Components/Components.jsx"
 import Context from "../context/Context"
 import { withPrefix } from "gatsby"
 import { Helmet } from "react-helmet"
+import theme from "../theme"
+import ThemeProvider from "@material-ui/styles/ThemeProvider"
+
 let hist = createMemoryHistory()
 
 const Index = () => {
@@ -22,22 +25,24 @@ const Index = () => {
   const [lang, setLang] = useState(langWithoutRu ? langWithoutRu : "")
 
   return (
-    <Context.Provider
-      value={{
-        lang,
-        setLang,
-      }}
-    >
-      <Helmet>
-        <script src={withPrefix("callback.js")} type="text/javascript" />
-        <meta name="yandex-verification" content="0d1b788a734b13b9" />
-      </Helmet>
-      <Router history={hist}>
-        <Switch>
-          <Route path="/" component={Components} />
-        </Switch>
-      </Router>
-    </Context.Provider>
+    <ThemeProvider theme={theme}>
+      <Context.Provider
+        value={{
+          lang,
+          setLang,
+        }}
+      >
+        <Helmet>
+          <script src={withPrefix("callback.js")} type="text/javascript" />
+          <meta name="yandex-verification" content="0d1b788a734b13b9" />
+        </Helmet>
+        <Router history={hist}>
+          <Switch>
+            <Route path="/" component={Components} />
+          </Switch>
+        </Router>
+      </Context.Provider>
+    </ThemeProvider>
   )
 }
 

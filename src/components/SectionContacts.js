@@ -9,35 +9,26 @@ import { MapContainer, TileLayer } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 import { navigation } from "../locales/navigation"
 import { createMuiTheme } from "@material-ui/core"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import makeStyles from "@material-ui/styles/makeStyles"
+import { useTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme()
 
-const useStyles = makeStyles(() => ({
-  item: {
-    width: "98%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    margin: "0 auto",
-    [theme.breakpoints.down("sm")]: {
-      justifyContent: "flex-start",
-    },
-  },
-}))
 const position = [52.2533308, 20.9910625]
 
 const SectionContacts = ({ lang }) => {
   const data = navigation(lang ? lang : "ru")
 
   return (
-    <div>
+    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
       <Typography
         variant="h3"
         style={{ textAlign: "center", marginBottom: 20 }}
       >
         {data.contacts.title}
       </Typography>
+        <div style={{maxWidth: 400}}>
       <ContactItem
         leftIcon={
           <PhoneIcon
@@ -91,11 +82,12 @@ const SectionContacts = ({ lang }) => {
           <a style={{ color: "rgba(0, 0, 0, 0.87)" }}>{data.contacts.time}</a>
         }
       />
+        </div>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <img
           src={require("../assets/img/contactUs.svg")}
           alt="contact_us"
-          style={{ width: "100%", height: '100%', maxWidth: 1000 }}
+          style={{ width: "100%", height: "100%", maxWidth: 600 }}
         />
       </div>
       <MapContainer
@@ -117,13 +109,23 @@ const SectionContacts = ({ lang }) => {
 
 export default SectionContacts
 
-const ContactItem = ({ leftIcon, leftText, rightText }) => {
-  const classes = useStyles()
-
+export const ContactItem = ({ smText, leftIcon, leftText, rightText }) => {
   return (
-    <div className={classes.item}>
+    <div
+      style={{
+        width: "98%",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        margin: "0 auto",
+      }}
+    >
       {leftIcon}
-      <Typography variant="h6" style={{ textTransform: "none" }}>
+      <Typography
+        variant="h6"
+        style={{ fontSize: smText ? 14 : 20, textTransform: "none" }}
+      >
         {rightText}
       </Typography>
     </div>

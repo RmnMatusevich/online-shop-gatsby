@@ -13,6 +13,7 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-material-ui',
     'gatsby-transformer-yaml',
+    'gatsby-plugin-material-ui',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

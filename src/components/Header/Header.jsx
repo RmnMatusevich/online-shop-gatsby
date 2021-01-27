@@ -15,6 +15,11 @@ import Drawer from "@material-ui/core/Drawer"
 import Menu from "@material-ui/icons/Menu"
 // core components
 import headerStyle from "assets/jss/material-kit-react/components/headerStyle.jsx"
+import { Typography } from "@material-ui/core"
+import PhoneIcon from "@material-ui/icons/Phone"
+import ScheduleIcon from "@material-ui/icons/Schedule"
+import { navigation } from "../../locales/navigation"
+import { ContactItem } from "../SectionContacts"
 
 class Header extends React.Component {
   constructor(props) {
@@ -66,6 +71,7 @@ class Header extends React.Component {
       leftLinks,
       fixed,
       absolute,
+      lang,
     } = this.props
     const appBarClasses = classNames({
       [classes.appBar]: true,
@@ -82,17 +88,55 @@ class Header extends React.Component {
         />
       </Button>
     )
+    const data = navigation(lang ? lang : "ru")
+
+    const infoComponent = (
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <ContactItem
+          smText
+          leftIcon={
+            <PhoneIcon
+              fontSize="default"
+              style={{ color: "#0D68E0", marginRight: 10 }}
+            />
+          }
+          rightText={
+            <a href="tel:+48889559888" style={{ color: "rgba(0, 0, 0, 0.87)" }}>
+              +48 889 559 888
+            </a>
+          }
+        />
+        <ContactItem
+          smText
+          leftIcon={
+            <ScheduleIcon
+              fontSize="default"
+              style={{ color: "#0D68E0", marginRight: 10 }}
+            />
+          }
+          rightText={
+            <a style={{ color: "rgba(0, 0, 0, 0.87)" }}>{data.contacts.time}</a>
+          }
+        />
+      </div>
+    )
+
     return (
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>
-          {leftLinks !== undefined ? brandComponent : null}
+          {/*{leftLinks !== undefined ? brandComponent : null}*/}
           <div className={classes.flex}>
             {leftLinks !== undefined ? (
               <Hidden smDown implementation="css">
                 {leftLinks}
               </Hidden>
             ) : (
-              brandComponent
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                {brandComponent}
+                <Hidden smDown implementation="css">
+                  {infoComponent}
+                </Hidden>
+              </div>
             )}
           </div>
           <Hidden smDown implementation="css">

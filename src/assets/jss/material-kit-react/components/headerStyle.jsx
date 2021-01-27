@@ -55,7 +55,7 @@ const headerStyle = theme => ({
   flex: {
     flex: 1,
     width: 786,
-    justifyContent: "flex-start"
+    justifyContent: "flex-start",
   },
   title: {
     ...defaultFont,
