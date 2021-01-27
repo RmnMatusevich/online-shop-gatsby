@@ -7,12 +7,13 @@ import Header from "../components/Header/Header"
 import HeaderLinks from "../components/Header/HeaderLinks"
 import Footer from "../components/Footer/Footer"
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx"
-import { Card, Typography, TextField } from "@material-ui/core"
+import { Card, Typography, TextField, Hidden } from "@material-ui/core"
 import SEO from "../components/seo"
 import Parallax from "../components/Parallax/Parallax"
 import GridContainer from "components/Grid/GridContainer.jsx"
 import GridItem from "components/Grid/GridItem.jsx"
 import { Helmet } from "react-helmet"
+import theme from "../theme"
 const StyledCard = withStyles({
   root: {
     display: "flex",
@@ -149,6 +150,29 @@ const RepairBrandTemplate = props => {
             justifyContent: "center",
           }}
         >
+          {products.length === 0 && (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: 20,
+                [theme.breakpoints.down("xs")]: {
+                  flexDirection: "column",
+                },
+              }}
+            >
+              <Typography style={{ lineHeight: 2, fontSize: 40 }}>
+                Sorry, for now we can't find that
+              </Typography>
+              <img
+                src={require("../assets/img/search.svg")}
+                alt="search"
+                style={{ width: "45%", height: 200 }}
+              />
+            </div>
+          )}
           {products.map((i, index) => {
             const item = i.node.frontmatter
             return (
