@@ -11,7 +11,7 @@ import { navigation } from "../locales/navigation"
 import { createMuiTheme } from "@material-ui/core"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import makeStyles from "@material-ui/styles/makeStyles"
-import { useTheme } from '@material-ui/core/styles';
+import { useTheme } from "@material-ui/core/styles"
 
 const theme = createMuiTheme()
 
@@ -21,68 +21,75 @@ const SectionContacts = ({ lang }) => {
   const data = navigation(lang ? lang : "ru")
 
   return (
-    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
       <Typography
         variant="h3"
         style={{ textAlign: "center", marginBottom: 20 }}
       >
         {data.contacts.title}
       </Typography>
-        <div style={{maxWidth: 400}}>
-      <ContactItem
-        leftIcon={
-          <PhoneIcon
-            fontSize="default"
-            style={{ color: "#0D68E0", marginRight: 10 }}
-          />
-        }
-        leftText={"Номер телефона: "}
-        rightText={
-          <a href="tel:+48889559888" style={{ color: "rgba(0, 0, 0, 0.87)" }}>
-            +48 889 559 888
-          </a>
-        }
-      />
-      <ContactItem
-        leftIcon={
-          <LocationOnIcon
-            fontSize="default"
-            style={{ color: "#0D68E0", marginRight: 10 }}
-          />
-        }
-        leftText={"Адрес: "}
-        rightText={data.contacts.place}
-      />
-      <ContactItem
-        leftIcon={
-          <AlternateEmailIcon
-            fontSize="default"
-            style={{ color: "#0D68E0", marginRight: 10 }}
-          />
-        }
-        leftText={"Почта: "}
-        rightText={
-          <a
-            style={{ color: "rgba(0, 0, 0, 0.87)" }}
-            href="mailto:info@techtag.pl"
-          >
-            info@techtag.pl
-          </a>
-        }
-      />
-      <ContactItem
-        leftIcon={
-          <ScheduleIcon
-            fontSize="default"
-            style={{ color: "#0D68E0", marginRight: 10 }}
-          />
-        }
-        leftText={"Адрес: "}
-        rightText={
-          <a style={{ color: "rgba(0, 0, 0, 0.87)" }}>{data.contacts.time}</a>
-        }
-      />
-        </div>
+      <div style={{ maxWidth: 400 }}>
+        <ContactItem
+          leftIcon={
+            <PhoneIcon
+              fontSize="default"
+              style={{ color: "#0D68E0", marginRight: 10 }}
+            />
+          }
+          leftText={"Номер телефона: "}
+          rightText={
+            <a href="tel:+48889559888" style={{ color: "rgba(0, 0, 0, 0.87)" }}>
+              +48 889 559 888
+            </a>
+          }
+        />
+        <ContactItem
+          leftIcon={
+            <LocationOnIcon
+              fontSize="default"
+              style={{ color: "#0D68E0", marginRight: 10 }}
+            />
+          }
+          leftText={"Адрес: "}
+          rightText={data.contacts.place}
+        />
+        <ContactItem
+          leftIcon={
+            <AlternateEmailIcon
+              fontSize="default"
+              style={{ color: "#0D68E0", marginRight: 10 }}
+            />
+          }
+          leftText={"Почта: "}
+          rightText={
+            <a
+              style={{ color: "rgba(0, 0, 0, 0.87)" }}
+              href="mailto:info@techtag.pl"
+            >
+              info@techtag.pl
+            </a>
+          }
+        />
+        <ContactItem
+          leftIcon={
+            <ScheduleIcon
+              fontSize="default"
+              style={{ color: "#0D68E0", marginRight: 10 }}
+            />
+          }
+          leftText={"Адрес: "}
+          rightText={
+            <a style={{ color: "rgba(0, 0, 0, 0.87)" }}>{data.contacts.time}</a>
+          }
+        />
+      </div>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <img
           src={require("../assets/img/contactUs.svg")}

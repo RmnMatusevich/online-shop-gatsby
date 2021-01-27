@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-  }
+  },
 }))
 
 const SectionAdvantages = ({ lang }) => {
