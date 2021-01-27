@@ -48,6 +48,7 @@ const Components = props => {
       <Header
         rightLinks={<HeaderLinks setLang={setLang} lang={lang} />}
         fixed
+        lang={lang}
         color="white"
         changeColorOnScroll={{
           height: 400,

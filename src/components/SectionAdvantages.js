@@ -47,7 +47,7 @@ const SectionAdvantages = ({ lang }) => {
         <img
           src={require("../assets/img/mobileDevices.svg")}
           alt="contact_us"
-          style={{ width: "100%", height: '100%', maxWidth: 500 }}
+          style={{ width: "100%", height: "100%", maxWidth: 500 }}
         />
       </div>
       <StaticQuery
@@ -96,7 +96,7 @@ const SectionAdvantages = ({ lang }) => {
         <img
           src={require("../assets/img/bugFixing.svg")}
           alt="contact_us"
-          style={{ width: "100%", height: '100%', maxWidth: 500 }}
+          style={{ width: "100%", height: "100%", maxWidth: 500 }}
         />
       </div>
     </div>

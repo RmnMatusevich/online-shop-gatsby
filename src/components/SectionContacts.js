@@ -13,18 +13,6 @@ import makeStyles from "@material-ui/styles/makeStyles"
 
 const theme = createMuiTheme()
 
-const useStyles = makeStyles(() => ({
-  item: {
-    width: "98%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    margin: "0 auto",
-    [theme.breakpoints.down("sm")]: {
-      justifyContent: "flex-start",
-    },
-  },
-}))
 const position = [52.2533308, 20.9910625]
 
 const SectionContacts = ({ lang }) => {
@@ -95,7 +83,7 @@ const SectionContacts = ({ lang }) => {
         <img
           src={require("../assets/img/contactUs.svg")}
           alt="contact_us"
-          style={{ width: "100%", height: '100%', maxWidth: 1000 }}
+          style={{ width: "100%", height: "100%", maxWidth: 1000 }}
         />
       </div>
       <MapContainer
@@ -117,13 +105,23 @@ const SectionContacts = ({ lang }) => {
 
 export default SectionContacts
 
-const ContactItem = ({ leftIcon, leftText, rightText }) => {
-  const classes = useStyles()
-
+export const ContactItem = ({ smText, leftIcon, leftText, rightText }) => {
   return (
-    <div className={classes.item}>
+    <div
+      style={{
+        width: "98%",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        margin: "0 auto",
+      }}
+    >
       {leftIcon}
-      <Typography variant="h6" style={{ textTransform: "none" }}>
+      <Typography
+        variant="h6"
+        style={{ fontSize: smText ? 14 : 20, textTransform: "none" }}
+      >
         {rightText}
       </Typography>
     </div>
